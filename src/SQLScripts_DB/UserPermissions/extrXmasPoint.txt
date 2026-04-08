@@ -1,0 +1,50 @@
+
+--insert form permission on role base for extra Xmas Point to view
+INSERT INTO [dbo].[RolePermissionForm_LINK]
+           ([RoleID]
+           ,[PermissionID]
+           ,[FormID])
+     VALUES(1,1,13),(2,1,13),(3,1,13)
+
+--insert form permission on role base for extra Xmas Point to create
+INSERT INTO [dbo].[RolePermissionForm_LINK]
+           ([RoleID]
+           ,[PermissionID]
+           ,[FormID])
+     VALUES (3,2,13)
+
+
+--insert form permission on role base for extra Xmas Point to EDIT
+INSERT INTO [dbo].[RolePermissionForm_LINK]
+           ([RoleID]
+           ,[PermissionID]
+           ,[FormID])
+     VALUES(3,3,13)
+
+
+--insert form permission on role base for extra Xmas Point to delete
+INSERT INTO [dbo].[RolePermissionForm_LINK]
+           ([RoleID]
+           ,[PermissionID]
+           ,[FormID])
+     VALUES (3,4,13)
+
+--insert form permission on role base for xmas Point for system admin
+INSERT INTO [dbo].[RolePermissionForm_LINK]
+           ([RoleID]
+           ,[PermissionID]
+           ,[FormID])
+     VALUES(1,1,14),(1,2,14),(1,3,14),(1,4,14)    
+
+
+INSERT INTO [dbo].[RolePermissionForm_LINK]
+           ([RoleID]
+           ,[PermissionID]
+           ,[FormID])
+     VALUES(1,2,13),(1,3,13),(1,4,13)
+
+INSERT INTO [dbo].[RolePermissionForm_LINK]
+           ([RoleID]
+           ,[PermissionID]
+           ,[FormID])
+     VALUES(2,2,13),(2,3,13),(2,4,13)           

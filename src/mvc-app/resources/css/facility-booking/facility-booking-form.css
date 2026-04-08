@@ -1,0 +1,136 @@
+form#create-facility-booking-form .fb-table {
+    --fb-line: #000;
+    --fb-bg: #eeeeee;
+
+    display: grid !important;
+    grid-template-columns: 220px 1fr 220px 1fr;
+    column-gap: 0;
+    row-gap: 0;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0 0 12px 0;
+
+    gap: 1px !important;
+    padding: 1px !important;
+    background: var(--fb-line, #000) !important;
+    background-color: var(--fb-line, #000) !important;
+    overflow: visible !important;
+}
+
+form#create-facility-booking-form .fb-row {
+    display: contents;
+}
+
+form#create-facility-booking-form .fb-cell {
+    box-sizing: border-box;
+    padding: 4px;
+    min-width: 0;
+    align-self: stretch;
+    background: var(--fb-bg, #eee) !important;
+    background-color: var(--fb-bg, #eee) !important;
+
+    position: relative;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    flex-wrap: wrap;
+    gap: 4px;
+
+    overflow: visible !important;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    justify-self: stretch;
+    width: 100%;
+}
+
+form#create-facility-booking-form .fb-cell--header {
+    font-weight: 600;
+}
+
+form#create-facility-booking-form .fb-cell * {
+    box-sizing: border-box;
+}
+
+form#create-facility-booking-form .fb-table input,
+form#create-facility-booking-form .fb-table select,
+form#create-facility-booking-form .fb-table textarea,
+form#create-facility-booking-form .fb-table button {
+    margin: 0;
+    max-width: 100%;
+}
+
+form#create-facility-booking-form .fb-table input[type="text"],
+form#create-facility-booking-form .fb-table input[type="email"],
+form#create-facility-booking-form .fb-table input[type="tel"],
+form#create-facility-booking-form .fb-table input[type="date"],
+form#create-facility-booking-form .fb-table input[type="time"],
+form#create-facility-booking-form .fb-table select,
+form#create-facility-booking-form .fb-table textarea {
+    width: 100%;
+}
+
+form#create-facility-booking-form .fb-cell[data-colspan="2"] {
+    grid-column: span 2;
+}
+form#create-facility-booking-form .fb-cell[data-colspan="3"] {
+    grid-column: span 3;
+}
+form#create-facility-booking-form .fb-cell[data-colspan="4"] {
+    grid-column: span 4;
+}
+form#create-facility-booking-form .fb-cell[data-rowspan="2"] {
+    grid-row: span 2;
+}
+form#create-facility-booking-form .fb-cell[data-rowspan="3"] {
+    grid-row: span 3;
+}
+form#create-facility-booking-form .fb-cell[data-rowspan="4"] {
+    grid-row: span 4;
+}
+
+form#create-facility-booking-form .fb-cell[data-colspan],
+form#create-facility-booking-form .fb-cell[data-rowspan] {
+    align-self: stretch;
+}
+
+form#create-facility-booking-form
+    .fb-cell
+    > input:not([type="radio"]):not([type="checkbox"]),
+form#create-facility-booking-form .fb-cell > select,
+form#create-facility-booking-form .fb-cell > textarea {
+    flex: 1 1 100%;
+    min-width: 0;
+    width: 100%;
+}
+
+form#create-facility-booking-form .fb-cell select {
+    position: relative;
+    z-index: 5;
+}
+
+form#create-facility-booking-form #recurring-booking-detail-container {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+form#create-facility-booking-form
+    #recurring-booking-detail-container
+    input[type="radio"] {
+    flex: 0 0 auto;
+    width: auto;
+    margin: 0;
+    appearance: auto;
+    -webkit-appearance: radio;
+    opacity: 1;
+    position: static;
+}
+
+form#create-facility-booking-form #recurring-booking-detail-container label {
+    margin: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}

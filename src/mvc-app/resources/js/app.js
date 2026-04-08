@@ -1,0 +1,20 @@
+require('./bootstrap');
+import $ from 'jquery';
+window.$ = window.jQuery = $;
+import 'jquery-ui/dist/jquery-ui.min.js';
+import 'jquery-ui/ui/widgets/datepicker.js';
+import DataTable from 'datatables.net';
+window.DataTable = DataTable;
+require('smartmenus');
+require('jquery.facebox');
+require('chosen-js');
+require('select2');
+require('multiselect-two-sides');
+require('jquery-validation');
+require('jquery-contextmenu');
+require('./plugins/yadcf.js')
+window.toastr = require('toastr');
+window.moment = require('moment-timezone');
+window.CommonFunction = require('./common-function.module.js');
+window.DatatableAccessibility = require('./facility/datatable-accessibility.module');
+window.Select2Ui = require('./facility/select2-ui.module');

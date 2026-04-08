@@ -1,0 +1,3 @@
+insert HistoryTypes (id,HistoryType) values (7,'SystemAdmin')
+Insert into [HistoryTypes] (id,HistoryType) values(8,'Daily Allocations - UnAllocated Screen')
+	

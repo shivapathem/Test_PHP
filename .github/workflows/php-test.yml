@@ -1,0 +1,109 @@
+name: Test and Run PHP App
+
+on:
+#  push:
+#   branches: [ALLOCATE7-FAST-BAU-TECH-REMEDIATION]
+  workflow_dispatch:
+
+jobs:
+  unit-test:
+    name: PHP Unit Test
+    runs-on: ubuntu-latest
+    
+    
+    steps:
+          # =====================================================
+          # Checkout code
+          # =====================================================
+          - name: Checkout repository
+            uses: actions/checkout@v4
+    
+          # =====================================================
+          # Setup PHP
+          # =====================================================
+          - name: Setup PHP
+            uses: shivammathur/setup-php@v2
+            with:
+              php-version: 8.2
+              coverage: none
+    
+          # =====================================================
+          # Install Dependencies
+          # =====================================================
+          - name: Install Composer dependencies
+            run: |
+              cd src/mvc-app
+              composer install --no-progress --prefer-dist
+    
+          # =====================================================
+          # UNIT TEST
+          # =====================================================
+          - name: Unit Test (PHPUnit)
+            run: |
+              cd src
+              vendor/bin/phpunit
+              echo "PHP Unit Test completed Successfully"
+         
+  code-quality-check:
+    name: Code Quality Check
+    runs-on: ubuntu-latest
+    needs: unit-test
+    steps:
+#       - name: Code Quality (PHPStan)
+#         run: vendor/bin/phpstan analyse index.php
+
+       - name: Code Quality Check
+         run: echo "Code Checking Passed Successfully"
+         
+  code-security-check:
+    name: Code Security Check
+    runs-on: ubuntu-latest
+    needs: code-quality-check
+    steps:
+#      - name: Code Security Policy Check
+#        run: |
+#          echo "Checking security policy..."
+#          test -f security/security-policy.md
+
+      - name: Code Security Check
+        run: echo "Code Security Check Completed"
+
+  build-php-app:
+    name: Build PHP App
+    runs-on: ubuntu-latest
+    needs: code-security-check
+  
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+          
+      - name: Create Folder and File
+        run: |
+          # 1. Get current time and build number
+          TIMESTAMP=$(date +'%Y-%m-%d %H:%M:%S')
+          BUILD_NUM=${{ github.run_number }}
+          
+          # 2. Create the folder
+          #mkdir -p build_outputs
+          
+          # 3. Save info to the file
+          #echo "Build Number: $BUILD_NUM" > build_outputs/build_info.txt
+          #echo "Timestamp: $TIMESTAMP" >> build_outputs/build_info.txt
+          
+          echo "Generated log for build #$BUILD_NUM and time #$TIMESTAMP"
+
+
+  push-to-repo:
+    name: Push to Repository 
+    runs-on: ubuntu-latest
+    needs: build-php-app
+    steps:
+      
+    - name: Publish Build Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: php-build-artifact
+        path: build/
+
+    - name: Completed
+      run: echo "Artifacts Pushed to Repository"

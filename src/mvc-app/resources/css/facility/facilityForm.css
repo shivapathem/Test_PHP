@@ -1,0 +1,57 @@
+#create-facility-form .ff-grid.facility-form {
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 13px;
+    background: #eeeeee;
+    border: 1px solid #b3b3b3;
+}
+
+#create-facility-form .ff-row {
+    display: grid;
+    grid-template-columns: 24% 1fr 24% 1fr;
+    column-gap: 0;
+    row-gap: 0;
+    align-items: center;
+    background: transparent;
+    border-bottom: 1px solid #b3b3b3;
+}
+
+#create-facility-form .ff-row:last-child {
+    border-bottom: 0;
+}
+
+#create-facility-form .ff-cell {
+    box-sizing: border-box;
+    padding: 8px 10px;
+    min-height: 36px;
+    background: #eeeeee;
+    border-right: 1px solid #b3b3b3;
+    overflow-wrap: anywhere;
+    width: auto !important;
+}
+
+#create-facility-form .ff-row > .ff-cell:last-child {
+    border-right: 0;
+}
+
+#create-facility-form .ff-cell:empty {
+    min-height: 36px;
+}
+
+#create-facility-form .ff-cell .facility-form-input,
+#create-facility-form .ff-cell select.facility-form-input,
+#create-facility-form .ff-cell input.facility-form-input,
+#create-facility-form .ff-cell textarea.facility-form-input {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+@media (max-width: 900px) {
+    #create-facility-form .ff-row {
+        grid-template-columns: 1fr;
+    }
+
+    #create-facility-form .ff-cell[style*="grid-column"] {
+        grid-column: auto !important;
+    }
+}

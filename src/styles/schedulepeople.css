@@ -1,0 +1,1419 @@
+.btn-class * {
+    box-sizing: content-box;
+}
+
+.newConfig .button-schedule, .newConfigSearch .button-schedule, .newConfigAttached .button-schedule, .existingconfigview .button-schedule {
+    border: 1px solid #000;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    background-color: #fff;
+    color: black;
+    width: 23%;
+}
+
+.float-container {
+    width: 100%;
+}
+
+.float-child {
+    float: left;
+}
+
+.dispName {
+    display: inline-block;
+    margin-left: 26px;
+}
+
+.right {
+    float: right;
+}
+
+section .schedulperson, .hometeam, .staffDetails {
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -o-border-radius: 15px;
+    -ms-border-radius: 15px;
+    border: 2px solid #f0f0f0;
+}
+
+.ht {
+    padding: 17px;
+    margin: 16px 0 0 0;
+}
+
+.schedule .schedulperson {
+    float: left;
+    width: 25%;
+    padding: 17px;
+    margin: 36px 0 0 0;
+}
+
+.staffDetails {
+    margin: 36px 0 0px 16px;
+    float: left;
+    width: 70%;
+    height: 493px;
+}
+
+.staffDetails .stfform, .dispName .stfform {
+    margin-left: 16px;
+}
+
+.dispStaffName {
+    display: table-caption;
+    padding: 17px;
+    width: 460px;
+}
+
+.fields .STfield {
+    width: 320px;
+}
+
+.fields label {
+    text-align: center;
+}
+
+.dispStaffName .fields label {
+    display: table-caption;
+}
+
+.btn-class {
+    height: 25px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -o-border-radius: 5px;
+    -ms-border-radius: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+section.schedule .schedulperson .scheduleinfo {
+    display: flex;
+}
+
+section.schedule .schedulperson .scheduleinfo h6 {
+    display: contents;
+    animation: btn-animation 5s linear 2s infinite alternate;
+}
+
+.floatStaff {
+    float: none;
+}
+
+.btn-staff {
+    width: 120px;
+    height: 38px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -o-border-radius: 5px;
+    -ms-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.adnteam {
+    margin-bottom: 5px;
+}
+
+/*css for scheduling-staff-allocate7.0-searchstaff.html*/
+.staffDetails table {
+    width: 100%;
+}
+
+.staffDetails table, .staffDetails table tr, .staffDetails table th, .staffDetails table td {
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid black;
+}
+
+.staffDetails table, .staffDetails table tr, .staffDetails table th, .staffDetails table td {
+    height: 35px;
+    text-align: center;
+    width: 120px;
+}
+
+.newConfigSearch .button-schedule {
+    width: 28%;
+}
+
+#table-wrapper {
+    position: relative;
+    left: 15px;
+}
+
+#table-scroll {
+    height: 320px;
+    overflow: auto;
+    margin-top: 20px;
+    width: 900px;
+}
+
+.newConfigAttached .button-schedule {
+    width: 28%;
+}
+
+#attachedstaff {
+    margin: 34px 0 0 16px;
+    height: 473px;
+}
+
+.STdetails {
+    margin: 16px 0 0 30px;
+}
+
+
+section#Attachedschedule {
+    margin: 0 0 0 10px;
+}
+
+.existingconfigview .button-schedule {
+    width: 52%;
+}
+
+.configView {
+    margin: 12px 133px 0 0px;
+}
+
+#Nteams {
+    width: 195px;
+}
+
+label.labelsort {
+    display: contents;
+}
+
+.sortcodeinput {
+    margin-left: 28px;
+}
+
+#flex-container {
+    width: 100%;
+    display: flex;
+}
+
+#EightScreen {
+    position: relative;
+    top: 355px;
+}
+
+div#EightBtn {
+    display: flex;
+}
+
+div#EightBtn button {
+    width: 100px;
+    height: 35px;
+    margin: 9px 0 0 16px;
+}
+
+#nightteam {
+    height: 293px;
+}
+
+#ninthbtn {
+    display: flex;
+}
+
+#ninthbtn .date {
+    margin: 25px 0 0 26px;
+}
+
+#Searchcontainer {
+    margin: 0 auto;
+    padding: 0;
+}
+
+.STD {
+    width: 410px;
+}
+
+#searchScheduleperson .child_div_1 {
+    float: left;
+    margin-right: 5px;
+    border: 2px solid #d3d3d3;
+    padding: 30px;
+
+}
+
+#searchScheduleperson .fields label, #searchScheduleperson .fields input, #searchScheduleperson .fields select {
+    width: auto;
+    text-align: left;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -o-border-radius: 4px;
+    -ms-border-radius: 4px;
+    font-size: 12px;
+}
+
+#searchScheduleperson .fields input, #searchScheduleperson .fields select {
+    border: 2px solid #c0c0c0;
+    width: auto;
+    height: 25px;
+}
+
+#parant_div_1 > div.child_div_2 > form.Srcfld > div > label {
+    margin: 0px;
+}
+
+.fieldsection #parent_div_1 {
+    margin: 0 0 36px 0;
+}
+
+.fieldsection {
+    width: 100%;
+    display: flow-root;
+}
+
+div.tables table tbody tr td {
+    border: none;
+}
+
+#searchScheduleperson .fields select {
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20256%20448%22%20enable-background%3D%22new%200%200%20256%20448%22%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E.arrow%7Bfill%3A%23424242%3B%7D%3C%2Fstyle%3E%3Cpath%20class%3D%22arrow%22%20d%3D%22M255.9%20168c0-4.2-1.6-7.9-4.8-11.2-3.2-3.2-6.9-4.8-11.2-4.8H16c-4.2%200-7.9%201.6-11.2%204.8S0%20163.8%200%20168c0%204.4%201.6%208.2%204.8%2011.4l112%20112c3.1%203.1%206.8%204.6%2011.2%204.6%204.4%200%208.2-1.5%2011.4-4.6l112-112c3-3.2%204.5-7%204.5-11.4z%22%2F%3E%3C%2Fsvg%3E%0A");
+    background-position: right 10px center;
+    background-repeat: no-repeat;
+    background-size: auto 70%;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+
+}
+
+#searchScheduleperson .srchtbl table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+
+#searchScheduleperson .srchtbl table tr {
+    border: 1px solid #000;
+    height: 30px;
+}
+
+#searchScheduleperson .srchtbl table tr th {
+    text-align: left;
+    font-size: 14px;
+    position: sticky;
+    top: 0;
+}
+
+.searchtblrow {
+    background: #D0D0D0;
+}
+
+.srchtbl .btn-class {
+    height: 15px;
+}
+
+#searchScheduleperson .srchtbl table tbody tr:nth-child(odd) {
+    background: #f0f0f0;
+}
+
+.schprsn {
+    width: 410px;
+    margin-left: 20px;
+}
+
+.child_div_2 button {
+    float: right;
+    margin: 10px 0 0 70px;
+}
+
+.child_div_3 {
+    float: right;
+    margin: -24px 0 0px 0;
+}
+
+.srchtbl {
+    overflow: auto;
+    max-height: 500px;
+}
+
+.ebtn button {
+    margin: 16px 23px 0 0;
+}
+
+.srchtbl table thead tr th {
+    position: sticky;
+    top: 0;
+
+    height: 30px;
+}
+
+.addNew .parent_div_1 {
+    width: 50%;
+}
+
+#srform {
+    width: 111px;
+}
+
+span.required {
+    color: red;
+}
+
+.Adntbl table tr th, .Adntbl table tr td, .Adntbl table {
+
+    border-collapse: collapse;
+}
+
+.Adntbl table tr th {
+    font-size: 10px;
+    text-align: center;
+    background: #ded8de;
+    position: sticky;
+    top: 0;
+}
+
+.tab {
+
+    background-color: #f1f1f1;
+}
+
+#scperson, #stfdtls {
+    display: inline-block;
+}
+
+#myBtn {
+    margin-right: 110px;
+    width: 115px;
+}
+
+#STFdtl {
+    width: 615px;
+}
+
+.history_tab_left {
+    padding-top: 72px;
+}
+
+.history_tab {
+    margin: 0 0 43px 18px;
+}
+
+.btntbl button {
+    float: left;
+    margin: 0;
+}
+
+.HisTTBL {
+    overflow: scroll;
+    height: 193px;
+    width: 424px;
+    margin: 9px 0px 0 -19px;
+    border: 1px solid #111;
+}
+
+.HisTTBL table .thstyle th {
+    background: #fff;
+}
+
+.HisTTBL table tr:nth-child(odd) {
+    background: #eee;
+}
+
+.HisTTBL table {
+    table-layout: fixed;
+    margin: 0 0 16px 19px;
+}
+
+.HisTTBL table, .HisTTBL table tr th, .HisTTBL table tr td {
+    border-collapse: collapse;
+    border: 1px solid #111;
+    text-align: center;
+}
+
+#schistory .parant_div_1 form .fields label {
+    width: 80px;
+}
+
+.Leftfld {
+    margin-left: 38px;
+}
+
+._leftstyle {
+    margin: 0 0 0px 70px;
+    height: 837px;
+    width: 489px;
+}
+
+.tabcontent {
+    display: none;
+    border-top: none;
+    padding-bottom: 10px;
+}
+
+.textarea textarea {
+    margin: 20px 0 0 0;
+    height: 80px;
+}
+
+.txtar {
+
+    align-items: center;
+    display: flex;
+}
+
+table#attachStaffSession tbody tr {
+    height: 35px;
+    text-align: left;
+}
+
+.std table tbody tr td {
+    width: 153px;
+}
+
+table.scrollTable {
+    border-collapse: collapse;
+}
+
+.rowsbtns {
+    display: flex;
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 37%;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.overlay:target {
+    visibility: visible;
+    opacity: 1;
+}
+
+/*css for model ends */
+/* define height and width of scrollable area. Add 16px to width for scrollbar          */
+div.tableContainer {
+    clear: both;
+    height: 285px;
+    overflow: auto;
+    width: 500px;
+    overflow: auto;
+}
+
+html > body div.tableContainer {
+    overflow: hidden;
+    width: 900px
+}
+
+#tableContainer {
+    width: 485px;
+    height: 206px;
+}
+
+.no_border {
+    border: none;
+}
+
+.btnf {
+    margin-left: 26px;
+}
+
+#searchScheduleperson .no-border {
+    border: none;
+    padding: 0;
+}
+
+.addbtn {
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.addbtn img {
+    width: 20px;
+    height: 20px;
+}
+
+.tables {
+    border: 1px solid #111;
+	/* position: absolute; */
+    width: 100%;
+    bottom: 0;
+    top: 116px;
+}
+
+.ui-tabs .ui-tabs-nav .ui-tabs-anchor {
+    cursor: pointer;
+}
+#schedulePersonTab .tables {
+    border: 1px solid #d6d6d6;
+}
+#schedulePersonTab .ui-tabs-panel {
+    padding: 0;
+}
+.buttonDisabled {
+    pointer-events: none;;
+    opacity: 0.5
+}
+
+.buttonEnabled {
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+.fields input, .fields select, button, .globalbutton {
+    border: 2px solid #c0c0c0;
+}
+
+.fields label, .fields input, .fields select {
+    width: 111px;
+    display: inline-block;
+    margin-top: 15px;
+}
+
+.fields input, .fields select {
+    width: 150px;
+    padding: 0 22px 0 13px;
+    height: 20px;
+}
+
+.closebox, .closeupd, .closef {
+    color: #aaaaaa;
+    float: right;
+    font-size: 13px;
+    font-weight: bold;
+    margin: 0px 4px 0 0;
+    position: relative;
+    top: 8px;
+    left: 11px;
+    width: 17px;
+    text-align: center;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+/*
+.btn-style {
+    float: right;
+    margin: 23px -13px 0px 0px;
+}*/
+
+.btn-class-color {
+    height: 25px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -o-border-radius: 2px;
+    -ms-border-radius: 2px;
+    border-radius: 2px;
+}
+
+.btn-staff-color {
+    width: 50px;
+    height: 38px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -o-border-radius: 2px;
+    -ms-border-radius: 2px;
+    border-radius: 2px;
+}
+
+.Leftstyle button {
+    width: 208px;
+}
+
+.tab button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+    background-color: #ccc;
+}
+
+.close:hover, .closef:hover,
+.close:focus, .closef:hover {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.save {
+    width: 55px;
+    height: 35px;
+}
+
+#btnSAvefld .fields label {
+    width: 152px;
+}
+
+form.InsertForm {
+    margin-left: 0px;
+}
+
+._fieldstf {
+    display: inline-grid;
+}
+
+._fieldstf input {
+    margin-top: 0px;
+}
+
+._staff-details .ht {
+    margin: -30px;
+}
+
+#searchScheduleperson #_fieldstf input {
+    width: 201px;
+}
+
+#scperson .content {
+    width: 500px;
+}
+
+._staff-tbl {
+    width: 360px;
+}
+
+._find {
+    position: relative;
+    left: 250px;
+}
+
+._cancel {
+    position: relative;
+    left: 254px;
+}
+
+.cncl {
+    float: right;
+    position: relative;
+    right: 66px;
+    top: 12px;
+}
+
+._find-btn {
+    display: flex;
+    margin: 5px 0 0 336px;
+    font-size: 22px;
+}
+
+.fields span.close {
+    margin: -10px -20px -6px -8px;
+}
+
+#startdate, #dispName, #hometeam, #edndate, #sortcode, textarea, #ddlTeams:focus-visible {
+    outline: unset;
+}
+
+/* css for popup*/
+.fields-color input[type=color] {
+    margin-left: 10px;
+    margin-top: 20px;
+}
+
+.headertextallpages {
+    font-size: 12pt;
+    font-weight: bold;
+    text-align: left;
+    position: relative;
+    background-color: #D0D0D0;
+    color: #000000;
+    padding-left: 2px;
+    width: 100%;
+}
+
+.main-heading {
+    text-align: center;
+    font-size: 12px;
+    padding: 10px;
+    margin: 0;
+}
+
+.filter_data_unavailabl {
+    text-align: center;
+}
+
+.activeclass {
+    display: none;
+}
+
+table.dataTable.no-footer {
+    border-bottom: 0px solid #111;
+}
+
+.no-record {
+    font-weight: 600;
+    text-align: center;
+    color: gray;
+
+}
+
+.primary-para {
+    font-size: 12px;
+    padding: -19px 0 0 0;
+    margin: 0;
+    text-align: end;
+}
+
+.filter {
+    border-radius: 77px;
+    width: auto;
+}
+
+.child_div_2 ._btn {
+    float: left;
+    margin: 0 0 0 0;
+}
+
+#js_cancelStaff {
+    margin-left: 10px;
+}
+
+._lblcls {
+    margin-left: 39px;
+    width: 127px;
+}
+
+.Adtm {
+    margin-left: 0px;
+}
+
+.primary-heading {
+    background-color: #ccc;
+    padding: 7px 13px 10px 13px;
+    font-weight: bold;
+}
+
+.outer-border {
+    border: 1px solid #ccc;
+    padding: 20px;
+    box-shadow: 0 0 2px 1px #cccccc85;
+}
+
+#contract_history1 {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+    font-family: arial;
+    font-size: 8pt;
+    width: max-content;
+}
+
+#contract_history1 th {
+    text-align: left;
+    padding: 8px;
+    border: 2px solid #ffffff;
+    box-shadow: 0 0 6px 0px #f2f2f2;
+
+}
+
+#contract_history1 td {
+    text-align: left;
+    padding: 8px;
+
+}
+
+.bg-gray {
+    background-color: #ddd;
+    font-size: 14px;
+    font-weight: 900;
+}
+
+
+.table-sch {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+    font-family: arial;
+    font-size: 8pt;
+
+}
+
+.container-sch {
+    border: 2px solid #ff000000;
+
+}
+
+.resposive-img {
+    width: 15%;
+    margin: auto;
+    display: block
+}
+
+.checkresposive-img {
+    width: 15px;
+    margin: auto;
+    display: block
+}
+
+.text-center {
+    text-align: center !important;
+    vertical-align: middle;
+}
+
+/* Coming from dataTable class */
+#scheduleTeamHistory_length, #scheduleTeamHistory_info, #contract_history1_length {
+    float: right;
+    margin: 6px 17px 10px 0;
+    font-size: 11px;
+}
+
+/* Coming from dataTable class ends*/
+.dispNamenput {
+    width: 165px;
+}
+
+#teamdropdown {
+    margin-left: auto;
+}
+
+.wordwrapteamname {
+    word-wrap: break-word;
+}
+
+/* 26may changes.............................. */
+.gray-outer {
+    border: 1px solid #ddd;
+}
+
+.additonaltemtd {
+    display: inline-flex;
+    margin: 4px;
+}
+
+.additonaltemtd input {
+    margin: 4px;
+}
+
+.btn-style {
+    display: block;
+    margin-left: auto;
+}
+
+.staffattach {
+    background-color: #cccc;
+    width: 100px;
+    height: 50px;
+    padding: 2px 3px 2px 3px;
+    border: 1px solid #aaaaaa;
+}
+
+.dispNameAddTeam {
+    display: inline-block;
+}
+
+/* scheduled person tabs feedback css...... */
+#searchScheduleperson .child_div_1 {
+    margin: 0 0 0px 0;
+}
+
+#tableContainer {
+    width: 100%;
+    height: auto;
+}
+
+#schedulePersonTab ._leftstyle {
+    margin: 0;
+    height: auto;
+    width: 100%;
+}
+
+#schedulePersonTab .fields.stfform {
+    padding: 0px 5px;
+    margin: 0px;
+    display: inline-block;
+    margin-top: -5px;
+}
+
+#schedulePersonTab .schprsn {
+    margin-left: 0px;
+    padding: 0px;
+}
+
+
+#scheduleTeamHistory_length, #scheduleTeamHistory_info, #contract_history1_length {
+    float: left;
+    font-size: 10pt;
+}
+
+#searchScheduleperson .child_div_1 {
+    padding: .2em;
+    width: 40%;
+}
+
+div#scheduleTeamHistory_paginate {
+    font-size: 13px;
+}
+
+.schprsn {
+    width: 100%;
+    margin: 10px auto 0;
+    display: inline-block;
+    border: 0px;
+}
+
+.schTeamDetails, .additionalTeam {
+    width: 49.8%;
+    min-height: 310px;
+    border: 1px solid #d6d6d6;
+    padding: 4px;
+    border-radius: 0px;
+}
+
+.additionalteamBox {
+    margin-top: 25px;
+    width: 93%;
+}
+
+.dispNameAddTeam {
+    display: block;
+    clear: both;
+}
+
+#schedulePersonTab .textAreaBlock {
+    clear: both;
+}
+
+.schTeamDetails h2, .additionalTeam h2 {
+    font-size: 10pt;
+    border: 1px solid #D0D0D0;
+    background-color: #D0D0D0;
+    padding: 10px;
+    text-align: center;
+    margin-top: 0;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.additionalTeam .btn-staff {
+    float: right;
+    margin-right: 0px !important;
+}
+
+#additionalteamgrid1 tr {
+    line-height: 1.9;
+}
+
+button#saveSchedulePerson {
+    margin-top: 22px;
+}
+
+.STdetails {
+    width: 42%;
+    border: 1px solid #d6d6d6;
+    margin: 0;
+    padding: 5px;
+    border-radius: 0px;
+}
+
+#schedulePersonTab .scrollable {
+    max-height: 100%;
+}
+
+#schedulePersonTab .colorChoose {
+    margin-top: 20px;
+}
+
+#schedulePersonTab .colorChoose .fields-color {
+    margin-right: 20px;
+}
+
+#scrollable-additionalteam {
+    max-height: 205px;
+    max-width: 814px;
+    overflow-x: auto;
+}
+
+input#ddlteamsidview {
+    margin: 0 10px;
+}
+
+.textAreaBlock .txtar {
+    width: 49.90%;
+    float: left;
+    padding-top: 0px;
+    display: block;
+}
+
+.textAreaBlock .txtar.ta2 {
+    margin-left: 2px;
+}
+
+.textAreaBlock textarea {
+    height: 240px;
+    width: 99.5%;
+    margin: 0px;
+}
+
+#schedulePersonTab .STdetails .ebtn button {
+    margin: 0;
+    padding: 5px;
+    width: 55px;
+    height: 100%;
+}
+
+button#myBtnEditUpdate1 {
+    float: right;
+}
+
+#myModalUpdate .closeupd {
+    top: 19px;
+    left: -5px;
+}
+
+.STdetails .ebtn .btntbl button {
+    float: none;
+}
+
+#myModalUpdate .scrollable {
+    max-height: 200px;
+    overflow-x: hidden;
+}
+
+#schedulePersonTab .scrollable {
+    overflow-x: hidden;
+}
+
+.undoUpdates .js_cancelStaff {
+    margin-left: 0;
+}
+
+#myModalUpdate .modal-content {
+    width: 50%;
+    border-radius: 5px;
+    box-shadow: 0 0 18px rgb(0 0 0 / 60%);
+    border: 4px solid #d0d0d0b3;
+    padding: 0 20px 20px;
+}
+
+.dispNameAddTeam .modal-content {
+    background-color: #fefefe;
+    width: unset;
+    max-width: 40%;
+    border-radius: 5px;
+    box-shadow: 0 0 18px rgb(0 0 0 / 60%);
+    border: 4px solid #d0d0d0b3;
+    padding: 0px;
+    margin: 0 auto;
+}
+
+.dispNameAddTeam .greyborderpopup {
+    height: 33px;
+    width: 98%;
+    border: 2px solid #c6c6c6;
+    background-color: #D0D0D0;
+    margin: 4px 4px 4px 4px;
+    font-size: 10pt;
+    font-weight: bold;
+    border-radius: 4px;
+    line-height: 2.3;
+    padding-left: 10px;
+}
+
+.dispNameAddTeam .bluetable {
+    margin: 15px;
+    max-width: 94%;
+}
+
+.dispNameAddTeam .closebox {
+    top: 12px;
+    left: -8px;
+}
+
+@media (max-width: 1028px) {
+    .schTeamDetails, .additionalTeam, .STdetails {
+        width: 100%;
+    }
+}
+
+#contract_history td, #contract_history th {
+    border-right: 0px;
+}
+
+#contract_history, table#scheduleTeamHistory {
+    border-bottom: 1px solid #cdcdcd;
+}
+
+div#tabs-4 .scrollable {
+    overflow-x: auto;
+}
+
+.clearFilter {
+    display: inline-block;
+    margin-left: 30px;
+    margin-top: 2px;
+}
+
+#searchScheduleperson .child_div_2 {
+    display: inline-block;
+    padding: .2em;
+    width: 52%;
+    margin-left: 82px;
+    text-align: right;
+    margin-bottom: 10px;
+}
+
+#tableheightsearch {
+    width: 100%;
+}
+
+@media screen and (max-width: 1399.98px) {
+    #scheduleTeamHistory, #contract_history {
+        max-height: 370px;
+        overflow-y: scroll;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    #scheduleTeamHistory, #contract_history {
+        max-height: 520px;
+        overflow-y: scroll;
+    }
+}
+
+div#searchScheduleperson .main-heading {
+    padding-top: 15px;
+}
+
+#schedulePersonTab .savePersonBTN {
+    display: inline-block;
+    float: right;
+    margin-top: -14px;
+}
+
+#searchScheduleperson .fields.textarea label {
+    width: auto;
+    margin-right: 5px;
+}
+
+span.italicText {
+    font-style: italic;
+    font-size: 8.5pt;
+    color: #828181;
+}
+
+.ui-widget button.addbtn-o {
+    font-size: 11px;
+    padding: 15px 8px;
+}
+
+#searchScheduleperson .fields .w-auto {
+    width: auto;
+}
+
+#searchScheduleperson .fields .chosen-search input {
+    width: auto;
+}
+
+.nonscheduledStaffbtn {
+    top: 4px;
+    position: relative;
+    margin-right: 5px;
+}
+
+#adminuserstabs .fields label,#adminuserstabs .fields input, #adminuserstabs .fields select {
+    font-size: 12px;
+}
+#adminuserstabs .fields {
+    margin: 0px 0px 8px 0px;
+}
+#adminuserstabs .additonaltemtd {
+    margin:0px;
+}
+#w-120 {
+    width: 120px;
+    margin-top: 15px;
+}
+/* staff admin css */
+.dutiesStaff{
+	width: 40%; 
+	display: inline-block;
+}
+.dutiesStaff .dataTables_scrollBody {
+    overflow: visible!important;
+}
+.dutiesStaff2ndcol {
+    width: 60%; 
+	display: inline-block;
+	overflow: scroll;
+}
+.ContactsTabsBlock .dataTables_scrollBody {
+    border-bottom: 0px solid #111!important;
+}
+
+#dutynewedittable th.noBorder {
+    border: 0px;
+}
+span.spanFaceBoxClose, span.dutyFaceBoxClose {
+    color: #aaaaaa;
+    float: right;
+    font-size: 13px;
+    font-weight: bold;
+    margin: 0px 4px 0 0;
+    position: relative;
+    top: -13px;
+    left: 15px;
+    width: 17px;
+    text-align: center;
+    background-color: #fff;
+    cursor: pointer;
+    z-index: 999;
+}
+.customFaceboxClose .close {
+    /*display: none!important;*/
+}
+.rotaduty-div .rotaselectedduty-context-menu {
+    padding: 0px;
+    height: 25px!important;
+}
+.rotaduty-div .rotaselectedduty-context-menu2 {
+    padding: 0px;
+    height: 25px!important;
+}
+.no-record-filter {
+    width: 150px;
+}
+#schedulingTeamDetails tr.highlightOrange {
+    color: #fff;
+}
+#masterdutiestabs .fa-search {
+    font-size: 11px;
+}
+#schedulingTeamDetails_wrapper .dataTables_scrollHead {
+    overflow: hidden!important;
+}
+#schedulingTeamDetails_wrapper .DTFC_LeftBodyLiner,
+#schedulingTeamDetails_wrapper .DTFC_RightBodyLiner
+{
+	overflow-x: hidden;
+	overflow-y: auto!important;
+}
+#schedulingTeamDetails_wrapper .DTFC_RightHeadBlocker {
+	background: #d0d0d0;
+    border-left: 1px solid #fff;
+}
+#schedulingTeamDetails_wrapper .DTFC_LeftBodyLiner {
+	width:188px!important;
+}
+.dataTables_scrollHeadInner #yadcf-filter-wrapper--schedulingTeamDetails-0 {
+    z-index: 1;
+    position: fixed;
+}
+
+.addTeamHeadStyle1 {
+    width:200px;
+    text-align: left;
+    font-family: Verdana,Arial,sans-serif;
+    font-size: 10pt;
+    border: 2px solid #f0f0f0;
+}
+.addTeamHeadStyle2 {
+    width:130px;
+    text-align: left;
+    font-family: Verdana,Arial,sans-serif;
+    font-size: 10pt;
+    border: 2px solid #f0f0f0;
+}
+.addTeamHeadStyle3 {
+    width:130px;
+    text-align: left;
+    font-family: Verdana,Arial,sans-serif;
+    font-size: 10pt;
+    border: 2px solid #f0f0f0;
+}
+.addTeamHeadStyle4 {
+    width:110px;
+    text-align: left;
+    font-family: Verdana,Arial,sans-serif;
+    font-size: 10pt;
+    border: 2px solid #f0f0f0;
+}
+.addTeamHeadStyle5 {
+    width:180px;
+    text-align: left;
+    font-family: Verdana,Arial,sans-serif;
+    font-size: 10pt;
+    border: 2px solid #f0f0f0;
+}
+
+.addTeamHeadStyle6 {
+    width:110px;
+    text-align: left;
+    font-family: Verdana,Arial,sans-serif;
+    font-size: 10pt;
+    border: 2px solid #f0f0f0;
+}
+
+.addTeamButtonBorder {
+    margin-top: -48px;
+    border: 2px solid;
+}
+.padding-oneem{
+    padding: 1em 1em;
+}
+.screen-fix-withscroll{
+    position: relative;
+    width: calc(100% - 10px);
+    margin: 0 auto; 
+}
+.fieldsection .parant_div_1.fieldmargin h6{
+	margin: 3px 0 10px 0;
+    font-size: 10.5px;
+    font-weight: bold;
+}
+.contarctahistoryInActive {
+    color:#ff0000;
+}
+.allocateUsertableH .no-footer{
+    position: relative !important;
+    height: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 100% !important;
+    max-height: 100%;
+    min-height: 100%;
+}
+.h-100Perc{
+    height: 100%;
+}
+.labelTxtAlign { 
+    text-align: left !important;
+}
+.scheduled-people-filter-container {
+    display: flex;
+    justify-content: right;
+    margin-top: 12px;
+}
+
+

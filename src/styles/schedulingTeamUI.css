@@ -1,0 +1,100 @@
+/* Extra Xmas Point Table Layout (Div-based) */
+.xmaspointtable-layout {
+    display: grid;
+    background-color: #ffffff;
+    width: 600px;
+}
+
+.xmaspointtable-layout .xmaspointtable-row {
+    display: grid;
+    grid-template-columns: 200px 400px;
+}
+
+.xmaspointtable-layout .xmaspointtable-row.xmaspointtable-row-full {
+    grid-template-columns: 100%;
+}
+
+.xmaspointtable-layout .xmaspointtable-cell {
+    padding: 6px 8px;
+    vertical-align: top;
+    border-right: 1px solid #999;
+    border-bottom: 1px solid #999;
+    box-sizing: border-box;
+    overflow: visible;
+}
+
+.xmaspointtable-layout .xmaspointtable-label {
+    background-color: #d3d3d3;
+    font-weight: normal;
+    font-size: 11px;
+    padding: 6px 8px;
+}
+
+.xmaspointtable-layout .xmaspointtable-label label {
+    margin: 0;
+    display: block;
+    font-weight: bold;
+}
+
+.xmaspointtable-layout .xmaspointtable-header {
+    background-color: #c0c0c0;
+    text-align: left;
+    padding: 6px 8px;
+    font-weight: bold;
+}
+
+.xmaspointtable-layout .xmaspointtable-input {
+    width: 100%;
+    padding: 4px 6px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    font-size: 11px;
+    box-sizing: border-box;
+}
+
+.xmaspointtable-layout .xmaspointtable-textarea {
+    width: 100%;
+    padding: 4px 6px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    font-size: 11px;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+.xmaspointtable-layout select {
+    width: 100%;
+    padding: 4px 6px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    font-size: 11px;
+    background-color: #ffffff;
+    box-sizing: border-box;
+}
+
+.xmaspointtable-layout .xmaspointtable-row-buttons .xmaspointtable-label {
+    background-color: #ffffff;
+}
+
+.xmaspointtable-layout .xmaspointtable-row-buttons .xmaspointtable-cell {
+    border-bottom: none;
+    border-right: none;
+}
+
+.xmaspointtable-layout .xmaspointtable-row-buttons .xmaspointtable-value {
+    padding: 6px 8px;
+}
+
+.xmaspointtable-layout .xmaspointtable-button {
+    padding: 4px 10px;
+    margin-right: 6px;
+    background-color: #f5f5f5;
+    border: 1px solid #999;
+    border-radius: 2px;
+    cursor: pointer;
+    font-size: 11px;
+}
+
+.xmaspointtable-layout .xmaspointtable-button:hover {
+    background-color: #e8e8e8;
+}

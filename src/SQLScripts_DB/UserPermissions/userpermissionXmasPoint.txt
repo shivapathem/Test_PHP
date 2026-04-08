@@ -1,0 +1,15 @@
+USE [Allocate7]
+GO
+
+INSERT INTO [dbo].[REF_Forms]
+           ([FormName]
+           ,[FormDescription]
+           ,[IsActive])  VALUES ('Christmas Points','Christmas Points',1)
+
+INSERT INTO [dbo].[RolePermissionForm_LINK]
+           ([RoleID] ,[PermissionID] ,[FormID])
+     VALUES(14 ,1 ,14),(14 ,2 ,14),(14 ,3 ,14),(14 ,4 ,14)
+
+
+
+

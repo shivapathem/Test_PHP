@@ -1,0 +1,100 @@
+/* Department Group Table Layout (Div-based) */
+.deptgroupstable-layout {
+    display: grid;
+    background-color: #ffffff;
+    width: 700px;
+}
+
+.deptgroupstable-layout .deptgroupstable-row {
+    display: grid;
+    grid-template-columns: 250px 450px;
+}
+
+.deptgroupstable-layout .deptgroupstable-row.deptgroupstable-row-full {
+    grid-template-columns: 100%;
+}
+
+.deptgroupstable-layout .deptgroupstable-cell {
+    padding: 6px 8px;
+    vertical-align: top;
+    border-right: 1px solid #999;
+    border-bottom: 1px solid #999;
+    box-sizing: border-box;
+    overflow: visible;
+}
+
+.deptgroupstable-layout .deptgroupstable-label {
+    background-color: #d3d3d3;
+    font-weight: normal;
+    font-size: 11px;
+    padding: 6px 8px;
+}
+
+.deptgroupstable-layout .deptgroupstable-label label {
+    margin: 0;
+    display: block;
+    font-weight: bold;
+}
+
+.deptgroupstable-layout .deptgroupstable-label .required {
+    color: red;
+    margin-left: 2px;
+}
+
+.deptgroupstable-layout .deptgroupstable-header {
+    background-color: #d3d3d3;
+    text-align: left;
+    padding: 6px 8px;
+}
+
+.deptgroupstable-layout .deptgroupstable-header h3 {
+    margin: 0;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.deptgroupstable-layout .deptgroupstable-input {
+    width: 100%;
+    padding: 4px 6px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    font-size: 11px;
+    box-sizing: border-box;
+}
+
+.deptgroupstable-layout select {
+    width: 100%;
+    padding: 4px 6px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    font-size: 11px;
+    background-color: #ffffff;
+    box-sizing: border-box;
+}
+
+.deptgroupstable-layout .deptgroupstable-row-buttons .deptgroupstable-label {
+    background-color: #ffffff;
+}
+
+.deptgroupstable-layout .deptgroupstable-row-buttons .deptgroupstable-cell {
+    border-bottom: none;
+    border-right: none;
+}
+
+.deptgroupstable-layout .deptgroupstable-row-buttons .deptgroupstable-value {
+    padding: 6px 8px;
+}
+
+.deptgroupstable-layout .deptgroupstable-button {
+    padding: 4px 10px;
+    margin-right: 6px;
+    background-color: #f5f5f5;
+    border: 1px solid #999;
+    border-radius: 2px;
+    cursor: pointer;
+    font-size: 11px;
+}
+
+.deptgroupstable-layout .deptgroupstable-button:hover {
+    background-color: #e8e8e8;
+}

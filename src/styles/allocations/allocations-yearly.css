@@ -1,0 +1,19 @@
+.context-menu-date-range {
+    background-color: orangered;
+}
+
+#editYearlyAllocationBlock {
+    overflow-y: scroll;
+}
+
+.ui-datepicker {
+    z-index: 2 !important;
+}
+
+.team-info-icon {
+    position: absolute;
+    margin-top: -12px;
+    margin-left: 3px;
+    height: 19px;
+    width: 19px;
+}

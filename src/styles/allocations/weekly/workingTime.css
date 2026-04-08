@@ -1,0 +1,183 @@
+.WorkingTime-container{
+    background-color: #eeeeee;
+	position: relative;
+	font-size:11px;
+}
+h1.WorkingTime-heading{
+    background-color: #d6d6d6;
+    color: #000000;
+    text-align: center;
+	font-size: 12px;
+    font-weight: normal;
+    padding: 5px 0px;
+	margin: 0px;
+}
+.WorkingTime {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+.WorkingTimeCol {
+    margin-bottom: 4px;
+}
+.WorkingTimeCol2 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 16.66667%;
+    flex: 0 0 16.66667%;
+    max-width: 16.66667%;
+}
+.WorkingTimeCol3 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 25%;
+    flex: 0 0 25%;
+    max-width: 25%;
+}
+.WorkingTimeCol5 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 41.66667%;
+    flex: 0 0 41.66667%;
+    max-width: 41.66667%;
+}
+
+.WorkingTimeCol6 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+.WorkingTimeCol7 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 58.3333%;
+    flex: 0 0 58.3333%;
+    max-width: 58.3333%;
+}
+.WorkingTimeCol8 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 66.66667%;
+    flex: 0 0 66.66667%;
+    max-width: 66.66667%;
+}
+
+.WorkingTimeCol12 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+.wt-labs{
+    border: 1px solid #858282;
+}
+
+.wt-lab {
+    display: inline-block;
+    text-align: left;
+	 margin-right: 5px;
+     width: 75px;
+}
+.wt-inp {
+    display: inline-block;
+	font-size:11px;
+	border: 1px solid #c0c0c0;
+}
+#WTDBreaches {
+    border: 1px solid #858282;
+}
+.WorkingTimeCol textarea {
+    font-size: 11px;
+	border: 1px solid #c0c0c0;
+    margin-left: 3px;
+}
+
+  .wt-btn{
+    width: 76px;
+    padding: 5px;
+    margin: 6px;
+    background: #d6d6d6;
+    border: 1px solid #c0c0c0;
+    font-size: 11px;
+	cursor: pointer;
+  }
+
+
+.colors-box{
+  margin: 0px 0px 0px 4px;
+  padding: 0px 9px;
+}
+
+
+.WTDApproved{
+  background-color: lightblue;
+  cursor: pointer;
+}
+
+.WTDNotApproved{
+  background-color: #FFB6B6;
+  cursor: pointer;
+}
+p.BreachNote {
+    font-weight: bold;
+    margin: 0px;
+    color: red;
+}
+
+/* common css */
+
+.fullWidth{
+  width:100%;	
+}
+
+.checkBoxlabel{
+	display: block;
+}
+.checkBoxInput{
+	vertical-align:middle;
+}
+.WTDate {
+	width: 65px;
+}
+.WorkingTime-container input:read-only:focus, .WorkingTime-container textarea:read-only:focus {
+outline: none;
+}
+.noMargin {
+	margin: 0px;
+}
+tr.highlightOrange {
+    background: orange !important;
+}
+.WorkingTime-container{
+    width:100%;
+    min-width: 520px;
+}
+.disabledField{
+    pointer-events: none;
+}
+#WTDBreachesContainer {
+    max-height: 109px;
+    overflow: auto;
+    margin-bottom: 5px;
+}
+.inlineBlock {
+   display: inline-block;
+   float: right;
+   margin-left: 5px;
+}
+.width83 {
+   width: 82.5%;
+}
+.width65 {
+   width: 65%;
+}
+.alignRight {
+    text-align: right;
+}
+.width87 {
+    width: 87px;
+}
+span.wtdCountSpan {
+    margin-left: 4px;
+}
+.width140{
+    width:140px;
+}

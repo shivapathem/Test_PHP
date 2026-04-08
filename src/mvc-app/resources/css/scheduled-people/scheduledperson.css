@@ -1,0 +1,526 @@
+*{
+  box-sizing: content-box;
+}
+.newConfig .button-schedule, .newConfigSearch .button-schedule, .newConfigAttached .button-schedule, .existingconfigview .button-schedule {
+    border: 1px solid #000;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    background-color: #fff; color: black;
+    width: 23%;
+  }
+.float-container {width:100%;}
+.float-child {
+    float: left;
+}
+.dispName {
+    display: inline-block;
+}
+
+.dispName form{margin-left: 26px;}
+.right{float: right;}
+  section .schedulperson, .hometeam, .staffDetails {
+      border-radius: 15px;
+      -webkit-border-radius: 15px;
+      -moz-border-radius: 15px;
+      -o-border-radius: 15px;
+      -ms-border-radius: 15px;
+      border: 1px solid #000;
+  }
+  .ht{padding: 17px;margin: 16px 0 0 0;}
+  .schedule .schedulperson {
+      float: left;
+      width: 25%;
+      padding: 17px;
+      margin: 36px 0 0 0;
+  }
+  .staffDetails {
+    margin: 36px 0 0px 16px;
+    float: left;
+    width: 70%;
+    height: 493px;
+  }
+  .staffDetails .stfform,.dispName .stfform{margin-left: 16px;}
+  .dispStaffName {
+      display: table-caption;
+      padding: 17px;
+      width: 460px;
+  }
+  .fields label, .fields input, .fields select {
+    width: 111px;
+    display: inline-block;
+    margin-top: 25px;
+  }
+  .fields input,.fields select {
+    border: 1px solid #000;
+  }
+  .fields input, .fields select {
+    width: 150px;
+    padding: 0 0 0 13px;
+    height: 20px;
+  }
+  .fields .STfield {width: 320px;}
+  .fields label {text-align: center;}
+  .dispStaffName .fields label {display: table-caption;}
+  .btn-class{height: 25px;animation: btn-animation 5s linear 2s infinite alternate;
+    -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      -o-border-radius: 5px;
+      -ms-border-radius: 5px;
+    border-radius: 5px;}
+  section.schedule .schedulperson .scheduleinfo {
+      display: flex;    
+  }
+  section.schedule .schedulperson .scheduleinfo h6 {
+    display: contents;animation: btn-animation 5s linear 2s infinite alternate;
+  }
+  .floatStaff{float: none;}
+  .btn-staff{width: 107px;height: 35px;
+    -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      -o-border-radius: 5px;
+      -ms-border-radius: 5px;
+    border-radius: 5px;}
+  @keyframes btn-animation {
+    0% {background: #eee;}
+    25% {background: #C0C0C0;}
+    50% {background: #eee;}
+    75% {background: #C0C0C0;}
+    100% {background: #eee;}
+  }
+
+  .adnteam {margin-bottom: 5px;}
+  /*css for scheduling-staff-allocate7.0-searchstaff.html*/
+  .staffDetails table {
+    width: 100%;
+  }
+.staffDetails table, .staffDetails table tr,.staffDetails table th,.staffDetails table td {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid black;
+}
+.staffDetails table, .staffDetails table tr, .staffDetails table th, .staffDetails table td {
+  height: 35px;
+  text-align: center;
+  width: 120px;
+}
+.newConfigSearch .button-schedule{width: 28%;}
+#table-wrapper {
+  position:relative;
+  left: 15px;
+}
+#table-scroll {
+  height:320px;
+  overflow:auto;  
+  margin-top:20px;
+  width: 900px;
+}
+  /*css for scheduling-staff-allocate7.0-searchstaff.html ends*/
+
+   /*css for scheduling-staff-allocate7.0-staff-attached*/
+   .newConfigAttached .button-schedule{width: 28%;}
+   #attachedstaff{margin: 34px 0 0 16px;height: 473px;}
+   .STdetails{margin: 16px 0 0 30px;}
+   .STdetails table, .STdetails th,.STdetails tr,.STdetails td{border:none;}
+   section#Attachedschedule{margin:0 0 0 10px;}
+   /*css for scheduling-staff-allocate7.0-staff-attached ends*/
+
+   /*css for scheduling-staff-allocate7.0-existingconfigWithDetails-VIEW*/
+   .existingconfigview .button-schedule{width: 52%;}
+   .configView{margin: 12px 133px 0 0px;}
+   #Nteams{width: 195px;}
+   label.labelsort{display: contents;}
+   .sortcodeinput{margin-left: 28px;}
+   /*css for scheduling-staff-allocate7.0-existingconfigWithDetails-VIEW ends*/
+   #flex-container {
+    width: 100%; display: flex;
+   }
+   #EightScreen {
+    position: relative;
+    top: 355px;
+   }
+   div#EightBtn{display: flex;}
+   div#EightBtn button{
+    width: 100px;
+    height: 35px;
+    margin: 9px 0 0 16px;
+   }
+   #nightteam{
+     height: 293px;
+   }
+   #ninthbtn{
+     display: flex;
+   }
+   #ninthbtn .date {
+    margin: 25px 0 0 26px;
+   }
+
+   /*Search schedule erson css */
+   .Searchcontainer {
+    padding: 20px;
+   }
+   #Searchcontainer{margin: 0 auto;padding: 0;}
+   .STD {width: 410px;}
+#searchScheduleperson .child_div_1{
+    float:left;
+    margin-right:5px;  
+    border: 1px solid #111;
+    padding: 30px; 
+}
+#searchScheduleperson .fields label, #searchScheduleperson .fields input, #searchScheduleperson .fields select {
+
+  width: 207px;
+  text-align: left;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -o-border-radius: 4px;
+  -ms-border-radius: 4px;
+}
+#searchScheduleperson .fields input, #searchScheduleperson .fields select {border: 1px solid #987f98;height: 25px;     height: 33px;
+  width: 180px;}
+
+#parant_div_1 > div.child_div_2 > form.Srcfld > div > label {
+  margin: 4px -83px 0 377px;
+
+}
+.fieldsection #parent_div_1 {margin: 0 0 36px 0;}
+#searchScheduleperson .fields select {
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20256%20448%22%20enable-background%3D%22new%200%200%20256%20448%22%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E.arrow%7Bfill%3A%23424242%3B%7D%3C%2Fstyle%3E%3Cpath%20class%3D%22arrow%22%20d%3D%22M255.9%20168c0-4.2-1.6-7.9-4.8-11.2-3.2-3.2-6.9-4.8-11.2-4.8H16c-4.2%200-7.9%201.6-11.2%204.8S0%20163.8%200%20168c0%204.4%201.6%208.2%204.8%2011.4l112%20112c3.1%203.1%206.8%204.6%2011.2%204.6%204.4%200%208.2-1.5%2011.4-4.6l112-112c3-3.2%204.5-7%204.5-11.4z%22%2F%3E%3C%2Fsvg%3E%0A");
+  background-position: right 10px center;
+  background-repeat: no-repeat;
+  background-size: auto 70%;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+#pt-37{
+  padding-top: 37px;
+}
+#searchScheduleperson .srchtbl table{width: 100%; table-layout: fixed; border-collapse: collapse ;}
+#searchScheduleperson .srchtbl table tr{border: 1px solid #000;height: 30px;}
+#searchScheduleperson .srchtbl table tr th{text-align: left;font-size: 14px;position: sticky;top: 0;}
+.searchtblrow{background:#D0D0D0;}
+.srchtbl .btn-class{height:15px;}
+#searchScheduleperson .srchtbl table tbody tr:nth-child(odd) {background:#f0f0f0;}
+.schprsn{width: 410px; margin-left: 20px;}
+.child_div_2 button{float: right; 
+   margin: -26px -341px 0px 32px;
+  }
+.child_div_3 {
+  float: right;
+  width: 393px;
+  margin: -30px -361px 2px -107px;
+}
+.fieldsection{
+  width: 100%;
+  display: flow-root;
+}
+.srchtbl {
+  overflow:auto;
+  max-height: 500px;
+}
+.ebtn button {
+  margin: 16px 23px 0 0;
+}
+.srchtbl table thead tr th{
+  position: sticky; top: 0;
+  height: 30px;}
+.addNew .parent_div_1 {
+  width: 50%;
+}
+#srform{
+  width: 111px;
+}
+span.required {color: red;}
+.Adntbl table tr th,.Adntbl table tr td, .Adntbl table{
+border-collapse: collapse;
+}
+.Adntbl table tr th {
+  font-size: 10px;
+  text-align: center;
+  background: #ded8de;
+  position: sticky;
+  top: 0;
+}
+  /* css for tabs */
+/* Style the tab */
+.tab {
+  background-color: #f1f1f1;
+}
+#scperson, #stfdtls {
+  display: inline-block;
+}
+#myBtn {margin-right: 110px;}
+#STFdtl {width: 615px;}
+.history_tab_left {padding-top: 72px;}
+.history_tab{margin: 0 0 43px 18px;}
+.btntbl button {float: left; margin: 0;}
+.HisTTBL {overflow: scroll;height: 193px;width: 424px;margin: 9px 0px 0 -19px;}
+.HisTTBL table .thstyle th {background: #fff;}
+.HisTTBL table tr:nth-child(odd){background: #eee;}
+.HisTTBL table {table-layout: fixed; margin: 0 0 16px 19px;}
+.HisTTBL table,.HisTTBL table tr th,.HisTTBL table tr td {border-collapse: collapse; border: 1px solid #111; text-align: center;}
+#schistory .parant_div_1 form .fields label{width: 80px;}
+.Leftfld {margin-left: 38px;}
+._leftstyle {margin: 0 0 0px 70px;height: 787px;width: 450px;}
+/* Style the buttons inside the tab */
+.tab button {
+  float: left;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+  border: 2px solid #ccc;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+}
+.Tabstyle button {width: 200px;}
+.Leftstyle button {width:208px;}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  border-top: none;
+  padding-bottom: 10px;
+}
+.textarea textarea {
+  margin: 20px 0 0 0;
+  height: 80px;
+}
+.txtar {
+  /*justify-content: center;*/
+  align-items: center;
+  display: flex;
+} table tbody tr {
+  height: 35px;
+  text-align: left;
+}
+.std table tbody tr td {
+  width: 153px;
+}
+table.scrollTable{border-collapse: collapse;}
+.rowsbtns{display: flex;}
+
+/*css for model */
+		/* The Modal (background) */
+    .modal {
+      display: none; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Sit on top */
+      padding-top: 100px; /* Location of the box */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgb(0,0,0); /* Fallback color */
+      background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    }
+    
+    /* Modal Content */
+    .modal-content {
+      background-color: #fefefe;
+      margin: auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 37%;
+    }
+    
+    /* The Close Button */
+    .close,.closeupd,.closef {
+      color: #aaaaaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+    
+    .close:hover, .closef:hover,
+    .close:focus, .closef:hover {
+      color: #000;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+}
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+/*css for model ends */
+/* define height and width of scrollable area. Add 16px to width for scrollbar          */
+div.tableContainer {
+	clear: both;
+	border: 1px solid #963;
+	height: 285px;
+	overflow: auto;
+	width: 500px;
+  overflow: auto;
+}
+html>body div.tableContainer {
+	overflow: hidden;
+	width: 900px
+} 
+#tableContainer {
+	width: 485px;
+  height: 206px;
+}
+.no_border{border:none;}
+/* css for model ends
+  /* css for tabs ends */
+   /*search schedule person ends */
+
+ /* close button model 4 open  ends*/
+ .btn-style {
+  float: right;
+  margin: 23px 19px 0px 0px;
+ }
+ .btnf {
+  margin-left: 26px;
+ }
+ #searchScheduleperson .no-border {border:none;padding: 0;}
+
+.addbtn {
+  height: 35px;display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.addbtn img {width:20px;height: 20px;}
+.tables {border: 1px solid #111;}
+.ui-tabs .ui-tabs-nav .ui-tabs-anchor{cursor: pointer;}
+
+/* Tab navigation styling */
+.first-tab.ui-tabs-nav li {
+    font-family: Verdana, Arial, sans-serif;
+    font-size: 13px;
+}
+
+.first-tab.ui-tabs-nav .ui-tabs-anchor {
+    font-family: Verdana, Arial, sans-serif;
+    font-size: 13px;
+}
+
+  .filter{
+    border-radius: 77px;
+    width: 89%;
+  }
+
+  .primary-para{
+    font-size: 12px;
+    padding: -19px 0 0 0;
+    margin: 0;
+    text-align: end;
+  }
+  .no-record{
+    font-weight: 600;
+    text-align: center;
+    color: gray;
+    
+  }
+   /*ekta chnages start */
+  /* UPDATE THE DATAT TABLE CSS*/
+ 
+  table.dataTable.no-footer {
+    border-bottom: 0px solid #111;
+  }
+  
+  .activeclass{
+    display:none;
+  }
+
+  .main-heading{
+    text-align: center;
+    font-size: 12px;
+    padding: 10px;
+    margin: 0;
+  }
+
+  .buttonDisabled {pointer-events: none; ;opacity:0.5}
+  .buttonEnabled {cursor: pointer;pointer-events: auto; }
+
+
+  /* 19may */
+  #searchScheduleperson .fields input, #searchScheduleperson .fields select {
+    width: 214px;
+  }
+  #searchScheduleperson .fields label, #searchScheduleperson .fields input, #searchScheduleperson .fields select {
+    width: 209px;
+    font-size: 12px;
+  }
+  /*ekta changes end */
+  .widthposition{
+	  width: 100%;
+	  top: 0;
+	  height: 98%;
+	  position: relative;
+  }
+  .hight100percent{
+	  height:100%;
+  } 
+  .poswithwidth{
+	  width: 100%;
+	  position: relative;
+  }
+   .poswithheight{
+	  height: 100%;
+	  position: relative;
+  }
+  /* ============================================================
+   TOP-RIGHT ACTION BUTTON STACK — UNIFIED LOOK
+   ============================================================ */
+
+/* Parent container for right-aligned buttons */
+.action-buttons {
+    display: flex;
+    flex-direction: column;        /* vertical stack */
+    align-items: flex-end;         /* push to right */
+    gap: 10px;                     /* spacing between buttons */
+    margin-top: -10px;             /* adjust vertical placement */
+}
+
+/* Style for all action buttons */
+.action-buttons button,
+.action-buttons input[type="button"],
+.action-buttons input[type="submit"] {
+    padding: 6px 18px;
+    border: 2px solid #000;
+    background: #fff;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 4px;
+    height: 34px;
+    min-width: 150px;              /* same width for uniform look */
+    text-align: center;
+}
+
+/* Optional: add hover effect */
+.action-buttons button:hover,
+.action-buttons input[type="button"]:hover {
+    background: #f2f2f2;
+}

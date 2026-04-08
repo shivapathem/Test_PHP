@@ -1,0 +1,88 @@
+
+body {
+    background:#FFFFFF;
+    font-family:Verdana, Arial, sans-serif;
+    margin: 0;
+    overflow-x: hidden;
+    }
+    .primary-hrading{
+      background-color: #ccc;
+      padding: 7px 13px 10px 13px;
+    }
+    .container{
+        border: 2px solid #ff000000;
+        overflow-x: scroll;
+    }
+
+  .outer-border{
+    border: 1px solid #ccc;
+    padding: 20px;
+    box-shadow: 0 0 2px 1px #cccccc85;
+    }
+  #contract_history {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+    font-family:arial;
+    font-size: 8pt;
+    width: max-content;
+  }
+#contract_history th{
+  text-align: left;
+  padding: 8px;
+  border: 2px solid #ffffff;
+  box-shadow: 0 0 6px 0px #f2f2f2;
+  /* border-right-color: #fff; */
+  /* height: 100px; */
+}
+
+
+  
+  #contract_history td {
+    text-align: left;
+    padding: 8px;
+    /* border: 2px solid #aaaaaa5c;
+    box-shadow: 0 0 6px 0px #f2f2f2; */
+  }
+
+  .bg-gray{
+    background-color: #ddd;
+    font-size: 14px;
+    font-weight: 900;
+  }
+  /* .h-30{
+      height:30px;
+  }
+  .h-50{
+      height:50px;
+  } */
+
+  
+  #contract_history tr:nth-child(even){background-color: #f2f2f2}
+
+.table-sch{
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+    font-family: arial;
+    font-size: 8pt;
+
+}
+.container-sch{
+        border: 2px solid #ff000000;
+       
+}
+
+.resposive-img{
+  width: 15%;
+  margin: auto;
+  display: block
+}
+.checkresposive-img{
+  width:15px;
+  margin: auto;
+  display: block
+}
+.text-center{text-align:center !important;vertical-align: middle;}

@@ -1,0 +1,121 @@
+.external-customer-form {
+    background: #eeeeee;
+    margin: 0;
+    padding: 0;
+}
+
+.external-customer-form .ec-box {
+    background: #eeeeee;
+    border: 1px solid #000;
+    margin: 0;
+    padding: 0;
+}
+
+.external-customer-form .ec-row {
+    background: #eeeeee;
+    border-bottom: 1px solid #000;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    width: 100%;
+    box-sizing: border-box;
+    align-items: stretch;
+}
+
+.external-customer-form .ec-row:last-child {
+    border-bottom: 0;
+}
+
+.external-customer-form .ec-row.ec-heading {
+    font-weight: bold;
+}
+
+.external-customer-form .ec-item {
+    background: #eeeeee;
+    padding: 5px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    min-width: 0;
+    overflow: hidden;
+    flex: 0 0 25%;
+}
+
+.external-customer-form .ec-item+.ec-item {
+    border-left: 1px solid #000;
+}
+
+.external-customer-form .ec-label {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin: 0;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.external-customer-form input[type="text"],
+.external-customer-form input[type="email"],
+.external-customer-form input[type="tel"] {
+    width: 100%;
+    background: #fff;
+    border: 1px solid #000;
+    padding: 4px;
+    margin: 0;
+    box-sizing: border-box;
+    border-radius: 0;
+    font: inherit;
+    min-width: 0;
+}
+
+.external-customer-form .ec-item #company_address_open_frm,
+.external-customer-form .ec-item a.ec-update {
+    text-decoration: underline;
+    color: #000;
+    cursor: pointer;
+}
+
+.external-customer-form .ec-item #company_address_open_frm:hover,
+.external-customer-form .ec-item a.ec-update:hover {
+    text-decoration: underline;
+}
+
+.required-asterisk {
+    color: red;
+}
+
+.submit-address-form-button {
+    padding: 8px 15px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.submit-address-form-button.ui-widget.ui-corner-all {
+    border-radius: 5px;
+}
+
+#ec_internationaladdress_char_count {
+    font-size: 12px;
+    text-align: left;
+    width: 100%;
+    display: block;
+}
+
+.ec-item--stack {
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.ec-item--stack textarea {
+    width: 100%;
+}
+
+.external-customer-form .ec-item--span-3 {
+    flex: 0 0 75%;
+    width: 75%;
+}
+
+.ec-item textarea {
+    width: 100%;
+    box-sizing: border-box;
+}

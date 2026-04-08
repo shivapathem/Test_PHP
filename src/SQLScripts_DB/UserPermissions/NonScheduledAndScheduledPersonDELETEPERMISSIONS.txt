@@ -1,0 +1,27 @@
+
+IF NOT EXISTS (select top(1) * from RolePermissionForm_LINK where FormID=11 and RoleID=3 and PermissionID =4)
+BEGIN 
+INSERT INTO [dbo].[RolePermissionForm_LINK]
+           ([RoleID]
+           ,[PermissionID]
+           ,[FormID])
+     VALUES(3,4,11)
+END
+
+IF NOT EXISTS (select top(1) * from RolePermissionForm_LINK where FormID=11 and RoleID=2 and PermissionID =4)
+BEGIN 
+INSERT INTO [dbo].[RolePermissionForm_LINK]
+           ([RoleID]
+           ,[PermissionID]
+           ,[FormID])
+     VALUES(2,4,11)
+END
+IF NOT EXISTS (select top(1) * from RolePermissionForm_LINK where FormID=11 and RoleID=1 and PermissionID =4)
+BEGIN 
+INSERT INTO [dbo].[RolePermissionForm_LINK]
+           ([RoleID]
+           ,[PermissionID]
+           ,[FormID])
+     VALUES(1,4,11)
+END
+

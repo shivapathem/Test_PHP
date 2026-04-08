@@ -1,0 +1,84 @@
+.names { 
+  border-bottom:1px solid #FFFFFF; 
+  font-size:8pt;
+  background-color: #CCCCCC; 
+  padding-left:3px; 
+  font-weight:bold;
+  -moz-box-shadow: 0 0 2px #ffffff; 
+  -webkit-box-shadow: 0 0 2px #ffffff;
+  box-shadow: 0 0 2px #ffffff;
+}
+
+.sortcodes { 
+  border-bottom:1px solid #FFFFFF; 
+  font-size:8pt;
+  background-color: #DDDDDD; 
+  padding-left:3px; 
+  font-weight:bold;
+  -moz-box-shadow: 0 0 2px #ffffff; 
+  -webkit-box-shadow: 0 0 2px #ffffff;
+  box-shadow: 0 0 2px #ffffff;
+}
+
+.innerborder { 
+  -moz-box-shadow: inset 0 0 2px 2px #ffffff;
+  -webkit-box-shadow: inset 0 0 5px 5px #ffffff;
+  box-shadow: inset 0 0 2px 2px #ffffff;
+}
+
+.allocation  { 
+  position: relative;
+  font-size:8pt;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.allocationdatecell  { 
+  position: relative;
+  background-color: #990000;
+  color: #fff;
+  font-size:8pt;
+  overflow: hidden;
+  font-weight:bold; 
+  text-align:center;  
+  -moz-box-shadow: 0 0 2px #ffffff; 
+  -webkit-box-shadow: 0 0 2px #ffffff;
+  box-shadow: 0 0 2px #ffffff; 
+}
+
+.allocationdatecelldark  { 
+  position: relative;
+  background-color: #99BFE6;
+  font-size:8pt;
+  overflow: hidden;
+  font-weight:bold; 
+  text-align:center;  
+  -moz-box-shadow: 0 0 2px #ffffff; 
+  -webkit-box-shadow: 0 0 2px #ffffff;
+  box-shadow: 0 0 2px #ffffff 
+}
+.dragbar {
+  cursor: all-scroll;
+}
+
+.nodrop {
+  cursor: no-drop;
+}
+
+div.drophere {
+    height: 10em;
+    position: relative;
+    background-color: #99BFE6;
+}
+div.drophere p {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%) 
+}
+
+.greytext {
+  color: #C0C0C0
+}

@@ -1,0 +1,15 @@
+.names { 
+  border-bottom:1px solid #FFFFFF; 
+  font-size:8pt;
+  background-color: #CCCCCC; 
+  padding-left:3px; 
+  font-weight:bold
+}
+.duties { 
+  border-bottom:1px solid #FFFFFF; 
+  font-size:8pt;
+}
+.times { 
+  font-size:8pt;
+  background-color: #CCCCCC; 
+}

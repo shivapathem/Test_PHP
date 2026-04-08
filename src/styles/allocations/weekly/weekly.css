@@ -1,0 +1,1239 @@
+.filterBlockWA .ui-accordion .ui-accordion-header {
+    float: left;
+    width: 230px;
+    margin: 7px 7px 0px 100px;
+}
+.choosecalender img {
+    margin-bottom: -6px;
+}
+.filterContainer {
+    border: 1px solid #f5f5f5;
+    padding: 5px;
+    border-radius: 2px;
+    display: inline-block;
+    position: relative;
+    margin-top: 7px;
+    height: 36px;
+}
+span.heading {
+    display: block;
+    text-align: left;
+    line-height: 1!important;
+    font-size: 10px;
+    position: absolute;
+    top: -6px;
+    background: #ddd;
+    font-weight: bold;
+}
+.fieldBox {
+    float: left;
+    font-size: 11px;
+    margin: 4px 0;
+}
+.fieldBox .filterBTN {
+    font-size: 11px;
+}
+
+div.weeklyAllocationTable {
+    font-size: 11px;
+    text-align: left;
+}
+div.weeklyAllocationTable .weekly-table-header .weekly-header-cell, div.weeklyAllocationTable .weekly-table-header .weekly-body-cell {
+    padding: 0px 1px 0px 4px;
+    border-bottom: 1px solid #111;
+    background-color: #4B72BF;
+    color: #fff;
+    text-align: left;
+}
+div.tdGrayBGAdditionalPerson {
+    background-color: #c7c7c7!important;
+    max-height: 30px !important;
+}
+
+div.tdGrayBG{
+    background-color: #ebebeb!important;
+    max-height: 30px !important;
+}
+
+div.weeklyAllocationTable .weekly-body-cell {
+    padding: 1px 0px 3px 3px;
+    border-left: 0.5px solid #ddd;
+    border-bottom: 0.5px solid #ddd;
+}
+
+div.weeklyAllocationTable .weekly-body-cell:last-child {
+	border-right: 0.5px solid #ddd;
+}
+
+#weeklyAllocationTable .weekly-table-body .weekly-body-cell, #weeklyAllocation2 .weekly-table-body .weekly-body-cell {
+    width: 127px;
+    max-width: 50px;
+	max-height:45px;
+	height:45px;
+	overflow:hidden;
+}
+
+#weeklyAllocationTable .weekly-table-body .weekly-body-cell {
+    height: 28px;
+}
+
+div.miscDutyTD {
+	height: 32px;
+	text-align: left;
+    font-size: 11px;
+	padding: 8px 0px;
+}
+
+#weeklyAllocation_info, #weeklyAllocation1_info, #showCounts_info {
+    display:none;
+}
+div#weeklyAllocation_wrapper {
+    overflow-y: scroll;
+}
+#weeklyAllocation-1 {
+    overflow: scroll;
+    min-height: 100%;
+}
+.allocationSingleWeek {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    min-height: 100%;
+}
+.allocationMultiWeeks { 
+	overflow: scroll;
+}
+.showCountContainer {
+    overflow-y: scroll;
+	overflow-x: hidden;
+}
+.showCountContainer {
+    border-bottom: 1px solid #ddd;
+}
+
+div.NotFixedon {
+    background-color: #ebebeb;
+    max-height: 30px;
+    min-width: 120px !important;
+}
+div.NotFixedoff {
+    background-color: #D8D8FF;
+    text-align: center;
+    max-height: 30px !important;
+}
+
+div.weeklyAllocationTable .weekly-table-header .weekly-header-cell, div.weeklyAllocationTable .weekly-table-header .weekly-body-cell {
+    position:sticky;
+    top:0px;
+    text-align:left;
+}
+div.weeklyAllocationTable .weekly-table-header .unallocatTable2Head .weekly-header-cell {
+    top: 14px;
+}
+#weeklyAllocation1 .weekly-table-body > .weekly-table-row, #weeklyAllocation2 .weekly-table-body > .weekly-table-row {
+    height: 45px !important;
+	overflow : hidden;
+}
+.weeklyHeaderBox {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 30% 30% 40%;
+    grid-template-columns: repeat( 3, 1fr );
+}
+
+.box1 {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+}
+
+.box2 {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+}
+
+.box3 {
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
+}
+.weeklyHeaderBox .box2 {
+    text-align: center;
+    font-weight: bold;
+    padding-left: 50px;
+}
+.weeklyHeaderBox .box1 {
+    padding: 0px 0px 0px 5px;
+}
+.weeklyHeaderBox .box3 {
+    text-align: right;
+    margin-right: 10px;
+}
+.weekBox span.heading {
+    background: #d0d0d0;
+}
+.box3 .calenderBox {
+    padding: 10px 0px;
+    font-weight: bold;
+}
+.filterContainer.weekBox {
+    min-width: 256px;
+    text-align: center;
+    margin-top: 15px;
+}
+.filterContainer.weekBox input {
+    font-size: 9.5pt;
+}
+.weeklyFilterBlock {
+    background-color: #dddddd;
+    color: #000000;
+    font-size:11px;
+}
+.weeklyFilterBlock .grid {
+    display: inline-block;
+}
+.filterContainer.fContainer1 {
+    margin-left: 5px;
+    margin-right: 0px;
+}
+.min-w120 {
+    min-width: 120px !important;
+}
+
+#weeklyAllocation1 .weekly-header-cell {
+    height: 27px;
+	vertical-align: middle;
+}
+div.weeklyAllocationTable .weekly-table-body div.centerText {
+    padding-left: 10px;
+}
+
+.weeklyAllocationTable.dropzone{
+    float: left;
+    text-align: left;
+}
+
+.allocated.dropzone {
+    height: auto;
+    float: left;
+    margin: 0px;
+    text-align: left;
+	width: -webkit-fill-available;
+}
+
+.draggable{
+    cursor: pointer;
+	font-size:11px;
+}
+
+.grid-container {
+    display: inline-flex;
+    grid-template-columns: auto auto auto;
+    padding: 2px 0px;
+}
+.grid-item {
+    text-align: center;
+}
+
+.block-25 {
+    width: 20.5%;
+    float: left;
+}
+div#unallocatedDuty, .block-25, .block-75 {
+    background: #dddddd;
+}
+    .block-50 {
+    width: 50%;
+    float: left;
+}
+#searchMiscDuty {
+	width: 100px;
+}
+.block-75 {
+    float:left;
+    width: 79.5%;
+}
+.block-100 {
+    float:left;
+    width: 100%;
+}
+.showWeeksBlock {
+    display: inline-block;
+    margin-right: 3px;
+}
+.disableDragBlock {
+    font-size: 11px;
+    float: right;
+    padding: 18px 5px;
+    margin-right: 10px;
+}
+.fContainer2 .fieldBox select, .fContainer3 .fieldBox select {
+    width: 130px;
+}
+#weeklyAllocation1 .weekly-table-body .weekly-table-row .weekly-body-cell:first-child, #weeklyAllocation1 .weekly-table-header .weekly-table-row .weekly-header-cell:first-child {
+    position: sticky;
+    left: 0;
+    right: 0;
+}
+#weeklyAllocation1 .weekly-table-header .weekly-table-row .weekly-header-cell:first-child {
+    z-index:1;
+}
+table.ui-datepicker-calendar tbody > tr {
+    height: auto;
+}
+.weekBox .choosecalender input {
+    width: 55px;
+	height: 21px;
+    line-height: 19;
+    border: 1px solid #aaa;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+#showCounts div.showCountCell {
+    width: 127px;
+    max-width: 50px;
+}
+#weeklyAllocation2 .weekly-table-header .weekly-header-cell {
+	z-index: 1;
+}
+#triangle {
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 11px solid #eca978;
+    float: right;
+}
+#circle {
+    background: #5d9baf;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+}
+.filterContainer.fContainer3 .fieldBox {
+    margin-right: 10px;
+}
+.allocationSections {
+    width: 100%;
+}
+div.attentionClass{
+    background-color: #FFB6C1;
+}
+
+div.attentionCopyDutyClass{
+    background-color: #9370db;
+  }
+  
+span.requestClass{
+    color:#800080;
+}
+.golden {
+    background: #f6c324 !important;
+}
+.pink {
+    background: #ff69b4 !important;
+}
+.blue {
+    background: #5d9baf !important;
+}
+.hide {
+    display:none;
+}
+
+.green{
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    background-color: rgb(140 252 3) !important;
+    transition: width .6s ease;
+}
+.stripped-bar{
+    background-image: linear-gradient(-45deg, rgb(255 182 193) 25%, transparent 25%, transparent 50%, rgb(255 182 193) 50%, rgb(255 182 193) 75%, transparent 75%, transparent);
+}
+
+/*Duty Shift Counting Css Starts*/
+#shiftCounting {
+    width: 100%; 
+    margin: 0 auto;
+    font-size:11px;
+}
+.shiftCounting-container .btn {
+    cursor: pointer;
+}
+.shiftCounting-container {
+    background: #eeeeee;
+    padding-top: 10px;
+}
+    .shiftCounting-container .filterContainer {
+    width: 98%;
+    border: 1px solid #d6d6d6;
+    margin: 10px 5px 5px;
+    }
+    .right {
+    float: right;
+    }
+    .shiftCounting-container .filterContainer .fieldBox {
+    margin: 8px 0;
+   }
+    .shiftCounting-container .filterContainer span.heading {
+    background: #eee;
+   }
+    select#adhocFilterSelection {
+        min-width: 160px;
+    font-size: 11px;
+    padding: 2px 0px;
+   }
+    .shiftCounting-container .filterContainer .btn {
+    font-size: 11px;
+        margin: 0 8px;
+   }
+   .bottomFilterContainer .filterContainer {
+    width: 47%;
+   }
+   .shiftCountSection {
+    border: 1px solid #d6d6d6;
+    width: 98%;
+    margin: 5px 5px;
+    }
+   .FilterContainerActionBtn {
+    text-align: center;
+    }
+    .shiftCountSection .btn {
+    font-size: 11px;
+    }
+   .FilterContainerActionBtn .btn {
+    font-size: 11px;
+    margin: 10px 0;
+   }
+   .fieldcontainer-message{
+    min-height: 10px; 
+    display: none;
+   }
+   .fieldbox-message{
+    text-align: center; 
+    width: 100%; 
+    margin: 2px 0; 
+    color: #FF0000;
+}
+
+.cross-red {
+    background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' preserveAspectRatio='none' viewBox='0 0 100 100'><path d='M100 0 L0 100 ' stroke='red' stroke-width='2'/><path d='M0 0 L100 100 ' stroke='red' stroke-width='2'/></svg>");
+    background-repeat:no-repeat;
+    background-position:center center;
+    background-size: 100% 100%, auto;
+    z-index:1;
+}
+
+.cross-blue {
+    background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' preserveAspectRatio='none' viewBox='0 0 100 100'><path d='M100 0 L0 100 ' stroke='lightblue' stroke-width='2'/><path d='M0 0 L100 100 ' stroke='lightblue' stroke-width='2'/></svg>");
+    background-repeat:no-repeat;
+    background-position:center center;
+    background-size: 100% 100%, auto;
+    z-index:1;
+}
+.ui-timepicker-wrapper{ 
+    z-index: 999999 !important;
+}
+   
+.fieldcontainer-success-message{
+    min-height: 10px; 
+    display: none;
+}
+.fieldbox-success{
+    text-align: center; 
+    width: 100%; 
+    margin: 2px 0; 
+    color: green;
+   }
+   
+.hide-class {
+    display:none;
+}
+/*Duty Shift Counting Css Ends*/
+
+div#weeklyAllocation1_paginate {
+    display: none;
+}
+span#allocationTableFilter-0, span#allocationTableFilter-1 {
+    display: block;
+}
+.bottom-border{
+    border-bottom:1px solid #ddd!important;
+}
+.font-bold{
+    font-weight:bold!important;
+}
+.left-pad-10{
+    padding:0 0 0 10px!important;
+}
+.pad-8{
+    padding:8px!important;
+}
+.td-bg-colour{
+    background-color: #ebebeb!important;
+}
+#allocations-filters .filter-dropdown {
+    min-width: 120px;
+    margin-top: 0px;
+}
+#adhocFilter_chosen {
+    width: 150px;
+}
+.choosecalender.chooseDate input {
+    width: 80px;
+}
+.filterContainer.showCountBlock .fieldBox select{
+    min-width: 140px;
+}
+.filterContainer.showCountBlock {
+    border: 0px;
+    padding: 5px 0;
+}
+#dityCountBtn {
+    margin-right: 10px;
+    font-size: 11px;
+    padding: 2px 5px;
+}
+#miscDutyBlock {
+    overflow-y: scroll;
+    border-right:1px solid #FFFFFF;
+    min-height: 100%;
+    overflow-x: auto;
+}
+div.miscHeader {
+    background: #900000;
+    color: #fff;
+}
+.filterContainer.publishWeek {
+    top: -2px;
+    vertical-align: text-bottom;
+}
+.publishWeek span {
+    font-size: 14px;
+    font-weight: bold;
+    padding: 4px;
+    vertical-align: -webkit-baseline-middle;
+}
+.filterContainer.removeWeekIcon {
+    padding: 8px 4px;
+    position: absolute;
+    right: 16px;
+    border: 0px;
+	top:0px;
+}
+select#dutyShiftCountingFilterId {
+    margin: 0 3px;
+}
+div.weekly-body-cell.context-menu-active{
+    background-color: rgb(221, 221, 221);
+}
+.displayInlineBlock {
+  	display: inline-block;
+	vertical-align: bottom;
+    margin-right: 1px;
+  }
+  .showWeeksBlock .chosen-container .chosen-results {
+    padding: 0 0 0 2px;
+  }
+  .showWeeksBlock .chosen-container .chosen-results li {
+    padding: 5px 1px;
+  }
+  .baseLineAlign {
+    vertical-align: -webkit-baseline-middle;
+  }
+  #dutyShiftCountingFilterId_chosen {
+    margin-right: 4px;
+    margin-left: 4px;
+  }
+  .chosen-container-single .chosen-single {
+  	  color: #000;
+  }
+  .weekBox input {
+  	font-size: 11px;
+	padding: 3px 5px;
+    border: 1px solid #aaa;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  .weeklyFilterBlock .chosen-container-single .chosen-single {
+  	  height: 22px;
+	  line-height: 19px;
+  }
+div.publish-icon {
+    display: table;
+}
+
+.publish-icon > span {
+    font-size: 18pt;
+    font-weight: 700;
+}
+
+.ui-dialog.editAdhocDutyClass .ui-dialog-content {
+    overflow: unset;
+}
+div.allocatedDutyCell {
+    position: relative;
+	z-index: 0;
+}
+.IconPositionClass {
+    height: 12px;
+}
+.IconPositionClass {
+    height: 10px;
+    width: 10px;
+    position: absolute;
+    font-size: 9px;
+}
+.DutyIconPositionLeft {
+    position: absolute;
+    left: 0;
+    top: 31px;
+    margin-right: 2px;
+    
+}
+.DutyIconPositionRight {
+    position: absolute;
+    right: 7px;
+    height: 10px;
+    bottom: 3px;
+    display: inline-block;
+    
+}
+.IconPositionClass.blueEuro {
+    left: 0;
+    bottom: -6px;
+}
+.IconPositionClass.redEuro {
+    left: 11px;
+}
+.IconPositionClass.markWA {
+	left: 22px;
+    bottom: -6px;
+	font-weight: bold;
+    color: #000;
+}
+.IconPositionClass.emptyIcon1 {
+	left: 36px;
+}
+.IconPositionClass.iconL {
+	left: 46px;
+    position: absolute;
+    bottom: -6px;
+}
+.IconPositionClass.iconLock {
+	left: 57px;
+    bottom: -6px;
+}
+.IconPositionClass.iconR {
+    left: 70px;
+    bottom:-6px;
+}
+.iconL span, .iconR span  {
+    font-size: 8.6px;
+}
+.iconL span {
+    padding: 1px 2.8px;
+}
+.iconR span {
+    padding: 1px 2px;
+}
+.IconPositionClass.iconLock img {
+
+}
+.leaveOrange {
+	background-color:#FF8000;
+    color:#000000;
+}
+.leaveYellow {
+	background-color:#FFFF00;
+    color:#000000;
+}
+.leavePowderBlue {
+	background-color:#00C6C6;
+    color:#000000;
+}
+.leavePurple {
+	background-color:#800080;
+	color: #fff;
+}
+.leaveGray {
+	background-color:#AAAAAA;
+    color:#000000;
+}
+.leaveHashedOrange {
+  color:#000000;
+  background-color: #ff80007a;
+}
+
+.DutyIconPositionRight .signedtip {
+    float: left;
+    margin-right: 2px;
+}
+.cornerIcon {
+    position:relative;
+    overflow:hidden;
+}
+.cornerIcon:after {
+    content: "";
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    width: 20px;
+    height: 20px;
+    transform: rotate(45deg);
+}
+.cornerIcon-Red:after {
+    background-color: red;
+}
+.cornerIcon-Blue:after {
+    background-color: blue;
+}
+.cornerIcon-Green:after {
+    background-color: green;
+}
+.cornerIcon-Yellow:after {
+    background-color: yellow;
+}
+.weekly-table {
+    width: 100%;
+    display: table;
+}
+.weekly-table-header{
+    display: table-header-group;
+    background-color: gray;
+    font-weight: bold;
+}
+.weekly-table-body{
+    display: table-row-group;
+}
+.weekly-header-cell{
+    display: table-cell;
+    text-align: justify;
+    border-bottom: 1px solid black;
+}
+.weekly-table-row{
+    display: table-row;
+}
+
+.weekly-body-cell{
+    display: table-cell;
+}
+
+div#weeklyAllocation-2 {
+    overflow-x: scroll;
+    width: 100%;
+    border-right: 2px solid #ddd;
+}
+
+.miscHeader .weekly-header-cell {
+    vertical-align: middle;
+}
+
+.multiWeekHolder .weekly-header-cell {
+	border-bottom: 1px solid #fff!important; 
+	min-height:23px !important;
+}
+
+.border-colour {
+    border-bottom: 1px solid #ddd;
+}
+
+.noRecordFound {
+    font-size: 11px;
+    padding: 5px 0px;
+}
+
+span.dutyTip b {
+	white-space: nowrap;
+}
+
+.cell-width-50{
+    width:50%;
+}
+
+.shiftPopupBox {
+    width: 500px;
+}	
+.shiftPopupBox .fields label {
+    width: 200px;
+    font-size: 12px;
+}
+.popupContent .textAreaBox {
+    vertical-align: top;
+    border: 2px solid #c0c0c0;
+}
+.shiftPopupBox .fields select {
+    padding-left: 0px;
+    font-size: 12px;
+    width: 173px;
+}
+.shiftPopupBox .fields input, .shiftPopupBox .fields span {
+    width: 173px;
+    font-size: 12px;
+}
+
+/*Request Classes*/
+.requestOrange {
+	background-color:#FF8000;
+    color:#000000;
+}
+.requestYellow {
+	background-color:#FFFF00;
+    color:#000000;
+}
+.requestPowderBlue {
+	background-color:#00C6C6;
+    color:#000000;
+}
+/**MultipleRequest**/
+.requestPurple {
+	background-color:#800080;
+	color: #fff;
+}
+.requestGray {
+	background-color:#AAAAAA;
+    color:#000000;
+}
+
+.sticky-header{
+    position: sticky;
+    top: 0px;
+}
+
+.max-height-duty-cell{
+    height: 38px;
+    position: relative;
+}
+
+.cell-loader{
+    position: absolute; 
+    margin: auto; 
+    top:0px; 
+    right: 0px; 
+    bottom: 0px; 
+    left: 0px;
+    display: none;
+}
+.activemarkovertime{
+    display: block;
+}
+.inactivemarkovertime{
+    display: none;
+}
+
+.otherTeamClass {
+    color: #4548488f;
+}
+.purpleTriangleIcon {
+    position:relative;
+    overflow:hidden;
+}
+
+.purpleTriangleIcon::before {
+    content: "";
+    position: absolute;
+    left: -10px;
+    top: -10px;
+    width: 20px;
+    height: 20px;
+    transform: rotate(45deg);
+    background-color: purple;
+}
+
+.IconPositionClass.twelveIcon {
+    font-weight: bold;
+    color: #000;
+    left: 80px;
+    bottom: -6px;
+    position: absolute;
+}
+.IconPositionClass.elevenIcon {
+    left: 31px;
+    bottom: -6px;
+    font-weight: bold;
+    color: #000;
+}
+.pIcon {
+    border: 1px solid white;
+    font-weight: bold;
+    text-align: center;
+    height: inherit;
+    line-height: 2;
+    height: 25px;
+    width: 25px;
+    right: 115px;
+}
+.globIcon{
+    height: 25px;
+    width: 25px;
+    right: 81px;
+  }
+.pencileIcon{
+    height: 25px;
+    width: 25px;
+    right: 52px;
+}
+.filterContainer.contextMenuInfoIcon {
+    padding: 9px 4px;
+    position: absolute;
+    margin-right: 27px;
+    border: 0px;
+}
+
+.LockIcon {
+    position: absolute;
+    top: -2.4px;
+    left: 11px;
+    height: 16px;
+    width: 17px;
+}
+
+.date-border {
+    border-left: 1px solid #ffffff;
+}
+
+.date-text-left {
+    text-align: left;
+}
+
+.date-text-right {
+    text-align: right !important;
+}
+.contextCornerIcon {
+    height: 13px;
+}
+.purpleFont {
+    color: #800080d9;
+}
+.viewIconstext {
+    text-align: end;
+}
+.viewIconsAlign {
+    margin-left: auto;
+}
+.filterPosition{
+    position:relative;
+    left:117px; 
+    width:250px
+    
+}
+
+.tooltip-table {
+    border: 10px solid #ffffff; 
+    border-radius: 5px;
+}
+
+.tooltip-table-background {
+    background-color: #f2f2f2;
+}
+
+.tooltip-div {
+    position: absolute; 
+    z-index:9999; 
+    display: none;
+}
+
+.padd1FontW600 {
+    padding: 1px;
+    font-weight: 600;
+}
+
+.cross-red-icon{
+    background-image: url(../../../images/red_cross.png);
+    width: 12px;
+    background-size: 12px;
+    height: 12px;
+}
+
+.signin-red-cross{
+    background-image: url(../../../images/red_cross.png);
+    width: 10px;
+    background-size: 10px;
+    height: 10px;
+    margin: -4px 0px 0px 0px;
+}
+
+.signin-green-tick{
+    background-image: url(../../../images/green_tick.png);
+    width: 10px;
+    background-size: 10px;
+    height: 10px;
+    margin: 1px 0px 0px 0px;
+}
+
+.signin-blue-tick{
+    background-image: url(../../../images/blue_tick.png);
+    width: 10px;
+    background-size: 10px;
+    height: 10px;
+    margin: 1px 0px 0px 0px;
+}
+
+.msg-box-warning{
+    background-image: url(../../../images/messagebox_warning.png);
+    width: 10px;
+    background-size: 10px;
+    height: 10px;
+    margin: 1px 0px 0px 0px;
+}
+
+.blue-pound-icon{
+    background-image: url(../../../images/overtime.png);
+    width: 10px;
+    background-size: 10px;
+    height: 10px;
+    margin: 1px 0px 0px 0px;
+}
+
+.red-pound-icon{
+    background-image: url(../../../images/money.png);
+    width: 10px;
+    background-size: 10px;
+    height: 10px;
+    margin: 1px 0px 0px 0px;
+    position: absolute;
+    bottom: 3px;
+  
+}
+
+.lock-icon-image{
+    background-image: url(../../../images/locks/locked.jpg);
+    width: 14px;
+    background-size: 12px;
+    height: 14px;
+    margin: 0;
+    background-repeat: no-repeat;
+}
+
+.filter-info-icon{
+    background-image: url(../../../images/allocations/filters/info_filter.png);
+    width: 13px;
+    background-size: 13px;
+    height: 13px;
+    margin: 5px 6px 0px 0px;
+}
+
+.info-list-icon{
+    background-image: url(../../../images/info.png);
+    width: 19px;
+    background-size: 19px;
+    height: 19px;
+}
+
+.remove-week-icon{
+    background-image: url(../../../images/delete.png);
+    width: 19px;
+    background-size: 19px;
+    height: 19px;
+}
+.viewmarkattention {
+    background-image: url(../../../images/menu/exclaim.png);
+    display: block;
+    width: 15px;
+    height: 15px;
+    background-repeat: no-repeat;
+    margin-left: auto;
+}
+
+.viewmarkovertime {
+    background-image: url(../../../images/menu/overtime.png);
+    display: block;
+    width: 15px;
+    height: 15px;
+    background-repeat: no-repeat;
+    margin-left: auto;
+}
+
+.hide-tb-tr{
+	display: none;
+}
+
+.font9{
+    font-size: 9px;
+}
+
+@media print {
+  #Allocatednames{
+    height: 100%;
+    overflow-y: unset !important;
+    overflow-x: unset !important;
+  }
+  }
+
+div.weeklyAllocationTable .weekly-table-body div.right-pad-4{
+    padding-right: 4px;
+}
+
+div.weeklyAllocationTable .weekly-table-body div.right-pad-14{
+    padding-right: 14px;
+}
+
+div.weeklyAllocationTable .weekly-table-body div.right-pad-26{
+    padding-right: 26px;
+}
+
+div.weeklyAllocationTable .weekly-table-body div.right-pad-32{
+    padding-right: 32px;
+}
+
+div.weeklyAllocationTable .weekly-table-body div.right-pad-27{
+    padding-right: 27px;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    height:10px;
+}
+    
+::-webkit-scrollbar-track {
+    background: #F1F1F1;
+    border-radius: 5px;
+}
+    
+::-webkit-scrollbar-thumb {
+    background: #A9A9A9;
+    border-radius: 5px;
+}
+    
+::-webkit-scrollbar-thumb:hover {
+    background: #A9A9A9;
+}
+#saveSchedulePerson {
+    background-color: buttonface;
+    color: buttontext;
+    padding: 1px 6px;
+    border-color: buttonborder;
+}
+
+.view-blue-pound-icon{
+    background-image: url(../../../images/menu/british-pound.png);
+    width: 19px;
+    background-size: 19px;
+    height: 19px;
+    margin-left: auto;
+    margin-right: -2px;
+}
+
+.tooltip-table-signedtip {
+    border: 10px solid #FFFFFF; 
+    border-radius: 5px;
+}
+
+.tooltip-table-background-signedtip {
+    background-color: #F2F2F2;
+}
+
+.DutyCountPositionRightTop {
+    position: absolute;
+    right: 2px;
+    height: 10px;
+    top: -1.5px;
+    display: inline-block;
+    z-index: 0.9;
+    color: #FFF;
+    font-size: 9px;
+}
+.cornerIcon-Unalloc {
+    position:relative;
+    overflow:hidden;
+}
+
+.cornerIcon-Unalloc:before {
+    content: "";
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    width: 23px;
+    height: 20px;
+    transform: rotate(41deg);
+}
+.cornerIcon-Grey:before {
+    background-color: grey;
+}
+
+.doesntNeedCoveringIcon {
+    position:relative;
+    overflow:hidden;
+}
+
+.doesntNeedCoveringIcon::before {
+    content: "";
+    position: absolute;
+    right: -10px;
+    top: 34px;
+    width: 20px;
+    height: 20px;
+    transform: rotate(45deg);
+    background-color: grey;
+}
+
+.actingLabelIconMonthyContainer {
+    font-weight: bold;
+    color: #000;
+    bottom: 4px;
+    position: absolute;   
+    right: 16px;
+}
+.actingLabelIconMonthy {
+    border:1px solid black;
+    border-radius: 100%;
+    font-size: 8px;
+    padding-left: 2px;
+    padding-right: 2px;
+    padding-bottom: 1px;
+    background: white;
+}
+.IconPositionClass.actingLabelIconContainer {
+    font-weight: bold;
+    color: #000;
+    left: 97px;
+    bottom: -5px;
+    position: absolute;   
+}
+.actingLabelIcon {
+    border:1px solid black;
+    border-radius: 100%;
+    font-size: 7px;
+    padding-left: 2px;
+    padding-right: 2px;
+    padding-bottom: 1px;
+    background: white;
+}
+
+.allocated-name-filter-container {
+    position: absolute;    
+    top: -30px;    
+    overflow: hidden;
+    width: 20.5%;
+    background-color: #F1F1F1;
+}
+
+#quick-filter-name-container {
+    background-color: #4B72BF;
+    padding: 5px;
+    min-height: 34px;
+}
+
+#edit-weekly-name-quick-filter-search {
+    color: white;
+    margin-left: 6px;
+    cursor: pointer;
+}
+
+.clearFilterIconName {
+    position: absolute;
+    right: 10%;
+    top: 1px;
+    cursor: pointer;
+}
+#miscDutyBlock::-webkit-scrollbar-track {
+    border-radius: 0px;
+}
+
+#dialog-form-duty .chosen-results {
+    max-height:150px;
+}
+
+.filter-hide-row {
+    display: none;
+}

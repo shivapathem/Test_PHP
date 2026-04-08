@@ -1,0 +1,99 @@
+/*Sickness popup CSS*/
+.sickness-container{
+    width: 100%;
+    margin: auto;
+    background-color: #eeeeee;
+    padding: 2px;
+	font-size:11px;
+	min-width: 470px;
+}
+
+.sickness-main-heading{
+    background-color: #D0D0D0;
+    padding: 1px;
+    text-align: center;
+}
+.sickness-heading{
+    font-size: 11px;
+	position:relative;
+}
+.week-small-text{
+font-size: 11px;
+font-weight: 600;
+}
+
+.sickness-container fieldset {
+    border: 1px solid #d6d6d6;
+}
+.sick-lab{
+    font-size: 11px;
+    text-align: left;
+    display: block;
+    font-weight: normal
+}
+.sick-inp{
+    width: 30px;
+    background-color: #dddddd;
+}
+
+.sickness-container table {  
+    text-align: left;
+    font-weight: 100;
+  }
+  
+  .sickness-container table {
+    width: 100%;
+  }
+
+  .sickness-table input[type=text]{
+    width: 100%;
+    padding: 5px 5px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  .select-sickness{
+   width: 98%;
+   font-size: 11px;
+   padding: 2px 0px;
+}
+
+  .sickness-table input[type=submit] {
+    width: 40%;
+    background-color: #d0d0d033;
+    color: #cccccc;
+    padding: 10px 3px;
+    margin: 8px 0;
+    border-radius: 4px;
+    cursor: pointer;
+    border: 1px solid #00000045;
+  }
+  .sick-textarea{
+    width: 100%;
+    height: 100px;
+  }
+  .sick-text, .sickness-container table td input{
+  font-size: 11px;
+  }
+  .btn-c{
+	text-align: center;
+  }
+
+  td.sicknessWarnnignMsg {
+    text-align:center;
+    font-weight: bold;
+    padding: 15px 0px;
+  }
+  span#reasonerror {
+    display: block;
+ }
+ table#markovertimetable {
+    margin-bottom: 0px;
+}
+form#markovertimeform span {
+	width: 100%;
+    display: block;
+    text-align: center;
+}

@@ -1,0 +1,3 @@
+Alter Table skills_programmes ADD TeamID int;
+Alter Table skills_duties ADD TeamID int;
+Alter Table ScheduledPersonTeam_LINK ADD TeamID int;

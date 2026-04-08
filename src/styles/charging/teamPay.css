@@ -1,0 +1,84 @@
+	.teamPay-btn {
+		width: 76px;
+		padding: 5px;
+		margin: 6px;
+		background: #d6d6d6;
+		border: 1px solid #c0c0c0;
+		font-size: 11px!important;
+		cursor: pointer;
+    }
+	#teamPayTab table.dataTable.no-footer {
+		border-bottom: 1px solid #111;
+    }
+	.teamPayActionBTN {
+		text-align: center;
+		margin-top: 10px;
+    }
+	#missingRecordEntries_wrapper .dataTables_scrollHead, #incorrectRecordEntries_wrapper .dataTables_scrollHead {
+		overflow: hidden!important;
+    }
+	tr.rowSeperator td {
+		border-top: 2px solid #aaa;
+    }
+	.teamPayFilterBlock {
+		background-color: #dddddd;
+		color: #000000;
+		font-size: 11px;
+	}
+	.teamPayFilterBlock .grid {
+		display: inline-block;
+	}
+	.box1 {
+		-ms-grid-row: 1;
+		-ms-grid-column: 1;
+	}
+	.recordFilter {
+		border: 1px solid #f5f5f5;
+		padding: 5px;
+		border-radius: 2px;
+		display: inline-block;
+		position: relative;
+		margin-top: 7px;
+		margin-left: 5px;
+		height: 36px;
+	}
+	.recordFilter .heading {
+		display: block;
+		text-align: left;
+		line-height: 1!important;
+		font-size: 10px;
+		position: absolute;
+		top: -6px;
+		background: #ddd;
+		font-weight: bold;
+		margin: 0;
+		padding: 0;
+	}
+	.recordFilterBox {
+		float: left;
+		font-size: 11px;
+		margin: 4px 0;
+	}
+	.recordFilterBtn {
+		border: 0px;
+		margin-left: 0px;
+	}
+	.recordFilterBtn input {
+		padding-top: 0px;
+	}
+	.wid-120 {
+		width: 120px;
+	}	
+	.recordFilterBox select {
+		padding: 1.35px 0;
+	}
+	.onHoldClass {
+		background-color: cornsilk !important;
+	}
+	.teamPayRecordSection {
+		overflow: auto;
+    }
+	#missingRecordEntries thead, #incorrectRecordEntries thead {
+		position: sticky;
+		top: 0;
+	}

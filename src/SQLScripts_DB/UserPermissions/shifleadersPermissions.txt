@@ -1,0 +1,25 @@
+
+
+--INSERT FORM 
+
+INSERT INTO [dbo].[REF_Forms]
+           ([FormName]
+           ,[FormDescription]
+           ,[IsActive])
+     VALUES  ('Shift Leaders'  ,'Shift Leaders',1)
+
+
+-- FORM ID = 12
+--insert form permission on role base for allocate users to view
+INSERT INTO [dbo].[RolePermissionForm_LINK]
+           ([RoleID]
+           ,[PermissionID]
+           ,[FormID])
+     VALUES(1,1,12),(2,1,12)
+
+--insert form permission on role base for allocate users to create
+INSERT INTO [dbo].[RolePermissionForm_LINK]
+           ([RoleID]
+           ,[PermissionID]
+           ,[FormID])
+     VALUES(1,2,9),(1,3,12),(1,4,12),(2,2,12),(2,3,12)

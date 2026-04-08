@@ -1,0 +1,612 @@
+#circle-clr {
+    color: blue;
+    font-size: 14px;
+}
+
+div.tables table thead tr th {
+    padding: 4px 5px 4px 4px;
+}
+
+/* Start to cssfor Divistion........................ */
+/* common css */
+.w-50 {
+    width: 50%;
+}
+
+.m-0 {
+    margin: 23px 0px 0px 0px;
+}
+
+.p-20 {
+    padding: 0 20px 0 20px;
+}
+
+.p-0 {
+    padding: 0;
+}
+
+/* ................ */
+#checkbox-btn {
+    width: auto !important;
+    min-width: 18px;
+}
+
+#input-height {
+    height: 35px !important;
+}
+
+.btn-division{
+    margin: 23px 0px 23px 0px;
+    float: left;
+}
+
+.font-icons {
+    font-size: 16px;
+}
+
+.bg-color {
+    background-color: #f0f0f0;
+    padding: 20px !important;
+}
+
+.division_closebtn {
+    text-align: end;
+    display: block;
+}
+
+/* schedule team css   start */
+.add-btn {
+    width: 25px;
+    height: 25px;
+}
+
+/* schedule team css   start */
+.tick {
+    width: 12px;
+    height: 12px;
+    margin: auto;
+    display: block;
+}
+
+.m-30 {
+    margin: -20px 0 0 0;
+}
+
+.table-height {
+    max-height: fit-content;
+    height: 100%;
+    width: unset;
+    border: 1px solid #CDCDCD;
+}
+
+#tables-border {
+    border: unset;
+}
+
+.iconstyleallocate7 {
+    width: 12px;
+    height: 12px;
+}
+
+#schedulingTeamDetails_wrapper .dataTables_length {
+    float: right;
+    margin: 6px 17px 10px 0;
+    font-size: 11px;
+}
+
+#m-30 {
+    margin: 30px 0 30px 0;
+}
+
+/* Start identity_tab.................. */
+.modal_tab {
+    width: 100%;
+    padding: 0px;
+    border: 0px solid #888;
+}
+
+.select_itemss {
+    width: 50%;
+    height: 90%;
+}
+
+.text-area {
+    margin: 0px;
+    width: 50%;
+    height: 71px;
+}
+
+.greyborderpopup {
+    height: 33px;
+    width: 99%;
+    border: 1px solid #D0D0D0;
+    background-color: #D0D0D0;
+    margin: 4px 4px 4px 4px;
+    font-size: 10pt;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+.resetmargintopbottom {
+    margin-top: unset;
+    margin-bottom: unset;
+}
+
+.identitytable-layout .identitytable-row {
+    display: grid;
+    grid-template-columns: 40% 60%;
+}
+
+.identitytable-layout .identitytable-row.identitytable-row-full {
+    grid-template-columns: 100%;
+}
+
+.identitytable-layout .identitytable-cell {
+    padding: 4px;
+    vertical-align: top;
+    border-right: 1px solid #cdcdcd;
+    border-bottom: 1px solid #cdcdcd;
+    box-sizing: border-box;
+    overflow: visible;
+}
+
+.identitytable-layout .identitytable-label.lightblue {
+    background-color: inherit;
+}
+
+.identitytable-layout .identitytable-value .select_itemss {
+    height: auto;
+}
+
+.identitytable-layout .identitytable-value .chosen-container {
+    max-width: 100%;
+}
+
+.allocationtable-layout .allocationtable-row {
+    display: grid;
+}
+
+.allocationtable-layout .allocationtable-row.allocationtable-row-4 {
+    grid-template-columns: 24% 26% 24% 26%;
+}
+
+.allocationtable-layout .allocationtable-row.allocationtable-row-2 {
+    grid-template-columns: 24% 76%;
+}
+
+.allocationtable-layout .allocationtable-row.allocationtable-row-full {
+    grid-template-columns: 100%;
+}
+
+.allocationtable-layout .allocationtable-cell {
+    padding: 4px;
+    vertical-align: top;
+    border-right: 1px solid #cdcdcd;
+    border-bottom: 1px solid #cdcdcd;
+    box-sizing: border-box;
+}
+
+.misctable-layout .misctable-row {
+    display: grid;
+}
+
+.misctable-layout .misctable-row.misctable-row-2 {
+    grid-template-columns: 40% 60%;
+}
+
+.misctable-layout .misctable-row.misctable-row-full {
+    grid-template-columns: 100%;
+}
+
+.misctable-layout .misctable-cell {
+    padding: 4px;
+    vertical-align: top;
+    border-right: 1px solid #cdcdcd;
+    border-bottom: 1px solid #cdcdcd;
+    box-sizing: border-box;
+}
+
+.popupwidth-60 {
+    width: unset;
+    max-width: 60%;
+    border-radius: 5px;
+    box-shadow: 0 0 18px rgb(0 0 0 / 60%);
+    border: 4px solid #d0d0d0b3;
+    padding: unset;
+    /*margin: 5px 5px 5px 5px;*/
+}
+
+.anchorclass {
+    color: #FF0000;
+    margin-top: 10px;
+}
+
+/* END identity_tab.................. */
+
+.table-box {
+    position: fixed;
+    top: 120px;
+    width: 98.4%;
+}
+
+.box-btn {
+    position: fixed;
+    top: 85px;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+#w-25 {
+    width: 25%;
+}
+
+.widthpopupcontrols {
+    width: 50%;
+}
+
+.widthallocationcontrols {
+    width: 80%;
+}
+
+.width-25Percent {
+    width: 25%;
+}
+.buttonlink {
+    width:10px;
+}
+
+.buttonlinkschteam {
+    width:200px;
+}
+
+.notclickable{
+    pointer-events: none;
+}
+
+#textcenter, .textcenter {
+    text-align:center;
+}
+
+ 
+  /* Style the tab content (and add height:100% for full page content) */
+  .tabcontent {
+    display: none;
+    padding: 0px 20px;
+    /* padding: 100px 20px; */
+    height: 93%;
+  }
+  .modal-box-tab{
+      border:1px solid #88888812;
+      width:45%;
+  }
+ 
+/* Start Allocation_tab Css................................................. */
+.w-80{
+    width:80%;
+}
+/* alloctate tab */
+.unset-flot{
+    float: unset;
+}
+#epic_2_table #p-0{
+    margin: 0;
+}
+/* .tabcontent, .m-0{
+    padding: 0px;
+} */
+.allocateuser_table{
+    border:unset;
+}
+.h-435{
+    max-height: 435px;
+}
+.padding-0{
+    padding: 20px 0 0 0;
+
+}
+.allocate-addbtn{
+    position: relative;
+    top: -7px;
+}
+
+/* allocate  user popup */
+.w-90{
+    width: 90%;
+}
+.p-40{
+    padding-bottom: 17px;
+}
+.allocate-input{
+    width: 180px;
+    padding: 0 0 0 13px;
+    height: 32px;
+    border-radius: 5px;
+}
+
+#js_networkid{
+    width: 214px;
+    border: 1px solid #987f98;
+    height: 25px;
+ 
+}
+.allocate-label{
+    font-size: 12px;
+}
+#allocate_search{
+    padding: 0 0 0 12px;
+    font-size: 18px;
+}
+#allocate-border{
+    border: 1px solid #ddd;
+}
+.widthallocationcontrolstime {
+    width: 40%;
+}
+
+#aligncloseschteam {
+    margin: 0px 10px 0 0;
+}
+
+#admindeptstabs {
+    margin: 4px 4px 4px 4px;
+}
+
+.center {
+    align:center;
+}
+/* access level css start */
+.center-text{
+    text-align: center;
+}
+
+.left-text{
+    text-align: left;
+}
+
+.input-acessbox{
+    margin: 15px 0 15px 0px;
+}
+.access-input{
+    border: 1px solid #f0f0f0;
+    width: 214px;
+    height: 25px;
+    border-radius: 4px;
+    background-color: #f0f0f0;
+}
+.pb-50{
+    padding-bottom: 50px;
+}
+.sec-acces-table{
+    width:50%;
+}
+.access-table{
+    border: 1px solid #ddd;
+}
+.text-justify{
+    vertical-align: top;
+    font-weight: bold;
+    font-size:11px;
+    color: #000000;
+    line-height: 1.5;
+    background-color: #DDDDDD;
+    border: 1px solid #FFFFFF;
+    text-align: left;
+}
+.p-0{
+    padding: 0px;
+}
+.p-11{
+    padding : 11px 0px 11px 0px;
+}
+.h-318{
+    max-height: 300px;
+}
+.pa-20 {
+    padding: 20px;
+}
+.division-add-btn {
+    position: relative;
+    top: -15px;  
+}
+.box-access{
+    margin: 0 0 0px 70px;
+    width:95%;
+    margin: auto;
+}
+
+#holyday-input{
+    padding: 0px 0 0 13px;
+    height: 30px;
+    border-radius: 5px;
+    margin-top: 20px;
+
+}
+.w-50{
+    width:50%;
+}
+.m-0{
+    margin: 23px 0px 0px 0px;
+}
+
+/* 19/jun */
+.holyday-addbtn{
+ 
+    position: absolute;
+    top: 25px;
+    z-index: 9;
+}
+
+.p-15{
+    padding: 15px;
+}
+.p-5{
+    padding: 0 0 5px 0px;
+}
+.p-20{
+    padding: 20px;
+}
+.h-600{
+    max-height: 510px;
+
+}
+.w-135{
+    width: 135px;
+}
+.p-7{
+    padding: 7px;
+    position: relative;
+    border: 2px solid rgb(153 153 153);
+   border-radius: 4px;
+    -webkit-box-shadow: 0 0 18px rgb(0 0 0 / 40%);
+    -moz-box-shadow: 0 0 18px rgba(0,0,0,0.4);
+    box-shadow: 0 0 18px rgb(0 0 0 / 40%);
+}
+.border-0{
+    border:unset;
+}
+.holiday-table-h{
+    height: 28px;
+}
+.p-tr{
+    height: 33px;
+}
+tr.highlightOrange {
+    background: orange !important;
+}
+
+
+/* start css allocate  non-scheduled */
+#w-100{
+    width:100%;
+}
+.w-100{
+    width:100%;
+    max-width: 100%;
+    min-width: 100%;
+}
+#w-150{
+    width:150px;
+    margin-top: 9px;
+}
+
+
+/* all acllocte tabs...................... */
+.h-550{
+    max-height: 530px;
+}
+.p2020{
+    padding: 20px 0 20px 0;
+}
+.h75{
+    height:75px;
+}
+.h-435{
+    max-height: 500px;
+    
+}
+.tab-serch{
+    margin: -25px 0 0px 380px;
+    font-size: 18px;
+    float: unset;
+
+}
+.lable-with{
+    margin-top: 9px;
+    font-size: 12px;
+}
+.division-seclect{
+    border-radius: 3px;
+    height: 22px;
+}
+.min200{
+    min-width: 100px;
+}
+
+.HeaderTitle {
+    margin-bottom: 10px;
+}
+
+#mt-0 {
+    margin: unset !important;
+    margin-top: unset !important;
+    width:180px;
+
+}
+.pb-20 {
+    padding: 0px 20px 20px 20px;
+}
+
+.nonscheduledbtn{
+    position: relative;
+    top: 18px;
+}
+#js_teamdropdown {
+    width:205px;
+}
+.js_mainrole {
+    width:190px;
+}
+.anchor-colour{
+    color: blue !important;
+}
+.m-tb {
+    margin: 9px -296px -3px 25px;
+}
+
+#w-0 {
+    width:auto !important;
+}
+
+.second-heading{
+    font-size: unset;
+    padding: 0;
+  }
+
+.tab-serch-margin {
+    margin: 26px 6px 29px 318px;
+}
+.position-division-addbtn {
+    position: relative;
+    top: -5px;
+}
+
+.addbtn-o {
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin : 13px;
+}
+
+.m-1 {
+    margin-bottom: 1%;
+}
+
+.back-button {
+    float:right;
+    cursor: pointer;
+    margin: 7px;
+}
+
+.hideContent {
+    pointer-events: none;
+    opacity: 0.5;
+}
+.leavecreditheaderW{
+    Width : 678px;
+}
+.section-margin{
+padding-bottom: 20px;
+}
+.sec-width{
+	max-height: 115px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+#unsetRotadiv{
+    margin: unset !important;
+    margin-top: unset !important;
+  
+    }

@@ -1,0 +1,453 @@
+.table-allocate-user-container {
+    max-height: 50vh;
+    overflow-y: scroll;
+}
+
+.table-scheduled-people-container {
+    max-height: 70vh;
+    overflow-y: scroll;
+}
+
+.table-non-scheduled-people-container {
+    max-height: 65vh;
+    overflow-y: scroll;
+}
+
+#alocateUsersLists thead th,
+#user-info2 thead th,
+#user-info thead th,
+#js_scheduledstaffteamlist thead th,
+#js_nonscheduledstaffteamlist thead th {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+#js_scheduledstaffteamlist thead th:nth-child(5),
+#js_scheduledstaffteamlist tr td:nth-child(5),
+#js_nonscheduledstaffteamlist thead th:nth-child(5),
+#js_nonscheduledstaffteamlist tr td:nth-child(5),
+#js_scheduledstaffteamlist thead th:nth-child(14),
+#js_scheduledstaffteamlist tr td:nth-child(14),
+#js_nonscheduledstaffteamlist thead th:nth-child(13),
+#js_nonscheduledstaffteamlist tr td:nth-child(13),
+#js_scheduledstaffteamlist thead th:nth-child(21),
+#js_scheduledstaffteamlist tr td:nth-child(21),
+#js_nonscheduledstaffteamlist thead th:nth-child(20),
+#js_nonscheduledstaffteamlist tr td:nth-child(20) {
+    border-right: 2px solid #b9b8b8;
+}
+
+.allocate-user-tab {
+    position: relative !important;
+    z-index: 10 !important;
+}
+
+.ui-tabs .ui-tabs-nav li a {
+    font-size: 10pt !important;
+}
+
+.circle-clr {
+    color: blue;
+    font-size: 14px;
+}
+
+.tick {
+    width: 12px;
+    height: 12px;
+    margin: auto;
+    display: block;
+}
+
+.imgtransparent {
+    visibility: hidden;
+    font-size: 0;
+    position: absolute;
+    opacity: 0;
+}
+
+.sec-width {
+    max-height: 115px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.sec-acces-table {
+    width: 50%;
+}
+
+/* Style for area permissions pop-up */
+#facebox {
+    z-index: 100;
+}
+
+.form-field-container-area {
+    display: flex;
+    margin: 15px 0;
+}
+
+.form-label-area {
+    font-size: 12px;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+}
+
+.form-input-area {
+    padding: 8px;
+    display: flex;
+    align-items: center;
+}
+
+.form-input-area select {
+    width: 97%;
+    padding: 5px;
+}
+
+.user-details-table-area {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+.user-details-table-area thead {
+    background-color: #f0f0f0;
+    border: 1px solid #999;
+}
+
+.user-details-table-area th {
+    padding: 8px;
+    text-align: left;
+    font-weight: bold;
+    border: 1px solid #999;
+    font-size: 12px;
+}
+
+.user-details-table-area td {
+    padding: 8px;
+    border: 1px solid #999;
+    font-size: 12px;
+}
+
+.user-details-table-area tbody tr:hover {
+    background-color: #f9f9f9;
+}
+
+.add-button {
+    padding: 5px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.add-button:hover {
+    background-color: #45a049;
+}
+
+.role-select {
+    padding: 3px 5px;
+    font-size: 12px;
+}
+
+#tick-mark {
+    background-image: url("../../../../images/green_tick.png");
+    background-repeat: no-repeat;
+    width: auto;
+    background-size: contain;
+    height: 12px;
+    background-position: center;
+}
+
+.staffcrossGreen {
+    background-image: url("../../../../images/green_tick.png");
+    background-repeat: no-repeat;
+    width: auto;
+    background-size: contain;
+    height: 12px;
+    background-position: center;
+    position: relative;
+    top: -10px;
+}
+
+#crossRed {
+    background-image: url("../../../../images/red_cross.png");
+    background-repeat: no-repeat;
+    width: auto;
+    background-size: contain;
+    height: 12px;
+    background-position: center;
+}
+
+.staffcrossRed {
+    background-image: url("../../../../images/red_cross.png");
+    background-repeat: no-repeat;
+    width: auto;
+    background-size: contain;
+    height: 12px;
+    background-position: center;
+    position: relative;
+    top: -10px;
+}
+
+.table-permission-descriptions-container .tick,
+.permission-descriptions-key .tick,
+.bracket-container .tick,
+.table-non-scheduled-people-container .tick,
+.table-scheduled-people-container .tick {
+    position: relative;
+    top: 0;
+    vertical-align: middle;
+    width: 12px;
+    height: 12px;
+    display: inline-block;
+}
+
+.grayscale-icon {
+    filter: grayscale(100%);
+    opacity: 0.6;
+}
+
+.area-readonly-icon img {
+    opacity: 0.45;
+}
+
+.bracket-container {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 0 1px;
+    vertical-align: middle;
+}
+
+.bracket-container::before,
+.bracket-container::after {
+    content: '';
+    width: 6px;
+    height: 14px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: inline-block;
+}
+
+.bracket-container::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 6 14'%3E%3Cpath d='M5,1 Q1,1 1,7 Q1,13 5,13' fill='none' stroke='%23333' stroke-width='2'/%3E%3C/svg%3E");
+    margin-right: 2px;
+}
+
+.bracket-container::after {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 6 14'%3E%3Cpath d='M1,1 Q5,1 5,7 Q5,13 1,13' fill='none' stroke='%23333' stroke-width='2'/%3E%3C/svg%3E");
+    margin-left: 2px;
+}
+
+
+
+/* Permission descriptions tab css */
+.table-permission-descriptions-container {
+    overflow-x: auto;
+}
+
+.table-permission-descriptions-container table {
+    min-width: 1800px;
+    text-align: center;
+}
+
+.table-permission-descriptions-container td:first-child {
+    text-align: left;
+    font-weight: bold;
+    min-width: 140px;
+    white-space: nowrap;
+}
+
+.table-permission-descriptions-container th {
+    text-align: center;
+    white-space: normal;
+    min-width: 80px;
+    vertical-align: top;
+}
+
+.table-permission-descriptions-container th .header-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4px;
+    width: 100%;
+    min-height: 24px;
+}
+
+.table-permission-descriptions-container th .header-text {
+    flex: 1;
+    text-align: center;
+}
+
+.table-permission-descriptions-container th .header-icon {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+}
+
+/* Icon colours */
+.table-permission-descriptions-container .icon {
+    font-size: 12px;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.table-permission-descriptions-container .green-tick {
+    color: #00aa00;
+}
+
+.table-permission-descriptions-container .red-cross {
+    color: #cc0000;
+}
+
+.table-permission-descriptions-container .grey-tick {
+    color: #888;
+}
+
+.table-permission-descriptions-container .grey-cross {
+    color: #aaa;
+}
+
+/* area permission tab  */
+
+.allocate-btn {
+    font-size: 11px !important;
+    padding: 15px 18px 15px 5px;
+    border: solid 2px #c9c9c9;
+    border-radius: 5px;
+    font-family: Verdana, Arial, sans-serif !important;
+}
+
+.area-dropdown-label {
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+.loader {
+    position: fixed;
+    left: 40%;
+    top: 40%;
+    width: 15%;
+    height: auto;
+    z-index: 9999;
+    opacity: .9;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Key Legend refinements */
+.permission-descriptions-key {
+    margin-top: 15px;
+    border: 1px solid #cccccc;
+    background: #f9f9f9;
+    font-size: 13px !important;
+    display: inline-block;
+}
+
+.permission-descriptions-key table {
+    border-spacing: 0;
+    background: transparent;
+    padding: 0;
+}
+
+.permission-descriptions-key td {
+    padding: 6px 10px;
+}
+
+.permission-descriptions-key td:first-child {
+    text-align: center;
+    min-width: 50px;
+}
+
+/* Allocate Users DataTable Height and Spacing Styles */
+/* Make DataTable containers take full available height only when needed */
+#allocate_user .table-allocate-user-container,
+#scheduled_staff .table-scheduled-people-container,
+#non_scheduled_staff .table-non-scheduled-people-container,
+#area_permission .table-area-permission-container,
+#permission_descriptions .table-permission-descriptions-container {
+    max-height: calc(100vh - 200px) !important;
+    overflow-y: auto !important;
+    position: relative;
+    z-index: 1;
+}
+
+/* Ensure DataTables fill their containers */
+.dataTables_wrapper {
+    height: auto !important;
+    min-height: 100% !important;
+    position: relative;
+    z-index: 2;
+}
+
+.dataTables_scrollBody {
+    max-height: none !important;
+    overflow-y: visible !important;
+}
+
+/* Only apply full height when table content exceeds viewport */
+.dataTables_scrollBody:has(> .dataTables_scroll) {
+    max-height: calc(100vh - 250px) !important;
+    overflow-y: auto !important;
+}
+
+/* Fix tab container border covering DataTable in first tab */
+#allocate-user-container-tab.ui-tabs {
+    border: none !important;
+    background: transparent !important;
+}
+
+/* Ensure first tab content is above tab border */
+#allocate_user {
+    position: relative;
+    z-index: 1;
+}
+
+/* Remove padding from area permission tab */
+#area_permission {
+    padding: 1px !important;
+    margin-top: 16px !important;
+}
+
+/* Remove padding from permission descriptions tab */
+#permission_descriptions {
+    padding: 0 !important;
+    margin-top: 2px !important;
+}
+
+.table-non-scheduled-people-container td:nth-child(n+5),
+.table-scheduled-people-container td:nth-child(n+5),
+.table-non-scheduled-people-container th:nth-child(n+5),
+.table-scheduled-people-container th:nth-child(n+5) {
+    text-align: center !important;
+    justify-content: center !important;
+}
+
+.table-non-scheduled-people-container table,
+.table-scheduled-people-container table {
+    text-align: center;
+}
+
+.table-non-scheduled-people-container td:nth-child(-n+4),
+.table-non-scheduled-people-container th:nth-child(-n+4),
+.table-scheduled-people-container td:nth-child(-n+4),
+.table-scheduled-people-container th:nth-child(-n+4) {
+    text-align: left;
+}
+
+.table-non-scheduled-people-container th:nth-child(n+5) .dt-column-title,
+.table-scheduled-people-container th:nth-child(n+5) .dt-column-title {
+    text-align: center !important;
+    display: inline-block !important;
+    width: 100% !important;
+}
+
+span.select2-selection__placeholder {
+    color: #000 !important; 
+}

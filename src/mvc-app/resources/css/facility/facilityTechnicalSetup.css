@@ -1,0 +1,173 @@
+#facility-technical-setup-modal .facility-form--layout {
+    box-sizing: border-box;
+    width: 100%;
+    border: 1px solid #9a9a9a;
+    background: #eeeeee;
+    font-family: inherit;
+    font-size: 13px;
+}
+
+#facility-technical-setup-modal .facility-technical-setup-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 55px minmax(0, 1fr);
+    gap: 0;
+    align-items: stretch;
+}
+
+#facility-technical-setup-modal .facility-technical-setup-cell {
+    padding: 10px;
+    border-top: 1px solid #9a9a9a;
+    border-left: 1px solid #9a9a9a;
+    background: #eeeeee;
+    min-width: 0;
+}
+
+#facility-technical-setup-modal
+    .facility-technical-setup-row:first-child
+    .facility-technical-setup-cell {
+    border-top: 0;
+}
+#facility-technical-setup-modal
+    .facility-technical-setup-row
+    .facility-technical-setup-cell:first-child {
+    border-left: 0;
+}
+
+#facility-technical-setup-modal .facility-technical-setup-cell h4 {
+    margin: 0 0 6px 0;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+#facility-technical-setup-modal
+    .facility-technical-setup-cell
+    select.facility-form-input {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#facility-technical-setup-modal .facility-technical-setup-cell--controls {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #eeeeee;
+}
+
+#facility-technical-setup-modal .facility-technical-setup-controls {
+    width: 55px;
+    text-align: center;
+    padding: 6px 0;
+}
+
+#facility-technical-setup-modal .facility-technical-setup-controls button {
+    width: 42px;
+    min-width: 42px;
+}
+
+#facility-technical-setup-modal .facility-technical-setup-quantity-title {
+    padding: 10px;
+    border-bottom: 1px solid #9a9a9a;
+    background: #eeeeee;
+}
+
+#facility-technical-setup-modal .facility-technical-setup-quantity-title h4 {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+}
+
+#facility-technical-setup-modal #table-technical-setup-quantity {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#facility-technical-setup-modal
+    #table-technical-setup-quantity
+    .technical-quantity-row {
+    width: 100%;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 120px minmax(0, 1fr);
+    gap: 0;
+    align-items: stretch;
+}
+
+#facility-technical-setup-modal
+    #table-technical-setup-quantity
+    tr.technical-quantity {
+    width: 100%;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 120px minmax(0, 1fr);
+    gap: 0;
+    align-items: stretch;
+}
+
+#facility-technical-setup-modal
+    #table-technical-setup-quantity
+    tr.technical-quantity
+    td {
+    display: block;
+}
+
+#facility-technical-setup-modal
+    #table-technical-setup-quantity
+    .technical-quantity-cell,
+#facility-technical-setup-modal
+    #table-technical-setup-quantity
+    tr.technical-quantity
+    td {
+    padding: 8px 10px;
+    border-top: 1px solid #9a9a9a;
+    border-left: 1px solid #9a9a9a;
+    background: #eeeeee;
+    min-width: 0;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+#facility-technical-setup-modal
+    #table-technical-setup-quantity
+    .technical-quantity-row
+    .technical-quantity-cell:first-child {
+    border-left: 0;
+}
+#facility-technical-setup-modal
+    #table-technical-setup-quantity
+    tr.technical-quantity
+    td:first-child {
+    border-left: 0;
+}
+
+#facility-technical-setup-modal
+    #table-technical-setup-quantity
+    .technical-quantity-row--header
+    .technical-quantity-cell {
+    border-top: 0;
+    font-weight: 600;
+}
+
+#facility-technical-setup-modal .technical-quantity-cell--quantity {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#facility-technical-setup-modal
+    .technical-quantity-cell--quantity
+    input[type="number"] {
+    text-align: center;
+}
+
+#facility-technical-setup-modal
+    .technical-quantity-cell--notes
+    input[type="text"] {
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+#facility-technical-setup-modal .facility-technical-setup-actions {
+    text-align: right;
+}

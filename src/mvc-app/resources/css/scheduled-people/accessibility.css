@@ -1,0 +1,276 @@
+.my-leave-section {
+    background-color: #dddddd !important;
+    padding: 10px 0px 10px;
+}
+
+.production-section {
+    background-color: #dddddd;
+    margin: 3px 0px;
+}
+
+.main-section {
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0px 0px 5px;
+    background-color: #dddddd;
+}
+
+.leave-weekly-left-section,
+.leave-weekly-center-section,
+.leave-weekly-right-section {
+    display: flex;
+    gap: 10px;
+}
+
+.leave-weekly-left-section{
+    width: 40%;
+}
+
+.leave-weekly-center-section{
+    width: 60%;
+}
+
+.section-box {
+    padding: 0px 1px;
+    border-radius: 4px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.center {
+    justify-content: center;
+    flex: 1;
+}
+
+.left,
+.right {
+    flex: 0 0 auto;
+}
+
+h1 {
+    font-size: 16px;
+    text-align: left;
+    padding-top: 10px;
+}
+
+.acc-btn {
+    padding: 5px 12px;
+    background: none !important;
+    border: none !important;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.p-r40 {
+    padding-right: 40px;
+}
+
+.img-w {
+    width: 50px;
+}
+
+.allocation-btn {
+    border: none;
+    background: none;
+    padding: 0px;
+    cursor: pointer;
+}
+
+.production-main {
+    display: flex;
+    gap: 0px;
+    border: solid 1px #5a5959;
+    padding: 3px 0px;
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 35%;
+    gap: 0px;
+}
+
+.left-btn-section {
+    display: flex;
+    align-items: center;
+}
+
+.box.fourth {
+    flex-basis: 40%;
+    padding-left: 10px;
+}
+
+.production-view-select1 {
+    padding: 3px 20px 3px 4px;
+    border-radius: 3px;
+    background: #f1f1f1;
+    border: solid 1px #b1b1b1;
+    font-size: 11px;
+    width: 195px;
+}
+
+.production-view-select2 {
+    padding: 7px 50px 7px 0px;
+    border-radius: 2px;
+    background: #efefef;
+    border: solid 1px #e2e2e2;
+    font-size: 13px;
+    width: 260px;
+    color: #5c5c5c;
+}
+
+.choose-week {
+    font-weight: bold;
+    color: #090909;
+    background-color: #dddddd;
+    padding: 7px 0px;
+    text-align: left;
+    border: 1px solid #ffffff;
+    border-collapse: collapse;
+    font-size: 8pt;
+}
+
+.clear-filter-wrapper {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    top: 25px;
+    position: absolute;
+    font-size: 12px;
+}
+
+.filter-table {
+    background: #dddddd;
+    border-collapse: collapse;
+}
+
+.filter-table tr td {
+    border: solid 2px #fff;
+}
+
+.left-section,
+.center-section,
+.right-section {
+    display: flex;
+    gap: 10px;
+}
+
+.request-section-box {
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.weeks-btn {
+    font-weight: normal;
+    border: none;
+    background: none;
+    font-size: 11px;
+    cursor: pointer;
+}
+
+.lock-admin-section {
+    background-color: #F3F3F3;
+    padding: 4px 0px;
+}
+
+.my-request-lock-section {
+    background-color: #F3F3F3 !important;
+    padding: 10px 0px 10px;
+}
+
+.main-request-section {
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0px 0px 5px;
+    background-color: #F3F3F3;
+}
+
+.spare-staff-section {
+    background-color: #dddddd;
+    padding: 4px 0px 10px;
+    width: 98.8%;
+    border: solid 1px;
+}
+
+.spare-weeks-btn {
+    font-weight: 600;
+    border: none;
+    background: none;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.accessbility-table-wrapper {
+    display: inline-block;
+}
+
+.accessbility-table-wrapper h2,
+.accessbility-table-wrapper table {
+    width: 100%;
+    margin: 0;
+}
+
+h2.heading, h3.heading {
+    display: block;
+    text-align: left;
+    line-height: 1!important;
+    font-size: 10px;
+    position: absolute;
+    top: -6px;
+    background: #eeeeee;
+    font-weight: bold;
+}
+
+.team-administrators-row {
+    display: flex;         
+    justify-content: space-between;
+    margin: 2px 0px;
+}
+
+.team-administrators-col {
+    flex: 1;
+    margin: 2px;
+}
+
+.allocate-help {
+    font-weight: bold;
+    color: #000000;
+    background-color: #DDDDDD;
+    border: 1px solid #FFFFFF;
+    text-align: center;
+    font-size: large;
+    padding: 12px 0px 5px;
+}
+.allocate-help-icon {
+    width: 20%;
+    text-align: center;
+    margin-top: -40px;
+    border: 1px solid #FFFFFF;
+    padding: 16px 0px 5px;
+    float: right;
+}
+.allocate-help-subheading {
+    font-size: inherit;
+    font-weight: bold;
+    margin: 1em 0 0.5em 0;
+    padding: 0;
+}
+h3.weekly-header-cell.heading {
+    font-size: inherit;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    position: static;
+    top: auto;
+    background: none;
+    border: none;
+    outline: none;
+    display: table-cell;
+}

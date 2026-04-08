@@ -1,0 +1,130 @@
+#facebox {
+  position: fixed !important;
+  top: 5vh !important;
+  left: 50% !important;
+  transform: translateX(-50%);
+}
+
+#facebox .popup {
+  overflow: hidden;
+}
+
+#facebox .content {
+  max-height: 85vh !important;
+  overflow-x: hidden;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+#user-info td,
+#user-info2 td {
+  text-align: center;
+}
+
+#user-info td:first-child {
+  text-align: left;
+}
+
+#user-info td img.tick,
+#user-info2 td img.tick {
+  display: block;
+  margin: 0 auto;
+}
+
+.circle-clr,
+#circle-clr,
+.js_area_user_history i,
+.js_userdatainfo i,
+#js_nonscheduledhistory i,
+.table-permission-descriptions-container .fa-info-circle {
+  color: blue !important;
+}
+
+.allocate-user-error-content {
+  padding: 0;
+  width: 600px;
+  max-width: 90vw;
+  box-sizing: border-box;
+}
+
+.allocate-user-error-table {
+  display: table;
+  width: 100%;
+  max-width: 600px;
+  border-collapse: collapse;
+  border: 1px solid #666;
+  background: #eee;
+  box-sizing: border-box;
+  margin-top: 10px;
+}
+
+.allocate-user-error-row {
+  display: table-row;
+}
+
+.allocate-user-error-row--header {
+  background-color: #cccccc;
+}
+
+.allocate-user-error-cell {
+  display: table-cell;
+  border: 1px solid #b9b8b8;
+  font-size: 11px;
+  padding: 6px 10px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.allocate-user-error-cell--header {
+  text-align: center;
+  font-weight: bold;
+  padding: 10px 12px;
+  width: 100%;
+}
+
+.allocate-user-error-cell--message {
+  text-align: center;
+  padding: 10px 12px;
+  width: 100%;
+  font-weight: 600;
+}
+
+.allocate-user-error-cell--label {
+  width: 60%;
+}
+
+.allocate-user-error-cell--value {
+  width: 40%;
+}
+
+.allocate-user-error-cell--full {
+  width: 100%;
+  padding: 0;
+}
+
+.allocate-user-error-inline {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+}
+
+.allocate-user-error-inline-label {
+  flex: 0 0 60%;
+  padding: 6px 10px;
+  text-align: left;
+}
+
+.allocate-user-error-inline-value {
+  display: flex;
+  align-items: center;
+  flex: 0 0 40%;
+  padding: 6px 10px 6px 12px;
+  border-left: 1px solid #b9b8b8;
+  text-align: right;
+  white-space: nowrap;
+}
+
+#facebox .popup.allocate-user-error-popup {
+  width: auto !important;
+  max-width: none !important;
+}

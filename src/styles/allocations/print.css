@@ -1,0 +1,13 @@
+.noprint {
+	DISPLAY: none	
+}
+.printonly {
+  DISPLAY: inline
+}
+
+#content {
+  position:absolute;
+  right:10px;
+  top:10px;
+  left:10px;
+}

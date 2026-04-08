@@ -1,0 +1,1 @@
+insert into maskType values (0,'Hide All Allocations'),(1,'Show First Letter'),(2,'Show All Allocations');

@@ -1,0 +1,133 @@
+.bbcMenu {
+    background-color: #4B72BF;
+}
+
+.bbcMenu a b {
+    font-weight: normal;
+}
+
+.bbcMenu a:hover,
+.bbcMenu a:focus,
+.bbcMenu a:active,
+.bbcMenu a.highlighted {
+    background: #4B72BF;
+    color: #fff;
+}
+
+.sm-clean a,
+.sm-clean a:hover,
+.sm-clean a:focus,
+.sm-clean a:active,
+.sm-clean ul a,
+.sm-clean ul a:hover,
+.sm-clean ul a:focus,
+.sm-clean ul a:active {
+    font-size: 11px;
+}
+
+#main-menu>li {
+    padding: 0 11px;
+}
+
+@media (min-width: 768px) {
+    #main-menu>li {
+        float: none;
+        display: table-cell;
+        text-align: center;
+        border-left: 1px solid #d6d6d6;
+        border-top: 1px solid #d6d6d6;
+        border-right: 1px solid #333333;
+        border-bottom: 1px solid #333333;
+    }
+
+    .sm-clean {
+        border-radius: 0px;
+    }
+
+    .sm-clean a .sub-arrow {
+        border-color: #ffffff transparent transparent transparent;
+    }
+
+    .sm-clean ul a:hover,
+    .sm-clean ul a:focus,
+    .sm-clean ul a:active,
+    .sm-clean ul a.highlighted {
+        background: #93AAD8;
+        color: #fff;
+    }
+
+    .sm-clean ul a .sub-arrow {
+        border-color: transparent transparent transparent #fff;
+    }
+
+    .sm-clean ul a:hover .sub-arrow,
+    .sm-clean ul a:focus .sub-arrow,
+    .sm-clean ul a:active .sub-arrow,
+    .sm-clean ul a.highlighted .sub-arrow {
+        border-color: transparent transparent transparent #fff;
+    }
+
+    .sm-clean .scroll-up-arrow {
+        border-color: transparent transparent #4B72BF transparent;
+    }
+
+    .sm-clean .scroll-down-arrow {
+        border-color: #4B72BF transparent transparent transparent;
+    }
+
+    .sm-clean .scroll-up:hover .scroll-up-arrow {
+        border-color: transparent transparent #93AAD8 transparent;
+    }
+
+    .sm-clean .scroll-down:hover .scroll-down-arrow {
+        border-color: #93AAD8 transparent transparent transparent;
+    }
+}
+
+@media (max-width: 767px) {
+
+    .sm ul li a,
+    .bbcMenu ul li a:hover,
+    .bbcMenu ul li a:focus,
+    .bbcMenu ul li a:active,
+    .bbcMenu ul li a.highlighted {
+        background: url(./arrowmenu.gif) no-repeat 21px 17px;
+    }
+
+    .sm ul li a,
+    .sm ul li a:hover,
+    .sm ul li a:focus,
+    .sm ul li a:active {
+        padding: 13px 35px;
+    }
+
+    .sm ul ul li a,
+    .sm ul ul li a:hover,
+    .sm ul ul li a:focus,
+    .sm ul ul li a:active {
+        padding: 13px 45px;
+    }
+
+    .sm-clean ul {
+        background: #4B72BF;
+    }
+
+    .bbcMenu a {
+        border-left: 0px solid #DDDDDD;
+        border-right: 0px solid #333333;
+        border-bottom: 0px solid #333333;
+    }
+}
+
+.scroll-position {
+    overflow: hidden;
+}
+
+.sm {
+    z-index: 100;
+}
+
+.scheduling-group-menu {
+    background-color: #747474;
+    border-bottom: 1px solid;
+}

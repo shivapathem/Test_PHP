@@ -1,0 +1,1 @@
+update LeaveApplications set sentOptionValue = 0 where sentOptionValue = 1

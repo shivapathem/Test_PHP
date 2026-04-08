@@ -1,0 +1,343 @@
+* {
+    box-sizing: border-box;
+}
+.required {
+    color:red;
+}
+.container {
+    width: 100%;
+    display: flex;
+}
+.container .left-section {
+  float: left;
+}
+.left-section .fields label, .right-section .fields label {
+    display: inline-block;
+    width: 300px;
+    text-align: left;
+}
+#ignore {
+    width:190px;
+    text-align: left;
+}
+div#fieldstick {
+    padding: 0 0 0 92px;
+}
+.leftstaff .fields label {
+    width: 90px;
+    text-align: right;
+}
+.right-section .right-aligned {
+    text-align: right;
+}
+.existingDeptstaff table tbody {
+    background:#c0c0c0;
+}
+section.formDepartment {
+    width: 100%;
+}
+section.formDepartment {
+    width:50%;
+}
+.center-section {
+    width: 15%;
+}
+div.center-sectionstaff {
+    width: 25%;
+}
+div#searchbtn {
+    position: relative;
+    top: 50px;
+    left: 8%;
+}
+div#searchbtn .searchbtn button i {
+    color: #45679B;
+    font-size: 20px;
+}
+div#searchbtn .fields button {
+    display: grid;
+    width: 75px;
+}
+.update-section {
+    float: left;
+    width: 25%;
+}
+.update-section div button.update {
+    width: 100px;
+    line-height: 1.5;
+    border-top-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: inset;
+    border-right-style: inset;
+}
+.center-section-staff .msg-info {
+    padding: 0 0 0 16px;
+}
+.right-section-staff h6 {
+    margin-block-end: auto;
+}
+/*utility classes starts*/
+.centre-align {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.center-section .newbutton button i {
+    color: #fff;
+}
+.fields {
+    margin: 10px 0 0 0;
+}
+tr.highlight {
+    background: #ffb5b2;
+}
+td.tbl-cent-aligin {
+    text-align: center;
+}
+/*utility classes ends*/
+.center-section div button {
+    display: grid;
+    background: #d6d3ce;
+    cursor: pointer;
+    margin: 16px 0 0 0;
+    padding: 5px 15px 5px 15px;
+    border-top-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: inset;
+    border-right-style: inset;
+}
+/*.existingDept table, th,tr,td, .existingDeptstaff table, th,tr,td, .existingDeptcuruser table, th,tr,td, .scrollable table thead tr th{
+    border-collapse: collapse;
+    border: 1px solid #000;
+}*/
+.table {
+    width:auto;
+    position: relative;
+    min-height:300px;
+}
+.table tbody {
+    overflow-y: auto;
+}
+table.fullwidth {
+    width:100%;
+    width:auto;
+}
+.table-wrapper {
+    min-width: 200px;
+    max-width: 400px;
+    display: table;
+    min-height:300px;
+}
+.table-wrapperstaff {
+    margin: 10px 0 0 0px;
+}
+/*.existingDept .table-responsive, .table-responsive, .existingDeptstaff .table-responsive, .table-responsive {
+  overflow: hidden;
+}*/
+.existingDept .table-wrapper .scrollable .table-responsive thead tr th, .table-responsive thead tr th {
+    font-weight: normal;
+}
+.existingDept .table-responsive thead tr th, .existingDeptcuruser .table-responsive thead tr th {
+    background: #add8e6;
+}
+.existingDeptstaff .scrollable table thead tr th  {
+    background: none;
+}
+.existingDeptstaff table, .existingDeptcuruser table {
+    width: 100%;
+}
+.scrollable{
+    overflow-x: auto;
+    overflow-y: auto;
+    width: 1350px;
+    display: inline-block;
+    max-height:200px;
+}
+
+#tableheightsearch {
+    max-height: 370px;
+    overflow-x: hidden;
+}
+
+.existingDept p {
+    text-align: center;
+}
+.existingDept p strong {
+    color:red;
+
+}
+.formfields input[type=text], .formfields input[type=email], .formfields select , .leftone input[type=text], .leftone select{
+    border-top-style: groove;
+    border-bottom-style: groove;
+}
+.formfields input[type=text], .formfields input[type=email], .leftone input[type=text] , .leftone select{
+    border-right-style: groove;
+    border-bottom-style: groove;
+}
+.formfields input[type=text]:focus, .formfields input[type=email]:focus, .formfields select:focus {
+outline: none;
+}
+.box {
+    width: 50%;
+    display:inline-block;
+}
+.box .text button {
+    display: grid;
+}
+  #containerSearch .box {
+    width: 30%;
+    display:inline-flex;
+}
+.flex-container {
+    display: flex;
+}
+
+.flex-child {
+    flex: 1;
+}  
+
+.flex-child:first-child {
+    margin-right: 20px;
+}
+.box .searchbtn {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+div.right-section-staff {
+    float: left;
+    margin: 0 0 0 60px;
+    position: relative;
+    bottom: 15px;
+}
+/*section.existingDept div.tables {
+    float: left;
+    width: 45%;
+    margin: 0 0 0 13px;
+}*/
+section.existingDept div.tables {
+    width: 48%;
+	border: 1px solid #d2d2d2;
+    padding: 2px;
+    float: left;
+    margin: 0 0 0 13px;
+    
+}
+div.tables .startend {
+    margin: 10px 0 3px 32px;
+}
+div.tables .startend input {
+    width: 60px;
+}
+/*div.tables table tbody tr:hover {
+    background: #6b6d6b;
+    color:#fff;
+}*/
+div.tables table tbody tr:hover {
+    background: none; color: #000;
+}
+div.tables table tbody tr td {
+    border:none;
+}
+div.tables table thead tr th {
+    padding: 4px 17px 4px 4px;
+} 
+div.tblContainer {
+    margin: 12px 0 0 0;
+}
+.tables #firsttbl {
+    max-height: 225px;
+}
+div.scrollable table thead tr .job {
+    width: 25%;
+}
+/*div.scrollable table tbody tr td {
+    padding: -5px;
+}*/
+.scrollable table thead tr th {
+    position: sticky;
+    top: 0;
+    text-align: left;
+    background-color:#ddd;
+}
+/*div.scrollable table, div.scrollable table td {
+    font-size: 11px;
+}*/
+/* media queries */
+
+@media screen and (min-width: 1200px) { 
+    .scrollable{
+        overflow: auto;
+        max-width: 1350px;
+        max-width: 100%;
+        display: inline-block;
+    }
+ }
+ @media screen and (max-width: 1200px) {
+    section.existingDept div.tables {
+        width: 50%;
+    }
+    .scrollable {
+     width: 100%;
+    }
+    section.existingDept div.tables {
+        width: 47%;
+    }
+ }
+@media screen and (max-width: 1399.98px) { 
+    section.formDepartment {
+        width: 100%;
+    }
+    section.formDepartmentstaff {
+        width: 65%;
+    }
+    .scrollable {
+        width: 100%;
+    }
+ }
+ @media screen and  (max-width: 1199.98px) { 
+    section.formDepartment {
+        width: 100%;
+    }
+    section.formDepartmentstaff {
+        width: 65%;
+    }
+    .right-section .right-aligned {
+        text-align: left;
+    }
+    .scrollable {
+        width: 100%;
+    }
+ }
+
+ @media screen and (max-width: 991.98px) { 
+    section.formDepartment {
+        width: 100%;
+    }
+    .container {
+        display: block;
+    }
+    .centre-align {
+        display: flex;
+        align-items: end;
+        justify-content: end;
+        flex-direction: row;
+        margin: 0 0px 16px 0;
+    }
+    .center-section div button {
+        margin: 16px 0 0 16px;
+    }
+    .scrollable {
+        width: 100%;
+    }
+  }
+  @media screen and (max-width:768px) {
+    .scrollable {
+        width: 100%;
+    }
+  }
+  .oddevenclass > tbody > tr:nth-child(2n + 1),.oddevenclass > tbody > tr:nth-child(2n + 1):hover {
+      background:#f0f0f0;}
+/* media queries */

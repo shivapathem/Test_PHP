@@ -1,0 +1,50 @@
+#facility-availability-modal .plain-table {
+    width: 100%;
+    border: 1px solid #ccc;
+    margin-top: 8px;
+}
+
+#facility-availability-modal .plain-table__row {
+    display: grid !important;
+    grid-template-columns: 1.2fr 2fr 2fr 120px !important;
+    grid-auto-flow: column;
+    width: 100%;
+}
+
+#facility-availability-modal .plain-table__cell {
+    flex-wrap: nowrap;
+}
+
+#facility-availability-modal .plain-table__row .plain-table__cell:last-child {
+    border-right: 0;
+}
+
+#facility-availability-modal .plain-table__row--last .plain-table__cell {
+    border-bottom: 0;
+}
+
+#facility-availability-modal .plain-table__row--header .plain-table__cell {
+    background: #d0d0d0;
+    white-space: nowrap;
+    font-weight: 700;
+    justify-content: center;
+    text-align: center;
+    padding: 2px;
+}
+
+#facility-availability-modal
+    .plain-table__row:not(.plain-table__row--header)
+    .plain-table__cell {
+    background: #eeeeee;
+    padding: 4px;
+}
+
+#facility-availability-modal .plain-table__cell--center {
+    justify-content: center !important;
+    text-align: center !important;
+}
+
+#facility-availability-modal .plain-table__cell--center input[type="checkbox"] {
+    margin: 0 auto;
+    display: block;
+}

@@ -1,0 +1,218 @@
+.chargeCol1 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 8.33333%;
+    flex: 0 0 8.33333%;
+    max-width: 8.33333%;
+}
+.chargeCol9 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 74.3333%;
+    flex: 0 0 74.3333%;
+    max-width: 74.3333%;
+}
+.chargeCol10 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 82.66667%;
+    flex: 0 0 82.66667%;
+    max-width: 82.66667%;
+}
+.chargeCol11 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 90.3333%;
+    flex: 0 0 90.3333%;
+    max-width: 90.3333%;
+}
+.popupContent p {
+    margin: 3px;
+}
+div.tables table.reportTable thead tr th,
+div.tables table.reportTable tbody tr td {
+   padding: 5px 2px;
+}
+#weeklyCharging, 
+#leaveReport, 
+#staffExtractReport,
+#wtdReport,
+#dutyExtractReport {
+	font-size:11px;
+	background: #eeeeee;
+}
+
+#weeklyCharging .fields select,
+#leaveReport .fields select {
+	padding: 0px;
+    font-size: 11px;
+	margin-top:0px;
+	width: 120px;
+}
+
+.weekStatus{
+    width: 40px!important;
+
+}
+#weeklyCharging .fields label, 
+#leaveReport .fields label, 
+#staffExtractReport .fields label,
+#wtdReport .fields label,
+#dutyExtractReport .fields label {
+    margin-top: 0px;
+	width: 119px;
+}
+#weeklyCharging .chosen-container, 
+#leaveReport .chosen-container, 
+#staffExtractReport .chosen-container,
+#wtdReport .chosen-container{
+    font-size: 11px;
+}
+#weeklyCharging .chosen-container .chosen-choices li.search-field input[type="text"], 
+#leaveReport .chosen-container .chosen-choices li.search-field input[type="text"],
+#staffExtractReport .chosen-container .chosen-choices li.search-field input[type="text"],
+#wtdReport .chosen-container .chosen-choices li.search-field input[type="text"] {
+    height: auto;
+    min-height: 20px;
+}
+.weekStatus-year, .wid50{
+    width: 50px!important;
+}
+.weeksBlock div {
+    margin-bottom: 7px;
+}
+.timeContent span {
+    display: block;
+}
+.timeContent span:nth-child(2) {
+	text-align:center;
+	 margin: 2px 0;
+}
+.keyBox1{
+    height: 16px;
+    background-color: #ADD8E6;
+    width: 16px;
+    display: inline-block;
+}
+tr.keyBoxBlue td{
+	background: #ADD8E6;
+}
+tr.keyBoxYellow td{
+	background: #ffeb3b;
+}
+.keyBox2{
+    height: 16px;
+    background-color: #ffeb3b;
+    width: 16px;
+    display: inline-block;
+}
+.keytext{
+    width: 110px;
+    display: inline-block;
+    text-align: center;
+	vertical-align: super;
+}
+.keyBlock {
+    margin: 2px 0;
+}
+.chargeBtnBlock {
+    text-align: center;
+    padding: 30px;
+}
+textarea.splitCol {
+    margin-left: 5px;
+}
+
+
+/* leave .................................... */
+.wid50 {
+	width:50px!important;
+}
+.wid155 {
+	width:155px!important;
+}
+/* Staff Extract Reports....................... */
+.keyBoxPink{
+    background-color: #FFE4E1;
+}
+tr.keyBoxPink td{
+	background: #FFE4E1;
+}
+#staffExtractReport .charging-btn {
+    margin: 10px 6px 6px 20px;
+}
+
+#wtdReport .charging-btn, #dutyExtractReport .charging-btn{
+    margin: 10px 6px 6px 6px;
+}
+tr.even td.lightGreen {
+    background: #dff6c4;
+}
+tr.even td.darkGreen {
+    background: #98FB98;
+}
+tr.even  td.lightPink {
+    background: #FFE4E1;
+}
+tr.even  td.darkPink {
+    background: #F08080;
+}
+tr.even  td.lightBlue {
+    background: #E0FFFF;
+}
+tr.even  td.darkBlue {
+    background: #87CEFA;
+}
+td.totalColumn{
+	font-weight:bold!important;
+}
+td.negativeValue {
+	background:#B22222!important;
+	color:#fff!important;
+}
+/* weekDuety Form..................................... */
+.wid65 {
+	width:65px!important;
+}
+.wid85 {
+	width:85px!important;
+}
+.goBtn{
+    width:30px;
+	padding: 2px;
+	background: #d6d6d6;
+    border: 1px solid #c0c0c0;
+    font-size: 11px;
+    cursor: pointer;
+}
+.extractSearchText{
+	display:flex; 
+	font-weight: 600;
+	margin:0px;
+}
+.displayFlex{
+	display:flex;	
+}
+input.searchMultiItem {
+    width: 250px;
+} 
+#wtdReport .fields select,
+#staffExtractReport .fields select,
+#dutyExtractReport .fields select {
+    padding: 0px;
+    font-size: 11px;
+	margin-top:0px;
+	width: 150px;
+}
+
+.charge-text-clr {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.charging-btn-clr {
+    width: auto;
+    min-width: 100px;
+    white-space: nowrap;
+    padding: 3px;
+    background: #d6d6d6;
+    border: 1px solid #c0c0c0;
+    font-size: 10px;
+    cursor: pointer;
+}

@@ -1,0 +1,29 @@
+@media only screen and (max-width: 1024px) {
+  #LeaveApproveTable .leaveTopTHWidth{
+    width: 30%;
+  }
+  th.leaveTHWidth{
+    width:6%;
+    word-break: auto-phrase;
+  }
+  th.leaveTReason {
+    width: 6%;
+  }
+  .date-Width{
+    width: 7.5%;
+  }
+  .group-type-Width{
+    width: 9.5%;
+  }
+  .duty-type-Width{
+    width: 15.5%;
+  }
+}
+
+@media only screen and (min-width: 1600px) {
+  #LeaveApproveTable {
+    overflow-y: scroll;
+    padding-right: 10px;
+    display: inline-table;
+  }
+}

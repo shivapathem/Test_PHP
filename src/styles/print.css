@@ -1,0 +1,28 @@
+.noprint {
+	DISPLAY: none	
+}
+.printonly {
+  DISPLAY: inline
+}
+#content {
+  position:absolute;
+  right:10px;
+  top:10px;
+  left:10px;
+}
+@media print {
+	#names,#duties,#rotapeoplelistsdiv0,#rotasdetailsdiv,#top,#weeklynames,#weeklyduties {
+		overflow: visible !important;
+		-webkit-print-color-adjust: exact !important;
+		display: block !important;
+	}
+	#rotasdetailsdiv {
+		position: relative !important;
+	}
+	#rotapeoplelistsdiv0{
+		display: none !important;
+	}
+	#backgroundHolder,.blueboxmedtextheader{
+		display:none;
+	}
+}

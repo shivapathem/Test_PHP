@@ -1,0 +1,62 @@
+#facility-mark-as-unavailable-modal .fmu-table {
+    width: 100%;
+    border-left: 1px solid #bdbdbd;
+    border-top: 1px solid #bdbdbd;
+    box-sizing: border-box;
+}
+
+#facility-mark-as-unavailable-modal .fmu-row {
+    display: grid;
+    box-sizing: border-box;
+}
+
+#facility-mark-as-unavailable-modal .fmu-row--dates {
+    grid-template-columns: 120px 1fr 120px 1fr;
+    align-items: center;
+    text-align: center;
+}
+
+#facility-mark-as-unavailable-modal .fmu-row--schedule {
+    grid-template-columns: 1.2fr 2fr 2fr 0.8fr;
+    align-items: center;
+}
+
+#facility-mark-as-unavailable-modal .fmu-cell {
+    border-right: 1px solid #bdbdbd;
+    border-bottom: 1px solid #bdbdbd;
+    padding: 6px 8px;
+    background: #eeeeee;
+    box-sizing: border-box;
+    height: 40px;
+    display: flex;
+    align-items: center;
+}
+
+#facility-mark-as-unavailable-modal .fmu-cell--header {
+    background: #d0d0d0;
+    font-weight: 600;
+}
+
+#facility-mark-as-unavailable-modal .fmu-cell--center {
+    justify-content: center;
+    text-align: center;
+}
+
+#facility-mark-as-unavailable-modal .fmu-label {
+    display: inline-block;
+    margin: 0;
+}
+
+#facility-mark-as-unavailable-modal .fmu-cell select,
+#facility-mark-as-unavailable-modal .fmu-cell input[type="text"] {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#facility-mark-as-unavailable-modal .fmu-cell input[type="checkbox"] {
+    margin: 0;
+}
+
+#facility-mark-as-unavailable-modal .fmu-cell[style*="overflow"] {
+    overflow: visible;
+}

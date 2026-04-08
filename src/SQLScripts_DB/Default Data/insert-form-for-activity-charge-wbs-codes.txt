@@ -1,0 +1,9 @@
+
+
+
+USE [Allocate7]
+GO
+
+
+insert into REF_Forms values('Charge Code', 'Charge Code', 1),('WBS Code', 'WBS Code', 1),('Activity Code', 'Activity Code', 1);
+insert into RolePermissionForm_LINK values(1, 1, 19),(1, 2, 19),(1, 3, 19),(1, 4, 19),(2, 1, 19),(2, 2, 19),(2, 3, 19),(2, 4, 19);

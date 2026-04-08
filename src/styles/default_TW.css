@@ -1,0 +1,162 @@
+
+#content {
+    position:absolute;
+    right:10px;
+    top:95px;
+    left:10px;
+}
+
+.blueboxmedtext {
+    background-color: #D0D0D0;
+    color:#000000;
+    font-size:10pt;
+    padding-left:12px;
+    padding-top:5px;
+    padding-bottom:5px
+}
+
+.blueboxmedtextheader {
+    background-color: #D0D0D0;
+    color:#000000;
+    font-size:12pt;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    padding-left:12px;
+    height:25px;
+    line-height:25px;
+    vertical-align:middle;
+    display:inline-block;
+    width: 100%;
+    min-height: 31px;
+}
+
+
+.smalltable {
+    font-size:8pt;
+    border: 0px;
+}
+.smalltable td {
+    vertical-align:top;
+}
+.smalltable th {
+    text-align:left;
+    background-color:#C0C0C0
+}
+.smalltable a:link {
+    text-decoration:none;
+    color:#000000;
+}
+.smalltable a:hover {
+    text-decoration:underline;
+    color:#000000;
+}
+.smalltable a:active {
+    text-decoration:underline;
+    color:#000000;
+}
+.smalltable a:visited{
+    text-decoration:none;
+    color:#000000;
+}
+.smalltable a:visited:hover {
+    text-decoration:underline;
+    color:#000000;
+}
+
+.bluetable {
+    border-left:1px solid #cdcdcd; border-right:0px solid #cdcdcd; border-top:1px solid #cdcdcd; border-bottom:0px solid #cdcdcd;
+    font-size:8pt;
+    /*background-color: #990000;*/
+    text-align: left;
+    border-spacing: 0;
+    margin-left:0; margin-right:0; margin-top:10px; margin-bottom:15px
+}
+.bluetable  th,
+.bluetable  td {
+    vertical-align: top;
+    border-left:0px solid #cdcdcd;
+    border-right:1px solid #cdcdcd;
+    border-top:0px solid #cdcdcd;
+    border-bottom:1px solid #cdcdcd;
+}
+/* header */
+.bluetable thead th,
+.bluetable thead td {
+    vertical-align: top;
+    font-weight: bold;
+    color: #000000;
+    background-color: #D0D0D0;
+    border-collapse: collapse;
+    padding: 4px;
+    text-align:left;
+    height:10px;
+}
+.bluetable tbody td,
+.bluetable tfoot th,
+.bluetable tfoot td {
+    padding: 4px;
+    vertical-align: top;
+}
+.bluetablenoborder {
+    font-size:8pt;
+    background-color: #D0D0D0;
+    text-align: left;
+    border-spacing: 0;
+    margin-left:0; margin-right:0; margin-top:0px; margin-bottom:0px
+}
+
+.red {
+    background: #990000;
+    color:#FFFFFF;
+    font-weight:bold
+
+}
+
+.green {
+    background: #009933;
+    text-align:center;
+    color:#FFFFFF
+}
+
+.yellow {
+    background: #CC9900;
+    text-align:center;
+    color:#FFFFFF
+}
+.lightgreen {
+    background: #CCFFCC;
+    color:#000000
+}
+.lightyellow {
+    background: #FFFFCC;
+    color:#000000
+}
+/**/
+.orange {
+    background: #FF6600;
+}
+.grey {
+    background: #909090;
+    font-weight:bold
+}
+.lightgrey {
+    background: #DDDDDD;
+    font-weight:bold
+}
+.hidden {
+    display: none;
+}
+.disabledtab {
+    pointer-events:none;
+    opacity:0.4;
+}
+
+#rotadiv0, #rotapeopletabs {
+    padding: 0;
+}
+.dailyscreenDisabledDuration { 
+    background: rgb(238, 233, 233); 
+    color: #333; 
+    border: 1px solid #666 
+}

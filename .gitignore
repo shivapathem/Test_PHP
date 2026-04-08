@@ -1,0 +1,15 @@
+#gitignore
+*.idea/
+src/.env
+src/.web.config
+*.vscode/
+logs/
+src/.vs
+src/vendor
+vendor
+.vs
+.env
+web.config
+src/mvc-app/sonar-project.properties
+src/mvc-app/.scannerwork
+src/mvc-app/.phpunit.cache

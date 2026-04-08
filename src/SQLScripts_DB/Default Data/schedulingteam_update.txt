@@ -1,0 +1,1 @@
+update schedulingTeams set schedulingTeamName = 'Freelancers' where schedulingTeamName = 'FreeLancers'

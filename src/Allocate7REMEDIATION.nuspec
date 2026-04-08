@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>Allocate7REMEDIATION</id>
+        <version>1.0.0.0</version>
+        <title>Allocate7REMEDIATION</title>
+        <authors>BuildServer</authors>
+        <owners>BBC Worldwide</owners>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>Allocate7REMEDIATION</description>
+    </metadata>
+</package>

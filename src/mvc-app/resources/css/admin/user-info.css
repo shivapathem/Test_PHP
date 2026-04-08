@@ -1,0 +1,58 @@
+#facebox .popup.user-info-popup {
+  width: 75vw !important;
+  max-width: 75vw !important;
+  height: 75vh !important;
+}
+
+#facebox .popup.user-info-popup .content {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-height: 75vh !important;
+  overflow-y: hidden !important;
+}
+
+#facebox .popup.user-info-popup .scrollable {
+  height: 46vh !important;
+  max-height: 46vh !important;
+}
+
+#facebox .popup.user-info-popup .sec-acces-table {
+  height: 20vh !important;
+  max-height: 20vh !important;
+  overflow-y: auto !important;
+}
+
+#facebox .popup.user-info-popup table {
+  border: none !important;
+}
+
+#facebox .popup.user-info-popup #user-info thead th {
+  position: sticky;
+  top: 0;
+  z-index: 10 !important;
+  background-color: #cccccc !important;
+  padding: 10px 5px !important;
+  border-bottom: 2px solid #b0b0b0 !important;
+}
+
+#facebox .popup.user-info-popup #user-info th {
+  white-space: normal !important;
+  vertical-align: middle !important;
+}
+
+#facebox .popup.user-info-popup #user-info th:not(:first-child) {
+  min-width: 65px !important;
+  max-width: 85px !important;
+}
+
+#facebox .popup.user-info-popup #user-info {
+  width: max-content !important;
+  min-width: 100% !important;
+}
+
+#facebox .popup.user-info-popup #user-info td {
+  width: auto !important;
+  min-width: max-content !important;
+  white-space: nowrap !important;
+}

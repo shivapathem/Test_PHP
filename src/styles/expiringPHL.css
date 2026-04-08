@@ -1,0 +1,129 @@
+.popupBlock-container{
+    background-color: #eeeeee;
+	position: relative;
+	font-size:11px;
+	min-width: 999px;
+    max-height: 400px;
+    overflow-y: auto;
+}
+h2.popupBlock-heading{
+    background-color: #d6d6d6;
+    color: #000000;
+    text-align: center;
+	font-size: 12px;
+    font-weight: normal;
+    padding: 5px 0px;
+	margin: 0px;
+}
+.popupBlock {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+.popupBlockCol {
+    margin-bottom: 4px;
+}
+.popupBlockCol2 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 16.66667%;
+    flex: 0 0 16.66667%;
+    max-width: 16.66667%;
+}
+.popupBlockCol3 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 25%;
+    flex: 0 0 25%;
+    max-width: 25%;
+}
+.popupBlockCol4 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 33.33333%;
+    flex: 0 0 33.33333%;
+    max-width: 33.33333%;
+}
+.popupBlockCol6 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
+.popupBlockCol12 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+div#PHLTableBlock {
+    max-height: 250px;
+    overflow-y: auto;
+}
+.phlTable tr {
+    background: #d6d6d6;
+}
+.popupBlock-labs{
+	border: 1px solid #858282;
+    position: sticky;
+    top: 0;
+    background: #eeeeee;
+}
+
+.popupBlock-lab {
+    display: inline-block;
+    text-align: left;
+	 margin-right: 5px;
+}
+.popupBlock-inp {
+    display: inline-block;
+	font-size:11px;
+	border: 1px solid #c0c0c0;
+}
+.phlTable {
+    border: 1px solid #858282;
+}
+.popupBlockCol textarea {
+    font-size: 11px;
+	border: 1px solid #c0c0c0;
+}
+th.PHLName {
+    width: 20%;
+}
+th.PHLComment {
+    width: 25%;
+}
+  .popupBlock-btn{
+    width: 76px;
+    padding: 5px;
+    margin: 6px;
+    background: #d6d6d6;
+    border: 1px solid #c0c0c0;
+    font-size: 11px;
+	cursor: pointer;
+  }
+
+/* common css */
+
+.fullWidth{
+  width:100%;	
+}
+.checkBoxlabel{
+	display: block;
+}
+.checkBoxInput{
+	vertical-align:middle;
+}
+.popupBlockDate {
+	width: 60px;
+}
+.popupBlock-container input:read-only:focus, .popupBlock-container textarea:read-only:focus {
+    outline: none;
+}
+.mr1{
+	margin-right: 1px;
+}
+.PHLfacebox{
+  top: 42.1px;
+  left: 176px;
+}

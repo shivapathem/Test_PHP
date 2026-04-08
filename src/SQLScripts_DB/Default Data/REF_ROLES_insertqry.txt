@@ -1,0 +1,9 @@
+
+
+
+USE [Allocate7]
+GO
+
+
+INSERT [dbo].[REF_Roles] ([RoleName], [RoleDescription], [IsActive],[isAdditional]) VALUES (N'Smartbook user', N'Smartbook user', 1,1)
+INSERT [dbo].[REF_Roles] ([RoleName], [RoleDescription], [IsActive],[isAdditional]) VALUES (N'Timesheet Authorizer', N'Timesheet Authorizer', 1,1)
