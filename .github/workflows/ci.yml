@@ -1,131 +1,60 @@
-name: Build, Test, and SonarQube
-
+name: PHP CI + SonarQube
+ 
 on:
   push:
-    branches: [ALLOCATE7-FAST-BAU-SCHEDULING-GROUP]
+    branches:
+      - dev
+      - qa
   pull_request:
-    branches: [ALLOCATE7-FAST-BAU-SCHEDULING-GROUP]
-
+    branches:
+      - dev
+      - qa
+ 
 jobs:
-  build-test-sonar:
-    runs-on: [vesilelocal]
-
-    env:
-      PHP_DIR: C:\tools\php85
-      COMPOSER_DIR: C:\ProgramData\ComposerSetup\bin
-      SONAR_SCANNER_BIN: C:\Users\uzunkv01\Downloads\sonar-scanner-cli-8.0.1.6346-windows-x64\sonar-scanner-8.0.1.6346-windows-x64\bin\sonar-scanner.bat
-      WORKING_DIR: src
-      SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-      SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
-      SONAR_PROJECT_KEY: Deneme
-      SONAR_PROJECT_NAME: Deneme
-
+  build-and-analyze:
+    runs-on:
+      - self-hosted
+      - windows
+ 
+    defaults:
+      run:
+        shell: powershell
+ 
     steps:
-      - name: Checkout code
+      - name: Checkout Code
         uses: actions/checkout@v4
-
-      - name: Configure git safe directory
-        shell: powershell
-        run: |
-          git config --global --add safe.directory $env:GITHUB_WORKSPACE
-
-      - name: Install PHP and Composer with Chocolatey
-        shell: powershell
-        run: |
-          choco install php composer -y --force
-          $env:Path = "$env:PHP_DIR;$env:COMPOSER_DIR;" + [System.Environment]::GetEnvironmentVariable("Path", "Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path", "User")
-          php --version
-          composer --version
-
-      - name: Validate composer files
-        shell: powershell
-        working-directory: ${{ env.WORKING_DIR }}
-        continue-on-error: true
-        run: |
-          $env:Path = "$env:PHP_DIR;$env:COMPOSER_DIR;" + [System.Environment]::GetEnvironmentVariable("Path", "Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path", "User")
-          & "$env:COMPOSER_DIR\composer.bat" validate
-
-      - name: Install dependencies
-        shell: powershell
-        working-directory: ${{ env.WORKING_DIR }}
-        run: |
-          $env:Path = "$env:PHP_DIR;$env:COMPOSER_DIR;" + [System.Environment]::GetEnvironmentVariable("Path", "Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path", "User")
-          & "$env:COMPOSER_DIR\composer.bat" install --prefer-dist --no-progress --no-interaction
-
-      - name: Create build directories
-        shell: powershell
-        run: |
-          New-Item -ItemType Directory -Path build\logs, build\coverage -Force | Out-Null
-
-      - name: Check vendor directory contents
-        shell: powershell
-        working-directory: ${{ env.WORKING_DIR }}
-        run: |
-          Write-Host "Checking vendor/bin contents..."
-          if (Test-Path "vendor\bin") {
-            Get-ChildItem -Path "vendor\bin" | Select-Object Name
-          } else {
-            Write-Host "vendor/bin directory does not exist"
-            if (Test-Path "vendor") {
-              Write-Host "Contents of vendor directory:"
-              Get-ChildItem -Path "vendor" | Select-Object Name
-            }
-          }
-
-      - name: Run PHPUnit tests with reports
-        shell: powershell
-        working-directory: ${{ env.WORKING_DIR }}
-        continue-on-error: true
-        run: |
-          $env:Path = "$env:PHP_DIR;$env:COMPOSER_DIR;" + [System.Environment]::GetEnvironmentVariable("Path", "Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path", "User")
-
-          if (Test-Path "vendor\bin\phpunit") {
-            Write-Host "Running PHPUnit..."
-            & "$env:PHP_DIR\php.exe" vendor\bin\phpunit -c phpunit.xml --log-junit ..\build\logs\junit.xml --coverage-clover ..\build\coverage\clover.xml
-          } elseif (Test-Path "vendor\bin\phpunit.phar") {
-            Write-Host "Running PHPUnit PHAR..."
-            & "$env:PHP_DIR\php.exe" vendor\bin\phpunit.phar -c phpunit.xml --log-junit ..\build\logs\junit.xml --coverage-clover ..\build\coverage\clover.xml
-          } else {
-            Write-Warning "PHPUnit executable not found under vendor/bin. Composer install may have failed."
-            Write-Host "Current working directory: $(Get-Location)"
-            Write-Host "Contents of vendor/bin:"
-            if (Test-Path "vendor\bin") {
-              Get-ChildItem -Path "vendor\bin" -Force
-            } else {
-              Write-Host "vendor/bin does not exist"
-            }
-          }
-
-      - name: Upload test artifacts
-        if: always()
-        uses: actions/upload-artifact@v4
         with:
-          name: php-test-artifacts
-          path: build/
-
-      - name: Run SonarQube Scan
-        shell: powershell
+          clean: true
+ 
+      - name: Verify PHP
+        run: php -v
+ 
+      - name: Install Dependencies
+        working-directory: src/mvc-app
+        run: composer install --no-interaction --prefer-dist
+ 
+      - name: Run All Unit Tests
+        working-directory: src/mvc-app
         run: |
-          if (-not (Test-Path "$env:SONAR_SCANNER_BIN")) {
-            Write-Error "SonarScanner not found at $env:SONAR_SCANNER_BIN"
-          }
-
-          Write-Host "Running SonarQube scan..."
-          $sonarArgs = @(
-            "-Dsonar.projectKey=$env:SONAR_PROJECT_KEY",
-            "-Dsonar.projectName=$env:SONAR_PROJECT_NAME",
-            "-Dsonar.sources=src",
-            "-Dsonar.tests=src/tests",
-            "-Dsonar.exclusions=src/tests/**",
-            "-Dsonar.test.inclusions=src/tests/**",
-            "-Dsonar.php.tests.reportPath=build/logs/junit.xml",
-            "-Dsonar.php.coverage.reportPaths=build/coverage/clover.xml",
-            "-Dsonar.host.url=$env:SONAR_HOST_URL",
-            "-Dsonar.sourceEncoding=windows-1254"
-          )
-
-          & "$env:SONAR_SCANNER_BIN" @sonarArgs
-          
-          if ($LASTEXITCODE -ne 0) {
-            Write-Error "SonarQube scan failed with exit code $LASTEXITCODE"
-          }
+          .\vendor\bin\phpunit ..\tests\Unit --log-junit test-report.xml --coverage-clover coverage.xml
+ 
+      - name: SonarQube Scan
+        uses: SonarSource/sonarqube-scan-action@v2
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+        with:
+          args: >
+            -Dsonar.projectKey=allocate7_fast_bau_scheduling_group
+            -Dsonar.projectName=Allocate7 Fast Bau Scheduling Group
+            -Dsonar.sources=src/mvc-app
+            -Dsonar.tests=src/tests/Unit
+            -Dsonar.php.tests.reportPath=src/mvc-app/test-report.xml
+            -Dsonar.php.coverage.reportPaths=src/mvc-app/coverage.xml
+            -Dsonar.sourceEncoding=UTF-8
+ 
+      - name: SonarQube Quality Gate
+        uses: SonarSource/sonarqube-quality-gate-action@v1.1.0
+        timeout-minutes: 5
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
