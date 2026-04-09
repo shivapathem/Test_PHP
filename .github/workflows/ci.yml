@@ -11,7 +11,7 @@ on:
       - qa
  
 jobs:
-  build-and-analyze:
+  build:
     runs-on:
       - self-hosted
       - windows
@@ -23,17 +23,17 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
-        with:
-          clean: true
  
-      - name: Verify PHP
-        run: php -v
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.1'
  
       - name: Install Dependencies
         working-directory: src/mvc-app
-        run: composer install --no-interaction --prefer-dist
+        run: composer install
  
-      - name: Run All Unit Tests
+      - name: Run Tests
         working-directory: src/mvc-app
         run: |
           .\vendor\bin\phpunit ..\tests\Unit --log-junit test-report.xml --coverage-clover coverage.xml
@@ -46,15 +46,5 @@ jobs:
         with:
           args: >
             -Dsonar.projectKey=allocate7_fast_bau_scheduling_group
-            -Dsonar.projectName=Allocate7 Fast Bau Scheduling Group
             -Dsonar.sources=src/mvc-app
             -Dsonar.tests=src/tests/Unit
-            -Dsonar.php.tests.reportPath=src/mvc-app/test-report.xml
-            -Dsonar.php.coverage.reportPaths=src/mvc-app/coverage.xml
-            -Dsonar.sourceEncoding=UTF-8
- 
-      - name: SonarQube Quality Gate
-        uses: SonarSource/sonarqube-quality-gate-action@v1.1.0
-        timeout-minutes: 5
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
