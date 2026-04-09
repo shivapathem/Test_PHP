@@ -11,7 +11,7 @@ on:
       - qa
  
 jobs:
-  build:
+  build-and-analyze:
     runs-on:
       - self-hosted
       - windows
@@ -32,12 +32,11 @@ jobs:
  
       - name: Install Dependencies
         working-directory: src/mvc-app
-        run: composer install
+        run: composer install --no-interaction --prefer-dist --no-progress
  
       - name: Run Tests
         working-directory: src/mvc-app
-        run: |
-          .\vendor\bin\phpunit ..\tests\Unit --log-junit test-report.xml --coverage-clover coverage.xml
+        run: .\vendor\bin\phpunit --log-junit test-report.xml --coverage-clover coverage.xml
  
       - name: SonarQube Scan
         uses: SonarSource/sonarqube-scan-action@v2
@@ -47,5 +46,15 @@ jobs:
         with:
           args: >
             -Dsonar.projectKey=allocate7_fast_bau_scheduling_group
+            -Dsonar.projectName=Allocate7 Fast Bau Scheduling Group
             -Dsonar.sources=src/mvc-app
-            -Dsonar.tests=src/tests/Unit
+            -Dsonar.tests=src/mvc-app/tests
+            -Dsonar.php.tests.reportPath=src/mvc-app/test-report.xml
+            -Dsonar.php.coverage.reportPaths=src/mvc-app/coverage.xml
+            -Dsonar.sourceEncoding=UTF-8
+ 
+      - name: SonarQube Quality Gate
+        uses: SonarSource/sonarqube-quality-gate-action@v1.1.0
+        timeout-minutes: 5
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
