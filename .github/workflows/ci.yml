@@ -27,8 +27,8 @@ jobs:
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '8.3'
-          extensions: fileinfo, mbstring, curl, xml
+          php-version: '8.5'
+          extensions: fileinfo, mbstring, openssl, pdo, curl, xml
  
       - name: Install Dependencies
         working-directory: src/mvc-app
