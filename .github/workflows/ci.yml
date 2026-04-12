@@ -19,35 +19,50 @@ jobs:
         shell: powershell
  
     steps:
+      # ✅ Checkout code
       - name: Checkout Code
         uses: actions/checkout@v4
  
+      # ✅ Setup PHP
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '8.5'
+          php-version: '8.2'
           extensions: xdebug, fileinfo, mbstring, openssl, pdo, curl, xml
  
+      # ✅ Install dependencies
       - name: Install Dependencies
         working-directory: src/mvc-app
         run: composer install --no-interaction --prefer-dist --no-progress
  
+      # ✅ Run Unit Tests
       - name: Run PHPUnit Tests
         working-directory: src/mvc-app
         run: vendor\bin\phpunit tests/Unit/AllocateUsers --log-junit test-report.xml
  
-      # ✅ Required for Sonar
+      # ✅ Setup Java (required for Sonar)
       - name: Setup Java
         uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
           java-version: '17'
  
-      # ✅ Clean SonarQube Scan (No manual download)
-      - name: SonarQube Scan
-        uses: SonarSource/sonarqube-scan-action@v2
-        with:
-          projectBaseDir: src/mvc-app
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+      # ✅ Download SonarScanner (FIXED URL)
+      - name: Download SonarScanner
+        run: |
+          Invoke-WebRequest -Uri https://github.com/SonarSource/sonar-scanner-cli/releases/latest/download/sonar-scanner-cli-windows.zip -OutFile sonar.zip
+          Expand-Archive sonar.zip -DestinationPath .
+          $folder = Get-ChildItem -Directory | Where-Object { $_.Name -like "sonar-scanner-*" }
+          Rename-Item $folder.Name sonar-scanner
+ 
+      # ✅ Run SonarQube Scan (Windows compatible)
+      - name: Run SonarQube Scan
+        run: |
+          .\sonar-scanner\bin\sonar-scanner.bat `
+            -Dsonar.projectKey=Allocate7 `
+            -Dsonar.projectName="Allocate7" `
+            -Dsonar.sources=src/mvc-app `
+            -Dsonar.tests=src/mvc-app/tests `
+            -Dsonar.php.tests.reportPath=src/mvc-app/test-report.xml `
+            -Dsonar.host.url=${{ secrets.SONAR_HOST_URL }} `
+            -Dsonar.login=${{ secrets.SONAR_TOKEN }}
