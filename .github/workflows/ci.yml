@@ -8,14 +8,10 @@ on:
  
 jobs:
   build-and-analyze:
-    runs-on: [self-hosted, windows]
- 
-    defaults:
-      run:
-        shell: powershell
+    runs-on: ubuntu-latest
  
     steps:
-      # Checkout
+      # Checkout code
       - name: Checkout Code
         uses: actions/checkout@v4
  
@@ -25,18 +21,30 @@ jobs:
         with:
           php-version: '8.5'
           extensions: xdebug, fileinfo, mbstring, openssl, pdo, curl, xml
+          coverage: xdebug
+ 
+      # Cache Composer dependencies (faster builds)
+      - name: Cache Composer
+        uses: actions/cache@v4
+        with:
+          path: ~/.composer/cache
+          key: composer-${{ runner.os }}-${{ hashFiles('**/composer.lock') }}
+          restore-keys: composer-${{ runner.os }}-
  
       # Install dependencies
       - name: Install Dependencies
         working-directory: src/mvc-app
         run: composer install --no-interaction --prefer-dist --no-progress
  
-      # Run tests
+      # Run PHPUnit tests
       - name: Run PHPUnit Tests
         working-directory: src/mvc-app
-        run: vendor/bin/phpunit tests/Unit/AllocateUsers --log-junit test-report.xml
+        run: |
+          vendor/bin/phpunit tests/Unit/AllocateUsers \
+          --log-junit test-report.xml \
+          --coverage-clover coverage.xml
  
-      # SonarQube Scan (NO manual download needed)
+      # SonarQube Scan (official, no manual setup)
       - name: SonarQube Scan
         uses: SonarSource/sonarqube-scan-action@v2
         with:
@@ -46,5 +54,7 @@ jobs:
             -Dsonar.sources=src/mvc-app
             -Dsonar.tests=src/mvc-app/tests
             -Dsonar.php.tests.reportPath=src/mvc-app/test-report.xml
+            -Dsonar.php.coverage.reportPaths=src/mvc-app/coverage.xml
             -Dsonar.host.url=${{ secrets.SONAR_HOST_URL }}
             -Dsonar.login=${{ secrets.SONAR_TOKEN }}
+ 
