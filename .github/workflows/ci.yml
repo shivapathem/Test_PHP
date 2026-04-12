@@ -45,16 +45,20 @@ jobs:
           --coverage-clover coverage.xml
  
       # SonarQube Scan (official, no manual setup)
-      - name: SonarQube Scan
-        uses: SonarSource/sonarqube-scan-action@v2
-        with:
-          args: >
-            -Dsonar.projectKey=Allocater
-            -Dsonar.projectName=Allocater
-            -Dsonar.sources=src/mvc-app
-            -Dsonar.tests=src/mvc-app/tests
-            -Dsonar.php.tests.reportPath=src/mvc-app/test-report.xml
-            -Dsonar.php.coverage.reportPaths=src/mvc-app/coverage.xml
-            -Dsonar.host.url=${{ secrets.SONAR_HOST_URL }}
-            -Dsonar.login=${{ secrets.SONAR_TOKEN }}
+       - name: SonarQube Scan
+        shell: cmd
+        env:
+          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        run: >
+          sonar-scanner.bat
+          -Dsonar.projectKey=php-demo
+          -Dsonar.projectName="PHP Demo"
+          -Dsonar.sources=src
+          -Dsonar.tests=tests
+          -Dsonar.exclusions=vendor/**
+          -Dsonar.php.coverage.reportPaths=coverage.xml
+          -Dsonar.php.tests.reportPath=junit.xml
+          -Dsonar.host.url=%SONAR_HOST_URL%
+          -Dsonar.login=%SONAR_TOKEN%
  
