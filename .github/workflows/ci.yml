@@ -34,27 +34,28 @@ jobs:
         working-directory: src/mvc-app
         run: composer install --no-interaction --prefer-dist --no-progress
  
+      # ✅ FIXED: Only AllocateUsers + correct Windows path
       - name: Run AllocateUsers Tests
         working-directory: src/mvc-app
-        run: .\vendor\bin\phpunit tests/Unit/AllocateUsers --log-junit test-report.xml --coverage-clover coverage.xml
+        run: |
+          .\vendor\bin\phpunit tests/Unit/AllocateUsers --log-junit test-report.xml --coverage-clover coverage.xml
  
-      - name: SonarQube Scan
-        uses: SonarSource/sonarqube-scan-action@v2
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
-        with:
-          args: >
-            -Dsonar.projectKey=allocate7_fast_bau_scheduling_group
-            -Dsonar.projectName=Allocate7 Fast Bau Scheduling Group
-            -Dsonar.sources=src/mvc-app
-            -Dsonar.tests=src/mvc-app/tests
-            -Dsonar.php.tests.reportPath=src/mvc-app/test-report.xml
-            -Dsonar.php.coverage.reportPaths=src/mvc-app/coverage.xml
-            -Dsonar.sourceEncoding=UTF-8
+      # ✅ FIXED: SonarQube using CLI (works on Windows)
+      - name: Download SonarScanner
+        run: |
+          Invoke-WebRequest -Uri https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-latest-windows.zip -OutFile sonar.zip
+          Expand-Archive sonar.zip -DestinationPath .
+          Rename-Item (Get-ChildItem -Directory | Where-Object {$_.Name -like "sonar-scanner-*"}).Name sonar-scanner
  
-      - name: SonarQube Quality Gate
-        uses: SonarSource/sonarqube-quality-gate-action@v1.1.0
-        timeout-minutes: 5
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      - name: Run SonarQube Scan
+        run: |
+          .\sonar-scanner\bin\sonar-scanner.bat `
+          -Dsonar.projectKey=allocate7_fast_bau_scheduling_group `
+          -Dsonar.projectName="Allocate7 Fast Bau Scheduling Group" `
+          -Dsonar.sources=src/mvc-app `
+          -Dsonar.tests=src/mvc-app/tests/Unit/AllocateUsers `
+          -Dsonar.php.tests.reportPath=src/mvc-app/test-report.xml `
+          -Dsonar.php.coverage.reportPaths=src/mvc-app/coverage.xml `
+          -Dsonar.host.url=${{ secrets.SONAR_HOST_URL }} `
+          -Dsonar.login=${{ secrets.SONAR_TOKEN }}
+ 
