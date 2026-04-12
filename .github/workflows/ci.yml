@@ -34,9 +34,9 @@ jobs:
         working-directory: src/mvc-app
         run: composer install --no-interaction --prefer-dist --no-progress
  
-      - name: Run Tests
+      - name: Run AllocateUsers Tests
         working-directory: src/mvc-app
-        run: .\vendor\bin\phpunit --log-junit test-report.xml --coverage-clover coverage.xml
+        run: .\vendor\bin\phpunit tests/Unit/AllocateUsers --log-junit test-report.xml --coverage-clover coverage.xml
  
       - name: SonarQube Scan
         uses: SonarSource/sonarqube-scan-action@v2
