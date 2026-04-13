@@ -58,7 +58,9 @@ jobs:
           sonar-scanner.bat ^
             -Dsonar.projectKey=Test_PHP ^
             -Dsonar.projectName=Test_PHP ^
+            -Dsonar.sources=src/mvc-app/app ^
             -Dsonar.tests=src/mvc-app/tests ^
+            -Dsonar.exclusions=src/mvc-app/vendor/** ^
             -Dsonar.sourceEncoding=UTF-8 ^
             -Dsonar.host.url=%SONAR_HOST_URL% ^
             -Dsonar.login=%SONAR_TOKEN%
