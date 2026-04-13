@@ -1,4 +1,3 @@
-
 name: PHP CI + SonarQube
 
 on:
@@ -66,4 +65,3 @@ jobs:
             -Dsonar.php.tests.reportPath=src/mvc-app/junit.xml ^
             -Dsonar.host.url=%SONAR_HOST_URL% ^
             -Dsonar.login=%SONAR_TOKEN%
-``
