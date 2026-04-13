@@ -1,64 +1,69 @@
+
 name: PHP CI + SonarQube
- 
+
 on:
   push:
     branches: [dev, qa]
   pull_request:
     branches: [dev, qa]
- 
+
 jobs:
   build-and-analyze:
-    runs-on: ubuntu-latest
- 
+    runs-on: [self-hosted, windows]
+
     steps:
-      # Checkout code
+      # Checkout repository
       - name: Checkout Code
         uses: actions/checkout@v4
- 
+
       # Setup PHP
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '8.5'
+          php-version: '8.3'
           extensions: xdebug, fileinfo, mbstring, openssl, pdo, curl, xml
           coverage: xdebug
- 
-      # Cache Composer dependencies (faster builds)
-      - name: Cache Composer
+
+      # Cache Composer dependencies
+      - name: Cache Composer dependencies
         uses: actions/cache@v4
         with:
-          path: ~/.composer/cache
+          path: |
+            C:\Users\runneradmin\AppData\Local\Composer\Cache
           key: composer-${{ runner.os }}-${{ hashFiles('**/composer.lock') }}
-          restore-keys: composer-${{ runner.os }}-
- 
+          restore-keys: |
+            composer-${{ runner.os }}-
+
       # Install dependencies
       - name: Install Dependencies
         working-directory: src/mvc-app
-        run: composer install --no-interaction --prefer-dist --no-progress
- 
+        shell: powershell
+        run: composer install --no-interaction --prefer-dist
+
       # Run PHPUnit tests
       - name: Run PHPUnit Tests
         working-directory: src/mvc-app
+        shell: powershell
         run: |
-          vendor/bin/phpunit tests/Unit/AllocateUsers \
-          --log-junit test-report.xml \
-          --coverage-clover coverage.xml
- 
-      # SonarQube Scan (official, no manual setup)
-       - name: SonarQube Scan
+          vendor\bin\phpunit tests\Unit\AllocateUsers `
+            --log-junit junit.xml `
+            --coverage-clover coverage.xml
+
+      # SonarQube Scan (Windows)
+      - name: SonarQube Scan
         shell: cmd
         env:
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: >
-          sonar-scanner.bat
-          -Dsonar.projectKey=Test_PHP
-          -Dsonar.projectName="Test_PHP"
-          -Dsonar.sources=src
-          -Dsonar.tests=tests
-          -Dsonar.exclusions=vendor/**
-          -Dsonar.php.coverage.reportPaths=coverage.xml
-          -Dsonar.php.tests.reportPath=junit.xml
-          -Dsonar.host.url=%SONAR_HOST_URL%
-          -Dsonar.login=%SONAR_TOKEN%
- 
+        run: |
+          sonar-scanner.bat ^
+            -Dsonar.projectKey=Test_PHP ^
+            -Dsonar.projectName=Test_PHP ^
+            -Dsonar.sources=src/mvc-app/src ^
+            -Dsonar.tests=src/mvc-app/tests ^
+            -Dsonar.exclusions=src/mvc-app/vendor/** ^
+            -Dsonar.php.coverage.reportPaths=src/mvc-app/coverage.xml ^
+            -Dsonar.php.tests.reportPath=src/mvc-app/junit.xml ^
+            -Dsonar.host.url=%SONAR_HOST_URL% ^
+            -Dsonar.login=%SONAR_TOKEN%
+``
