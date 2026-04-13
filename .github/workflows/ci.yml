@@ -52,8 +52,8 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: >
           sonar-scanner.bat
-          -Dsonar.projectKey=php-demo
-          -Dsonar.projectName="PHP Demo"
+          -Dsonar.projectKey=Test_PHP
+          -Dsonar.projectName="Test_PHP"
           -Dsonar.sources=src
           -Dsonar.tests=tests
           -Dsonar.exclusions=vendor/**
