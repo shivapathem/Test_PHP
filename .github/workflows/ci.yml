@@ -61,6 +61,8 @@ jobs:
             -Dsonar.sources=src/mvc-app/app ^
             -Dsonar.tests=src/mvc-app/tests ^
             -Dsonar.exclusions=src/mvc-app/vendor/** ^
+            -Dsonar.php.coverage.reportPaths=src/mvc-app/coverage.xml ^
+            -Dsonar.php.tests.reportPath=src/mvc-app/junit.xml ^
             -Dsonar.sourceEncoding=UTF-8 ^
             -Dsonar.host.url=%SONAR_HOST_URL% ^
             -Dsonar.login=%SONAR_TOKEN%
