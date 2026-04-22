@@ -13,28 +13,30 @@ jobs:
 
     steps:
       # ------------------------------------------------------------
-      # Step 1: Checkout code
+      # Step 1: Checkout repository
       # ------------------------------------------------------------
       - name: Checkout repository
         uses: actions/checkout@v4
 
       # ------------------------------------------------------------
-      # Step 2: Setup PHP 8.5
+      # Step 2: Setup PHP (USE VALID VERSION)
       # ------------------------------------------------------------
-      - name: Setup PHP 8.5
+      - name: Setup PHP 8.3
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '8.5'
+          php-version: '8.3'
           tools: composer
           coverage: none
 
       - name: Verify PHP version
+        shell: pwsh
         run: php -v
 
       # ------------------------------------------------------------
       # Step 3: Install Composer dependencies (SAFE)
       # ------------------------------------------------------------
       - name: Install Composer dependencies
+        shell: pwsh
         run: |
           composer install `
             --no-interaction `
@@ -43,9 +45,10 @@ jobs:
             --no-scripts
 
       # ------------------------------------------------------------
-      # Step 4: PHP Syntax Check (excluding problematic file)
+      # Step 4: PHP Syntax Check (Exclude bad file)
       # ------------------------------------------------------------
       - name: PHP Syntax Check
+        shell: pwsh
         run: |
           Write-Host "Running PHP syntax check..."
           Get-ChildItem -Recurse -Filter *.php src |
@@ -56,8 +59,9 @@ jobs:
       # Step 5: Prepare build directory
       # ------------------------------------------------------------
       - name: Prepare build directory
+        shell: pwsh
         run: |
-          New-Item -ItemType Directory -Force build
+          New-Item -ItemType Directory -Force build | Out-Null
           Copy-Item src build/src -Recurse
           Copy-Item composer.json build/
           Copy-Item composer.lock build/
@@ -66,6 +70,7 @@ jobs:
       # Step 6: Create ZIP artifact
       # ------------------------------------------------------------
       - name: Create build artifact
+        shell: pwsh
         run: |
           Compress-Archive -Path build\* -DestinationPath Test_PHP_${{ github.run_number }}.zip
 
@@ -82,20 +87,23 @@ jobs:
       # Step 8: Docker Build
       # ------------------------------------------------------------
       - name: Docker build
+        shell: pwsh
         run: |
           docker build -t test_php_app:latest .
 
       # ------------------------------------------------------------
-      # Step 9: Stop & Remove existing container (if any)
+      # Step 9: Stop existing container (ignore if not exists)
       # ------------------------------------------------------------
       - name: Remove existing container
+        shell: pwsh
         run: |
-          docker rm -f test_php_container 2>$null || echo "No existing container"
+          docker rm -f test_php_container 2>$null || Write-Host "No existing container"
 
       # ------------------------------------------------------------
       # Step 10: Run Docker container (DEPLOY)
       # ------------------------------------------------------------
       - name: Run container
+        shell: pwsh
         run: |
           docker run -d `
             --name test_php_container `
