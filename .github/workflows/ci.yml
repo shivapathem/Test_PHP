@@ -1,30 +1,27 @@
 
-name: PHP CI Build with Artifacts
+name: PHP CI-CD with Docker Deployment (Windows)
 
 on:
   push:
     branches:
       - main
-  pull_request:
-    branches:
-      - main
 
 jobs:
-  build:
-    name: Build PHP Application
-    runs-on: ubuntu-latest
+  build-and-deploy:
+    name: Build, Package & Deploy to Docker
+    runs-on: [self-hosted, windows, x64]
 
     steps:
       # ------------------------------------------------------------
-      # Step 1: Checkout repository
+      # Step 1: Checkout code
       # ------------------------------------------------------------
       - name: Checkout repository
         uses: actions/checkout@v4
 
       # ------------------------------------------------------------
-      # Step 2: Setup PHP 8.5 and Composer
+      # Step 2: Setup PHP 8.5
       # ------------------------------------------------------------
-      - name: Setup PHP
+      - name: Setup PHP 8.5
         uses: shivammathur/setup-php@v2
         with:
           php-version: '8.5'
@@ -39,46 +36,68 @@ jobs:
       # ------------------------------------------------------------
       - name: Install Composer dependencies
         run: |
-          composer install \
-            --no-interaction \
-            --prefer-dist \
-            --no-progress \
+          composer install `
+            --no-interaction `
+            --prefer-dist `
+            --no-progress `
             --no-scripts
 
       # ------------------------------------------------------------
-      # Step 4: PHP Syntax Check (Exclude problematic file)
+      # Step 4: PHP Syntax Check (excluding problematic file)
       # ------------------------------------------------------------
       - name: PHP Syntax Check
         run: |
-          echo "Running PHP syntax check (excluding z-getscreenres.php)..."
-          find src -name "*.php" ! -name "z-getscreenres.php" -print0 \
-          | xargs -0 -n1 php -l
+          Write-Host "Running PHP syntax check..."
+          Get-ChildItem -Recurse -Filter *.php src |
+          Where-Object { $_.Name -ne "z-getscreenres.php" } |
+          ForEach-Object { php -l $_.FullName }
 
       # ------------------------------------------------------------
       # Step 5: Prepare build directory
       # ------------------------------------------------------------
       - name: Prepare build directory
         run: |
-          mkdir -p build
-          cp -r src build/src
-          cp composer.json build/
-          cp composer.lock build/
-          cp *.nuspec build/ || true
-          cp README* build/ || true
+          New-Item -ItemType Directory -Force build
+          Copy-Item src build/src -Recurse
+          Copy-Item composer.json build/
+          Copy-Item composer.lock build/
 
       # ------------------------------------------------------------
       # Step 6: Create ZIP artifact
       # ------------------------------------------------------------
-      - name: Package build artifact
+      - name: Create build artifact
         run: |
-          cd build
-          zip -r Test_PHP_${{ github.run_number }}.zip .
+          Compress-Archive -Path build\* -DestinationPath Test_PHP_${{ github.run_number }}.zip
 
       # ------------------------------------------------------------
       # Step 7: Upload artifact
       # ------------------------------------------------------------
-      - name: Upload build artifact
+      - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: Test_PHP_Artifact
-          path: build/Test_PHP_*.zip
+          path: Test_PHP_${{ github.run_number }}.zip
+
+      # ------------------------------------------------------------
+      # Step 8: Docker Build
+      # ------------------------------------------------------------
+      - name: Docker build
+        run: |
+          docker build -t test_php_app:latest .
+
+      # ------------------------------------------------------------
+      # Step 9: Stop & Remove existing container (if any)
+      # ------------------------------------------------------------
+      - name: Remove existing container
+        run: |
+          docker rm -f test_php_container 2>$null || echo "No existing container"
+
+      # ------------------------------------------------------------
+      # Step 10: Run Docker container (DEPLOY)
+      # ------------------------------------------------------------
+      - name: Run container
+        run: |
+          docker run -d `
+            --name test_php_container `
+            -p 8080:80 `
+            test_php_app:latest
