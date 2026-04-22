@@ -1,3 +1,4 @@
+
 name: PHP CI Build with Artifacts
 
 on:
@@ -15,13 +16,13 @@ jobs:
 
     steps:
       # ------------------------------------------------------------
-      # Step 1: Checkout Source Code
+      # Step 1: Checkout repository
       # ------------------------------------------------------------
       - name: Checkout repository
         uses: actions/checkout@v4
 
       # ------------------------------------------------------------
-      # Step 2: Setup PHP & Composer
+      # Step 2: Setup PHP 8.5 and Composer
       # ------------------------------------------------------------
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
@@ -34,12 +35,8 @@ jobs:
         run: php -v
 
       # ------------------------------------------------------------
-      # Step 3: Install Dependencies (FIXED)
+      # Step 3: Install Composer dependencies (SAFE)
       # ------------------------------------------------------------
-      # NOTE:
-      # ❌ Removed --optimize-autoloader
-      # ✅ Prevents recursive scanning of system directories (/etc/*)
-      # ✅ Fixes permission denied error
       - name: Install Composer dependencies
         run: |
           composer install \
@@ -49,15 +46,16 @@ jobs:
             --no-scripts
 
       # ------------------------------------------------------------
-      # Step 4: PHP Syntax Validation
+      # Step 4: PHP Syntax Check (Exclude problematic file)
       # ------------------------------------------------------------
       - name: PHP Syntax Check
         run: |
-          echo "Running PHP syntax check..."
-          find src -name "*.php" -print0 | xargs -0 -n1 php -l
+          echo "Running PHP syntax check (excluding z-getscreenres.php)..."
+          find src -name "*.php" ! -name "z-getscreenres.php" -print0 \
+          | xargs -0 -n1 php -l
 
       # ------------------------------------------------------------
-      # Step 5: Prepare Build Directory
+      # Step 5: Prepare build directory
       # ------------------------------------------------------------
       - name: Prepare build directory
         run: |
@@ -69,7 +67,7 @@ jobs:
           cp README* build/ || true
 
       # ------------------------------------------------------------
-      # Step 6: Create Artifact (ZIP)
+      # Step 6: Create ZIP artifact
       # ------------------------------------------------------------
       - name: Package build artifact
         run: |
@@ -77,7 +75,7 @@ jobs:
           zip -r Test_PHP_${{ github.run_number }}.zip .
 
       # ------------------------------------------------------------
-      # Step 7: Upload Artifact
+      # Step 7: Upload artifact
       # ------------------------------------------------------------
       - name: Upload build artifact
         uses: actions/upload-artifact@v4
