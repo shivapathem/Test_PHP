@@ -1,5 +1,5 @@
 
-name: PHP CI Build & Artifact
+name: PHP CI Build with Artifacts
 
 on:
   push:
@@ -15,47 +15,73 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Checkout code
+      # ------------------------------------------------------------
+      # Step 1: Checkout Source Code
+      # ------------------------------------------------------------
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # Step 2: Setup PHP
+      # ------------------------------------------------------------
+      # Step 2: Setup PHP & Composer
+      # ------------------------------------------------------------
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '8.5'
+          php-version: '8.1'
           tools: composer
+          coverage: none
 
-      # Step 3: Verify PHP version
       - name: Verify PHP version
         run: php -v
 
-      # Step 4: Install Composer dependencies
-      - name: Install dependencies
-        run: composer install --no-interaction --prefer-dist --optimize-autoloader
+      # ------------------------------------------------------------
+      # Step 3: Install Dependencies (FIXED)
+      # ------------------------------------------------------------
+      # NOTE:
+      # ❌ Removed --optimize-autoloader
+      # ✅ Prevents recursive scanning of system directories (/etc/*)
+      # ✅ Fixes permission denied error
+      - name: Install Composer dependencies
+        run: |
+          composer install \
+            --no-interaction \
+            --prefer-dist \
+            --no-progress \
+            --no-scripts
 
-      # Step 5: PHP syntax check
+      # ------------------------------------------------------------
+      # Step 4: PHP Syntax Validation
+      # ------------------------------------------------------------
       - name: PHP Syntax Check
         run: |
+          echo "Running PHP syntax check..."
           find src -name "*.php" -print0 | xargs -0 -n1 php -l
 
-      # Step 6: Prepare build directory
-      - name: Prepare build
+      # ------------------------------------------------------------
+      # Step 5: Prepare Build Directory
+      # ------------------------------------------------------------
+      - name: Prepare build directory
         run: |
           mkdir -p build
           cp -r src build/src
           cp composer.json build/
           cp composer.lock build/
+          cp *.nuspec build/ || true
+          cp README* build/ || true
 
-      # Step 7: Create artifact ZIP
-      - name: Package artifact
+      # ------------------------------------------------------------
+      # Step 6: Create Artifact (ZIP)
+      # ------------------------------------------------------------
+      - name: Package build artifact
         run: |
           cd build
           zip -r Test_PHP_${{ github.run_number }}.zip .
 
-      # Step 8: Upload artifact
+      # ------------------------------------------------------------
+      # Step 7: Upload Artifact
+      # ------------------------------------------------------------
       - name: Upload build artifact
         uses: actions/upload-artifact@v4
         with:
-          name: Test_PHP_Build
+          name: Test_PHP_Artifact
           path: build/Test_PHP_*.zip
