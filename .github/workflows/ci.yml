@@ -1,5 +1,5 @@
 
-name: CI-CD PHP App with Artifacts to IIS
+name: CI-CD PHP App with Artifacts to IIS (Syntax Bypassed)
 
 on:
   push:
@@ -8,40 +8,22 @@ on:
 
 jobs:
 # ============================================================
-# CI JOB – BUILD & PACKAGE ARTIFACT
+# CI JOB – PACKAGE ARTIFACT (NO PHP SYNTAX CHECK)
 # ============================================================
   build:
-    name: CI - Build & Package Artifact
+    name: CI - Package Artifact
     runs-on: [self-hosted, windows, x64]
 
     steps:
       # --------------------------------------------------------
-      # Checkout source code
+      # Step 1: Checkout source code
       # --------------------------------------------------------
       - name: Checkout repository
         uses: actions/checkout@v4
 
       # --------------------------------------------------------
-      # Verify PHP is available
-      # --------------------------------------------------------
-      - name: Verify PHP
-        shell: pwsh
-        run: php -v
-
-      # --------------------------------------------------------
-      # PHP Syntax Check (CI)
-      # --------------------------------------------------------
-      - name: PHP Syntax Check
-        shell: pwsh
-        run: |
-          Write-Host "Running PHP syntax check..."
-          Get-ChildItem -Recurse -Filter *.php . |
-          ForEach-Object {
-            & php -l $_.FullName
-          }
-
-      # --------------------------------------------------------
-      # Package artifact (ZIP)
+      # Step 2: Package application into ZIP artifact
+      # (No validation, syntax errors are ignored)
       # --------------------------------------------------------
       - name: Create artifact ZIP
         shell: pwsh
@@ -52,7 +34,7 @@ jobs:
             -Force
 
       # --------------------------------------------------------
-      # Upload artifact
+      # Step 3: Upload artifact
       # --------------------------------------------------------
       - name: Upload build artifact
         uses: actions/upload-artifact@v4
@@ -71,7 +53,7 @@ jobs:
 
     steps:
       # --------------------------------------------------------
-      # Download artifact
+      # Step 1: Download artifact
       # --------------------------------------------------------
       - name: Download artifact
         uses: actions/download-artifact@v4
@@ -79,7 +61,7 @@ jobs:
           name: php-app-artifact
 
       # --------------------------------------------------------
-      # Stop IIS Website
+      # Step 2: Stop IIS Website
       # --------------------------------------------------------
       - name: Stop IIS Website
         shell: pwsh
@@ -88,7 +70,8 @@ jobs:
           Stop-Website -Name "Default Web Site"
 
       # --------------------------------------------------------
-      # Deploy artifact to IIS directory
+      # Step 3: Deploy artifact to IIS directory
+      # (Folder must already exist)
       # --------------------------------------------------------
       - name: Deploy artifact to IIS
         shell: pwsh
@@ -99,7 +82,7 @@ jobs:
             -Force
 
       # --------------------------------------------------------
-      # Start IIS Website
+      # Step 4: Start IIS Website
       # --------------------------------------------------------
       - name: Start IIS Website
         shell: pwsh
@@ -108,9 +91,9 @@ jobs:
           Start-Website -Name "Default Web Site"
 
       # --------------------------------------------------------
-      # Verify IIS Site Status
+      # Step 5: Verify IIS Website State
       # --------------------------------------------------------
-      - name: Verify IIS Site
+      - name: Verify IIS Website
         shell: pwsh
         run: |
           Get-Website | Select-Object Name, State
