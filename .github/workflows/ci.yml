@@ -19,21 +19,14 @@ jobs:
         uses: actions/checkout@v4
 
       # ------------------------------------------------------------
-      # Step 2: Setup PHP (USE VALID VERSION)
+      # Step 2: Verify PHP (pre-installed)
       # ------------------------------------------------------------
-      - name: Setup PHP 8.3
-        uses: shivammathur/setup-php@v2
-        with:
-          php-version: '8.3'
-          tools: composer
-          coverage: none
-
       - name: Verify PHP version
         shell: pwsh
         run: php -v
 
       # ------------------------------------------------------------
-      # Step 3: Install Composer dependencies (SAFE)
+      # Step 3: Install Composer dependencies (FIXED)
       # ------------------------------------------------------------
       - name: Install Composer dependencies
         shell: pwsh
@@ -42,10 +35,11 @@ jobs:
             --no-interaction `
             --prefer-dist `
             --no-progress `
-            --no-scripts
+            --no-scripts `
+            --ignore-platform-req=ext-gd
 
       # ------------------------------------------------------------
-      # Step 4: PHP Syntax Check (Exclude bad file)
+      # Step 4: PHP Syntax Check (exclude problematic file)
       # ------------------------------------------------------------
       - name: PHP Syntax Check
         shell: pwsh
@@ -88,11 +82,10 @@ jobs:
       # ------------------------------------------------------------
       - name: Docker build
         shell: pwsh
-        run: |
-          docker build -t test_php_app:latest .
+        run: docker build -t test_php_app:latest .
 
       # ------------------------------------------------------------
-      # Step 9: Stop existing container (ignore if not exists)
+      # Step 9: Remove existing container if exists
       # ------------------------------------------------------------
       - name: Remove existing container
         shell: pwsh
