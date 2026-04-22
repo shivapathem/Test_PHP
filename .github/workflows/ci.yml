@@ -1,5 +1,5 @@
 
-name: CI-CD Deploy PHP Application to IIS
+name: CI-CD PHP App with Artifacts to IIS
 
 on:
   push:
@@ -7,68 +7,110 @@ on:
       - main
 
 jobs:
-  ci-cd-iis:
-    name: Build and Deploy PHP App to IIS
+# ============================================================
+# CI JOB – BUILD & PACKAGE ARTIFACT
+# ============================================================
+  build:
+    name: CI - Build & Package Artifact
     runs-on: [self-hosted, windows, x64]
 
     steps:
-      # ------------------------------------------------------------
-      # Step 1: Checkout source code (CI)
-      # ------------------------------------------------------------
+      # --------------------------------------------------------
+      # Checkout source code
+      # --------------------------------------------------------
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # ------------------------------------------------------------
-      # Step 2: Verify PHP availability (CI)
-      # ------------------------------------------------------------
-      - name: Verify PHP installation
+      # --------------------------------------------------------
+      # Verify PHP is available
+      # --------------------------------------------------------
+      - name: Verify PHP
         shell: pwsh
         run: php -v
 
-      # ------------------------------------------------------------
-      # Step 3: PHP Syntax Check (CI)
-      # ------------------------------------------------------------
+      # --------------------------------------------------------
+      # PHP Syntax Check (CI)
+      # --------------------------------------------------------
       - name: PHP Syntax Check
         shell: pwsh
         run: |
-          Write-Host "Running PHP syntax validation..."
+          Write-Host "Running PHP syntax check..."
           Get-ChildItem -Recurse -Filter *.php . |
-          ForEach-Object { php -l $_.FullName }
+          ForEach-Object {
+            & php -l $_.FullName
+          }
 
-      # ------------------------------------------------------------
-      # Step 4: Stop IIS Website (CD)
-      # ------------------------------------------------------------
+      # --------------------------------------------------------
+      # Package artifact (ZIP)
+      # --------------------------------------------------------
+      - name: Create artifact ZIP
+        shell: pwsh
+        run: |
+          Compress-Archive `
+            -Path .\* `
+            -DestinationPath app-artifact.zip `
+            -Force
+
+      # --------------------------------------------------------
+      # Upload artifact
+      # --------------------------------------------------------
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: php-app-artifact
+          path: app-artifact.zip
+
+
+# ============================================================
+# CD JOB – DEPLOY ARTIFACT TO IIS
+# ============================================================
+  deploy:
+    name: CD - Deploy Artifact to IIS
+    needs: build
+    runs-on: [self-hosted, windows, x64]
+
+    steps:
+      # --------------------------------------------------------
+      # Download artifact
+      # --------------------------------------------------------
+      - name: Download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: php-app-artifact
+
+      # --------------------------------------------------------
+      # Stop IIS Website
+      # --------------------------------------------------------
       - name: Stop IIS Website
         shell: pwsh
         run: |
           Import-Module WebAdministration
           Stop-Website -Name "Default Web Site"
 
-      # ------------------------------------------------------------
-      # Step 5: Deploy application files to IIS directory (CD)
-      # ------------------------------------------------------------
-      - name: Deploy application to IIS
+      # --------------------------------------------------------
+      # Deploy artifact to IIS directory
+      # --------------------------------------------------------
+      - name: Deploy artifact to IIS
         shell: pwsh
         run: |
-          Copy-Item -Path .\* `
-                    -Destination "C:\inetpub\wwwroot\TestPHP" `
-                    -Recurse `
-                    -Force `
-                    -Exclude ".git",".github","node_modules"
+          Expand-Archive `
+            -Path app-artifact.zip `
+            -DestinationPath "C:\inetpub\wwwroot\TestPHP" `
+            -Force
 
-      # ------------------------------------------------------------
-      # Step 6: Start IIS Website (CD)
-      # ------------------------------------------------------------
+      # --------------------------------------------------------
+      # Start IIS Website
+      # --------------------------------------------------------
       - name: Start IIS Website
         shell: pwsh
         run: |
           Import-Module WebAdministration
           Start-Website -Name "Default Web Site"
 
-      # ------------------------------------------------------------
-      # Step 7: Verify IIS Site Status (Post-deploy check)
-      # ------------------------------------------------------------
-      - name: Verify IIS Website State
+      # --------------------------------------------------------
+      # Verify IIS Site Status
+      # --------------------------------------------------------
+      - name: Verify IIS Site
         shell: pwsh
         run: |
           Get-Website | Select-Object Name, State
