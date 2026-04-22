@@ -1,71 +1,74 @@
 
-name: PHP CI-CD using Docker (Windows Runner)
+name: CI-CD Deploy PHP Application to IIS
 
-# ------------------------------------------------------------
-# Trigger: Run pipeline on every push to main branch
-# ------------------------------------------------------------
 on:
   push:
     branches:
       - main
 
-# ------------------------------------------------------------
-# Job Definition
-# ------------------------------------------------------------
 jobs:
-  docker-ci-cd:
-    name: Build and Deploy PHP App using Docker
+  ci-cd-iis:
+    name: Build and Deploy PHP App to IIS
     runs-on: [self-hosted, windows, x64]
 
     steps:
       # ------------------------------------------------------------
-      # Step 1: Checkout source code from GitHub
+      # Step 1: Checkout source code (CI)
       # ------------------------------------------------------------
       - name: Checkout repository
         uses: actions/checkout@v4
 
       # ------------------------------------------------------------
-      # Step 2: Verify Docker is available on runner
-      # (Helpful for troubleshooting)
+      # Step 2: Verify PHP availability (CI)
       # ------------------------------------------------------------
-      - name: Verify Docker installation
-        run: docker version
+      - name: Verify PHP installation
+        shell: pwsh
+        run: php -v
 
       # ------------------------------------------------------------
-      # Step 3: Build Docker image
-      # Dockerfile handles:
-      #  - PHP installation
-      #  - Required extensions (gd, zip)
-      #  - Composer install
+      # Step 3: PHP Syntax Check (CI)
       # ------------------------------------------------------------
-      - name: Build Docker image
+      - name: PHP Syntax Check
+        shell: pwsh
         run: |
-          docker build `
-            -t test_php_app:latest `
-            .
+          Write-Host "Running PHP syntax validation..."
+          Get-ChildItem -Recurse -Filter *.php . |
+          ForEach-Object { php -l $_.FullName }
 
       # ------------------------------------------------------------
-      # Step 4: Stop & remove existing container if it exists
-      # Prevents port conflicts & stale deployments
+      # Step 4: Stop IIS Website (CD)
       # ------------------------------------------------------------
-      - name: Stop existing container (if any)
+      - name: Stop IIS Website
+        shell: pwsh
         run: |
-          docker rm -f test_php_container || echo "No existing container found"
+          Import-Module WebAdministration
+          Stop-Website -Name "Default Web Site"
 
       # ------------------------------------------------------------
-      # Step 5: Run new container (DEPLOYMENT)
-      # App will be accessible on:
-      # http://localhost:8080
+      # Step 5: Deploy application files to IIS directory (CD)
       # ------------------------------------------------------------
-      - name: Run Docker container
+      - name: Deploy application to IIS
+        shell: pwsh
         run: |
-          docker run -d `
-            --name test_php_container `
-            -p 8080:80 `
-            test_php_app:latest
+          Copy-Item -Path .\* `
+                    -Destination "C:\inetpub\wwwroot\TestPHP" `
+                    -Recurse `
+                    -Force `
+                    -Exclude ".git",".github","node_modules"
 
       # ------------------------------------------------------------
-      # Step 6: Optional – Show running containers (confirmation)
+      # Step 6: Start IIS Website (CD)
       # ------------------------------------------------------------
-      - name: Verify running containers
-        run: docker ps
+      - name: Start IIS Website
+        shell: pwsh
+        run: |
+          Import-Module WebAdministration
+          Start-Website -Name "Default Web Site"
+
+      # ------------------------------------------------------------
+      # Step 7: Verify IIS Site Status (Post-deploy check)
+      # ------------------------------------------------------------
+      - name: Verify IIS Website State
+        shell: pwsh
+        run: |
+          Get-Website | Select-Object Name, State
