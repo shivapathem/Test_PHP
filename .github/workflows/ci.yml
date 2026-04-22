@@ -8,23 +8,16 @@ on:
 
 jobs:
 # ============================================================
-# CI JOB – PACKAGE ARTIFACT (NO PHP SYNTAX CHECK)
+# CI JOB – PACKAGE ARTIFACT
 # ============================================================
   build:
     name: CI - Package Artifact
     runs-on: [self-hosted, windows, x64]
 
     steps:
-      # --------------------------------------------------------
-      # Step 1: Checkout source code
-      # --------------------------------------------------------
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # --------------------------------------------------------
-      # Step 2: Package application into ZIP artifact
-      # (No validation, syntax errors are ignored)
-      # --------------------------------------------------------
       - name: Create artifact ZIP
         shell: pwsh
         run: |
@@ -33,9 +26,6 @@ jobs:
             -DestinationPath app-artifact.zip `
             -Force
 
-      # --------------------------------------------------------
-      # Step 3: Upload artifact
-      # --------------------------------------------------------
       - name: Upload build artifact
         uses: actions/upload-artifact@v4
         with:
@@ -52,27 +42,17 @@ jobs:
     runs-on: [self-hosted, windows, x64]
 
     steps:
-      # --------------------------------------------------------
-      # Step 1: Download artifact
-      # --------------------------------------------------------
       - name: Download artifact
         uses: actions/download-artifact@v4
         with:
           name: php-app-artifact
 
-      # --------------------------------------------------------
-      # Step 2: Stop IIS Website
-      # --------------------------------------------------------
       - name: Stop IIS Website
         shell: pwsh
         run: |
           Import-Module WebAdministration
           Stop-Website -Name "Default Web Site"
 
-      # --------------------------------------------------------
-      # Step 3: Deploy artifact to IIS directory
-      # (Folder must already exist)
-      # --------------------------------------------------------
       - name: Deploy artifact to IIS
         shell: pwsh
         run: |
@@ -81,19 +61,14 @@ jobs:
             -DestinationPath "C:\inetpub\wwwroot\TestPHP" `
             -Force
 
-      # --------------------------------------------------------
-      # Step 4: Start IIS Website
-      # --------------------------------------------------------
       - name: Start IIS Website
         shell: pwsh
         run: |
           Import-Module WebAdministration
           Start-Website -Name "Default Web Site"
 
-      # --------------------------------------------------------
-      # Step 5: Verify IIS Website State
-      # --------------------------------------------------------
       - name: Verify IIS Website
         shell: pwsh
         run: |
+          Import-Module WebAdministration
           Get-Website | Select-Object Name, State
