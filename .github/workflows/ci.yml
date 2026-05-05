@@ -1,5 +1,4 @@
-
-name: CI-CD PHP App with Artifacts to IIS (Syntax Bypassed)
+name: CI-CD PHP App with Artifacts to IIS
 
 on:
   push:
@@ -8,16 +7,44 @@ on:
 
 jobs:
 # ============================================================
-# CI JOB – PACKAGE ARTIFACT
+# CI JOB – BUILD & PACKAGE ARTIFACT
 # ============================================================
   build:
-    name: CI - Package Artifact
+    name: CI - Build & Package Artifact
     runs-on: [self-hosted, windows, x64]
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      # -----------------------
+      # Install dependencies (Root)
+      # -----------------------
+      - name: Install Composer dependencies (root)
+        shell: pwsh
+        run: |
+          composer install `
+            --no-interaction `
+            --no-progress `
+            --prefer-dist `
+            --optimize-autoloader
+
+      # -----------------------
+      # Install dependencies (MVC App)
+      # -----------------------
+      - name: Install Composer dependencies (src/mvc-app)
+        shell: pwsh
+        run: |
+          cd src/mvc-app
+          composer install `
+            --no-interaction `
+            --no-progress `
+            --prefer-dist `
+            --optimize-autoloader
+
+      # -----------------------
+      # Create ZIP artifact
+      # -----------------------
       - name: Create artifact ZIP
         shell: pwsh
         run: |
@@ -31,7 +58,6 @@ jobs:
         with:
           name: php-app-artifact
           path: app-artifact.zip
-
 
 # ============================================================
 # CD JOB – DEPLOY ARTIFACT TO IIS
