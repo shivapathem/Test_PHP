@@ -1,3 +1,4 @@
+
 name: Deploy PHP Application
 
 on:
@@ -25,7 +26,7 @@ jobs:
         with:
           php-version: '8.4'
 
-      # ✅ TEMP FIX (session only)
+      # ✅ FIX TEMP (session only)
       - name: Fix Temp Directory
         shell: powershell
         run: |
@@ -33,7 +34,7 @@ jobs:
           $env:TMP = "C:\Temp"
           New-Item -ItemType Directory -Force -Path C:\Temp
 
-      # ✅ COMPOSER CACHE
+      # ✅ SET COMPOSER CACHE
       - name: Set Composer Cache
         shell: powershell
         run: |
@@ -52,7 +53,7 @@ jobs:
         run: |
           if (Test-Path vendor) { Remove-Item vendor -Recurse -Force }
 
-      # ✅ INSTALL DEPENDENCIES (CRITICAL FIX)
+      # ✅ INSTALL DEPENDENCIES (NO AUTOLOADER)
       - name: Install Composer Dependencies
         shell: powershell
         run: |
@@ -60,14 +61,18 @@ jobs:
             --no-dev `
             --prefer-dist `
             --no-scripts `
-            --no-autoloader
+            --no-autoloader `
+            --classmap-authoritative
 
-      # ✅ GENERATE AUTOLOAD (SAFE STEP)
+      # ✅ GENERATE AUTOLOAD (FINAL FIX)
       - name: Generate Autoload
         shell: powershell
         run: |
           cd $env:GITHUB_WORKSPACE
-          & "C:\composer\composer.bat" dump-autoload --optimize
+          & "C:\composer\composer.bat" dump-autoload `
+            --optimize `
+            --classmap-authoritative `
+            --no-dev
 
       # ✅ CREATE ZIP
       - name: Create Deployment Package
@@ -94,7 +99,7 @@ jobs:
         run: |
           New-Item -Path "${{ secrets.DEPLOY_PATH }}\storage\logs\laravel.log" -ItemType File -Force
 
-      # ✅ PERMISSIONS
+      # ✅ SET PERMISSIONS
       - name: Set Folder Permissions
         shell: powershell
         run: |
