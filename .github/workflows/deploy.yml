@@ -25,7 +25,7 @@ jobs:
         with:
           php-version: '8.4'
 
-      # ✅ FIX TEMP DIRECTORY (NO ADMIN REQUIRED)
+      # ✅ TEMP FIX (session only)
       - name: Fix Temp Directory
         shell: powershell
         run: |
@@ -33,30 +33,41 @@ jobs:
           $env:TMP = "C:\Temp"
           New-Item -ItemType Directory -Force -Path C:\Temp
 
-      # ✅ SET COMPOSER CACHE (LOCAL ONLY)
+      # ✅ COMPOSER CACHE
       - name: Set Composer Cache
         shell: powershell
         run: |
           $env:COMPOSER_CACHE_DIR = "C:\composer-cache"
           New-Item -ItemType Directory -Force -Path C:\composer-cache
 
-      # ✅ CLEAR COMPOSER CACHE
+      # ✅ CLEAR CACHE
       - name: Clear Composer Cache
         shell: powershell
         run: |
           & "C:\composer\composer.bat" clear-cache
 
-      # ✅ CLEAN OLD VENDOR
+      # ✅ CLEAN VENDOR
       - name: Clean Vendor Folder
         shell: powershell
         run: |
           if (Test-Path vendor) { Remove-Item vendor -Recurse -Force }
 
-      # ✅ INSTALL DEPENDENCIES (FIXED)
+      # ✅ INSTALL DEPENDENCIES (CRITICAL FIX)
       - name: Install Composer Dependencies
         shell: powershell
         run: |
-          & "C:\composer\composer.bat" install --no-dev --optimize-autoloader --prefer-dist --no-scripts
+          & "C:\composer\composer.bat" install `
+            --no-dev `
+            --prefer-dist `
+            --no-scripts `
+            --no-autoloader
+
+      # ✅ GENERATE AUTOLOAD (SAFE STEP)
+      - name: Generate Autoload
+        shell: powershell
+        run: |
+          cd $env:GITHUB_WORKSPACE
+          & "C:\composer\composer.bat" dump-autoload --optimize
 
       # ✅ CREATE ZIP
       - name: Create Deployment Package
@@ -64,7 +75,7 @@ jobs:
         run: |
           Compress-Archive -Path * -DestinationPath deploy.zip -Force
 
-      # ✅ STOP IIS SITE
+      # ✅ STOP IIS
       - name: Stop IIS Website
         shell: powershell
         run: |
@@ -77,7 +88,7 @@ jobs:
         run: |
           Expand-Archive deploy.zip -DestinationPath "${{ secrets.DEPLOY_PATH }}" -Force
 
-      # ✅ REQUIRED FILES
+      # ✅ CREATE REQUIRED FILE
       - name: Create Required Files
         shell: powershell
         run: |
