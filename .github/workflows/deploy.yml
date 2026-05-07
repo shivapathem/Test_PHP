@@ -1,3 +1,4 @@
+
 name: Deploy PHP Application
 
 on:
@@ -5,9 +6,6 @@ on:
   push:
     branches:
       - main
-    paths:
-      - '.github/workflows/deploy.yml'
-      - 'deploy/**'
 
 jobs:
   deploy:
@@ -28,58 +26,73 @@ jobs:
         with:
           php-version: '8.4'
 
-      # ✅ FIX TEMP DIRECTORY (important for your error)
+      # ✅ FIX WINDOWS TEMP (CRITICAL)
       - name: Fix Temp Directory
         shell: powershell
         run: |
           $env:TEMP = "C:\Temp"
           $env:TMP = "C:\Temp"
+          [System.Environment]::SetEnvironmentVariable("TEMP", "C:\Temp", "Machine")
+          [System.Environment]::SetEnvironmentVariable("TMP", "C:\Temp", "Machine")
           New-Item -ItemType Directory -Force -Path C:\Temp
 
-      # ✅ OPTIONAL: Clear Composer cache
+      # ✅ FIX COMPOSER CACHE LOCATION
+      - name: Set Composer Cache
+        shell: powershell
+        run: |
+          $env:COMPOSER_CACHE_DIR = "C:\composer-cache"
+          New-Item -ItemType Directory -Force -Path C:\composer-cache
+
+      # ✅ CLEAR CACHE
       - name: Clear Composer Cache
         shell: powershell
         run: |
           & "C:\composer\composer.bat" clear-cache
 
-      # ✅ OPTIONAL: Clean old vendor folder
+      # ✅ CLEAN OLD FILES
       - name: Clean Vendor Folder
         shell: powershell
         run: |
           if (Test-Path vendor) { Remove-Item vendor -Recurse -Force }
 
-      # ✅ USING LOCAL COMPOSER PATH (your requirement)
+      # ✅ INSTALL DEPENDENCIES (FIXED)
       - name: Install Composer Dependencies
         shell: powershell
         run: |
           & "C:\composer\composer.bat" install --no-dev --optimize-autoloader --prefer-dist --no-scripts
 
+      # ✅ CREATE ZIP PACKAGE
       - name: Create Deployment Package
         shell: powershell
         run: |
           Compress-Archive -Path * -DestinationPath deploy.zip -Force
 
+      # ✅ STOP IIS
       - name: Stop IIS Website
         shell: powershell
         run: |
           Import-Module WebAdministration
           Stop-Website -Name "${{ secrets.IIS_SITE_NAME }}"
 
+      # ✅ DEPLOY FILES
       - name: Copy Files to IIS
         shell: powershell
         run: |
           Expand-Archive deploy.zip -DestinationPath "${{ secrets.DEPLOY_PATH }}" -Force
 
+      # ✅ CREATE REQUIRED FILES
       - name: Create Required Files
         shell: powershell
         run: |
           New-Item -Path "${{ secrets.DEPLOY_PATH }}\storage\logs\laravel.log" -ItemType File -Force
 
+      # ✅ SET PERMISSIONS
       - name: Set Folder Permissions
         shell: powershell
         run: |
           icacls "${{ secrets.DEPLOY_PATH }}\storage" /grant IIS_IUSRS:(OI)(CI)F /T
 
+      # ✅ RUN LARAVEL COMMANDS
       - name: Run Laravel Commands
         shell: powershell
         run: |
@@ -88,19 +101,20 @@ jobs:
           php artisan cache:clear
           php artisan migrate --force
 
+      # ✅ START IIS
       - name: Start IIS Website
         shell: powershell
         run: |
           Import-Module WebAdministration
           Start-Website -Name "${{ secrets.IIS_SITE_NAME }}"
 
-      - name: Notify Deployment Completion
+      - name: Notify Success
         if: success()
         shell: powershell
         run: |
           Write-Host "Deployment Completed Successfully"
 
-      - name: Notify Deployment Failure
+      - name: Notify Failure
         if: failure()
         shell: powershell
         run: |
