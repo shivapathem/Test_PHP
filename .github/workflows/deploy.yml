@@ -52,7 +52,7 @@ jobs:
       - name: Install Composer Dependencies
         shell: powershell
         run: |
-          "C:\composer\composer.bat" install --no-dev --optimize-autoloader --prefer-dist --no-scripts
+          & "C:\composer\composer.bat" install --no-dev --optimize-autoloader --prefer-dist --no-scripts
 
       - name: Create Deployment Package
         shell: powershell
