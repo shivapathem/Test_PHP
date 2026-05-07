@@ -1,4 +1,3 @@
-
 name: Deploy PHP Application
 
 on:
@@ -41,7 +40,7 @@ jobs:
       - name: Clear Composer Cache
         shell: powershell
         run: |
-          "C:\composer\composer.bat" clear-cache
+          & "C:\composer\composer.bat" clear-cache
 
       # ✅ OPTIONAL: Clean old vendor folder
       - name: Clean Vendor Folder
