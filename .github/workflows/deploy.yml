@@ -1,4 +1,3 @@
-
 name: Deploy PHP Application
 
 on:
@@ -26,30 +25,28 @@ jobs:
         with:
           php-version: '8.4'
 
-      # ✅ FIX WINDOWS TEMP (CRITICAL)
+      # ✅ FIX TEMP DIRECTORY (NO ADMIN REQUIRED)
       - name: Fix Temp Directory
         shell: powershell
         run: |
           $env:TEMP = "C:\Temp"
           $env:TMP = "C:\Temp"
-          [System.Environment]::SetEnvironmentVariable("TEMP", "C:\Temp", "Machine")
-          [System.Environment]::SetEnvironmentVariable("TMP", "C:\Temp", "Machine")
           New-Item -ItemType Directory -Force -Path C:\Temp
 
-      # ✅ FIX COMPOSER CACHE LOCATION
+      # ✅ SET COMPOSER CACHE (LOCAL ONLY)
       - name: Set Composer Cache
         shell: powershell
         run: |
           $env:COMPOSER_CACHE_DIR = "C:\composer-cache"
           New-Item -ItemType Directory -Force -Path C:\composer-cache
 
-      # ✅ CLEAR CACHE
+      # ✅ CLEAR COMPOSER CACHE
       - name: Clear Composer Cache
         shell: powershell
         run: |
           & "C:\composer\composer.bat" clear-cache
 
-      # ✅ CLEAN OLD FILES
+      # ✅ CLEAN OLD VENDOR
       - name: Clean Vendor Folder
         shell: powershell
         run: |
@@ -61,13 +58,13 @@ jobs:
         run: |
           & "C:\composer\composer.bat" install --no-dev --optimize-autoloader --prefer-dist --no-scripts
 
-      # ✅ CREATE ZIP PACKAGE
+      # ✅ CREATE ZIP
       - name: Create Deployment Package
         shell: powershell
         run: |
           Compress-Archive -Path * -DestinationPath deploy.zip -Force
 
-      # ✅ STOP IIS
+      # ✅ STOP IIS SITE
       - name: Stop IIS Website
         shell: powershell
         run: |
@@ -80,19 +77,19 @@ jobs:
         run: |
           Expand-Archive deploy.zip -DestinationPath "${{ secrets.DEPLOY_PATH }}" -Force
 
-      # ✅ CREATE REQUIRED FILES
+      # ✅ REQUIRED FILES
       - name: Create Required Files
         shell: powershell
         run: |
           New-Item -Path "${{ secrets.DEPLOY_PATH }}\storage\logs\laravel.log" -ItemType File -Force
 
-      # ✅ SET PERMISSIONS
+      # ✅ PERMISSIONS
       - name: Set Folder Permissions
         shell: powershell
         run: |
           icacls "${{ secrets.DEPLOY_PATH }}\storage" /grant IIS_IUSRS:(OI)(CI)F /T
 
-      # ✅ RUN LARAVEL COMMANDS
+      # ✅ LARAVEL COMMANDS
       - name: Run Laravel Commands
         shell: powershell
         run: |
