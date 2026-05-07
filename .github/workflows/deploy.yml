@@ -1,0 +1,81 @@
+name: Deploy PHP Application
+ 
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+ 
+jobs:
+  deploy:
+    runs-on: self-hosted
+ 
+    steps:
+ 
+      - name: Checkout Code
+        uses: actions/checkout@v4
+ 
+      - name: Notify Deployment Start
+        shell: powershell
+        run: |
+          Write-Host "Deployment Started"
+ 
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.4'
+ 
+      - name: Install Composer Dependencies
+        run: composer install --no-dev --optimize-autoloader
+ 
+      - name: Create Deployment Package
+        shell: powershell
+        run: |
+          Compress-Archive -Path * -DestinationPath deploy.zip -Force
+ 
+      - name: Stop IIS Website
+        shell: powershell
+        run: |
+          Import-Module WebAdministration
+          Stop-Website -Name "${{ secrets.IIS_SITE_NAME }}"
+ 
+      - name: Copy Files to IIS
+        shell: powershell
+        run: |
+          Expand-Archive deploy.zip -DestinationPath "${{ secrets.DEPLOY_PATH }}" -Force
+ 
+      - name: Create Required Files
+        shell: powershell
+        run: |
+          New-Item -Path "${{ secrets.DEPLOY_PATH }}\storage\logs\laravel.log" -ItemType File -Force
+ 
+      - name: Set Folder Permissions
+        shell: powershell
+        run: |
+          icacls "${{ secrets.DEPLOY_PATH }}\storage" /grant IIS_IUSRS:(OI)(CI)F /T
+ 
+      - name: Run Laravel Commands
+        shell: powershell
+        run: |
+          cd "${{ secrets.DEPLOY_PATH }}"
+          php artisan config:clear
+          php artisan cache:clear
+          php artisan migrate --force
+ 
+      - name: Start IIS Website
+        shell: powershell
+        run: |
+          Import-Module WebAdministration
+          Start-Website -Name "${{ secrets.IIS_SITE_NAME }}"
+ 
+      - name: Notify Deployment Completion
+        if: success()
+        shell: powershell
+        run: |
+          Write-Host "Deployment Completed Successfully"
+ 
+      - name: Notify Deployment Failure
+        if: failure()
+        shell: powershell
+        run: |
+          Write-Host "Deployment Failed"
