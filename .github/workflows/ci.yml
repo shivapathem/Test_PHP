@@ -1,9 +1,10 @@
 name: CI-CD PHP App with Artifacts to IIS
 
 on:
-  push:
-    branches:
-      - main
+  #push:
+  workflow_dispatch:
+    #branches:
+     #- main
 
 jobs:
 # ============================================================
