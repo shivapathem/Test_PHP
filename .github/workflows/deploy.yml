@@ -6,6 +6,9 @@ on:
   push:
     branches:
       - main
+    paths:
+      - '.github/workflows/deploy.yml'
+      - 'deploy/**'
 
 jobs:
   deploy:
@@ -103,4 +106,3 @@ jobs:
         shell: powershell
         run: |
           Write-Host "Deployment Failed"
-``
