@@ -52,6 +52,12 @@ jobs:
         shell: powershell
         run: |
           Expand-Archive -Path deploy.zip -DestinationPath "${{ secrets.DEPLOY_PATH }}" -Force
+   
+      - name: Create .env file
+        shell: powershell
+        run: |
+          Copy-Item "${{ secrets.DEPLOY_PATH }}\.env.example" "${{ secrets.DEPLOY_PATH }}\.env" -Force
+
 
       # ✅ VERIFY ARTISAN (NOW IT WILL PASS ✅)
       - name: Verify Laravel Deployment
