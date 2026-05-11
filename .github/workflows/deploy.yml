@@ -26,7 +26,7 @@ jobs:
         with:
           php-version: '8.4'
 
-      # ✅ TEMP FIX
+      # ✅ FIX TEMP
       - name: Fix Temp Directory
         shell: powershell
         run: |
@@ -47,13 +47,13 @@ jobs:
         run: |
           & "C:\composer\composer.bat" clear-cache
 
-      # ✅ CLEAN VENDOR
+      # ✅ CLEAN OLD VENDOR
       - name: Clean Vendor Folder
         shell: powershell
         run: |
           if (Test-Path vendor) { Remove-Item vendor -Recurse -Force }
 
-      # ✅ INSTALL DEPENDENCIES (NO AUTOLOAD)
+      # ✅ INSTALL DEPENDENCIES (NO AUTOLOAD TO AVOID WINDOWS ISSUE)
       - name: Install Composer Dependencies
         shell: powershell
         run: |
@@ -63,38 +63,55 @@ jobs:
             --no-scripts `
             --no-autoloader
 
-      # ✅ CREATE ZIP
+      # ✅ CREATE ZIP (FLATTEN STRUCTURE)
       - name: Create Deployment Package
         shell: powershell
         run: |
-          Compress-Archive -Path * -DestinationPath deploy.zip -Force
+          Compress-Archive -Path .\* -DestinationPath deploy.zip -Force
 
-      # ✅ STOP IIS
+      # ✅ STOP IIS WEBSITE
       - name: Stop IIS Website
         shell: powershell
         run: |
           Import-Module WebAdministration
           Stop-Website -Name "${{ secrets.IIS_SITE_NAME }}"
 
-      # ✅ DEPLOY FILES
+      # ✅ CLEAN TARGET DIRECTORY BEFORE DEPLOY
+      - name: Clean IIS Folder
+        shell: powershell
+        run: |
+          Remove-Item "${{ secrets.DEPLOY_PATH }}\*" -Recurse -Force -ErrorAction SilentlyContinue
+
+      # ✅ COPY FILES
       - name: Copy Files to IIS
         shell: powershell
         run: |
-          Expand-Archive deploy.zip -DestinationPath "${{ secrets.DEPLOY_PATH }}" -Force
+          Expand-Archive -Path deploy.zip -DestinationPath "${{ secrets.DEPLOY_PATH }}" -Force
+
+      # ✅ DEBUG (IMPORTANT - verifies artisan exists)
+      - name: Verify Deployment Structure
+        shell: powershell
+        run: |
+          Get-ChildItem "${{ secrets.DEPLOY_PATH }}"
+          if (!(Test-Path "${{ secrets.DEPLOY_PATH }}\artisan")) {
+            Write-Host "ERROR: artisan file not found!"
+            exit 1
+          }
 
       # ✅ CREATE REQUIRED FILES
       - name: Create Required Files
         shell: powershell
         run: |
-          New-Item -Path "${{ secrets.DEPLOY_PATH }}\storage\logs\laravel.log" -ItemType File -Force
+          New-Item -ItemType Directory -Force -Path "${{ secrets.DEPLOY_PATH }}\storage\logs"
+          New-Item -ItemType File -Force -Path "${{ secrets.DEPLOY_PATH }}\storage\logs\laravel.log"
 
-      # ✅ PERMISSIONS
+      # ✅ SET PERMISSIONS (FIXED QUOTES)
       - name: Set Folder Permissions
         shell: powershell
         run: |
           icacls "${{ secrets.DEPLOY_PATH }}\storage" /grant "IIS_IUSRS:(OI)(CI)F" /T
 
-      # ✅ LARAVEL COMMANDS
+      # ✅ RUN LARAVEL COMMANDS (NOW SAFE)
       - name: Run Laravel Commands
         shell: powershell
         run: |
@@ -103,7 +120,7 @@ jobs:
           php artisan cache:clear
           php artisan migrate --force
 
-      # ✅ START IIS
+      # ✅ START IIS WEBSITE
       - name: Start IIS Website
         shell: powershell
         run: |
