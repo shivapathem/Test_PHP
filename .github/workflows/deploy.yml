@@ -73,6 +73,14 @@ jobs:
         shell: powershell
         run: |
           icacls "${{ secrets.DEPLOY_PATH }}\storage" /grant "IIS_IUSRS:(OI)(CI)F" /T
+        
+      - name: Debug PHP Config
+        shell: powershell
+        run: |
+          php -v
+          php --ini
+          php -m
+
 
       # ✅ ✅ RUN ARTISAN (NOW WORKS ✅)
       - name: Run Laravel Commands
