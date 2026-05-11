@@ -29,14 +29,13 @@ jobs:
           $env:TMP = "C:\Temp"
           New-Item -ItemType Directory -Force -Path C:\Temp
 
-      # ✅ INSTALL COMPOSER DEPENDENCIES IN src
+      # ✅ INSTALL COMPOSER FROM ROOT (IMPORTANT FIX)
       - name: Install Composer Dependencies
         shell: powershell
         run: |
-          cd src
           & "C:\composer\composer.bat" install --no-dev --prefer-dist --no-scripts
 
-      # ✅ CREATE ZIP ONLY FOR src FOLDER
+      # ✅ CREATE ZIP ONLY FROM src (LARAVEL APP)
       - name: Create Deployment Package
         shell: powershell
         run: |
@@ -49,19 +48,19 @@ jobs:
           Import-Module WebAdministration
           Stop-Website -Name "${{ secrets.IIS_SITE_NAME }}"
 
-      # ✅ CLEAN IIS
+      # ✅ CLEAN IIS FOLDER
       - name: Clean IIS Folder
         shell: powershell
         run: |
           Remove-Item "${{ secrets.DEPLOY_PATH }}\*" -Recurse -Force -ErrorAction SilentlyContinue
 
-      # ✅ DEPLOY FILES DIRECTLY (NO src FOLDER INSIDE IIS)
+      # ✅ DEPLOY FILES
       - name: Copy Files to IIS
         shell: powershell
         run: |
           Expand-Archive -Path deploy.zip -DestinationPath "${{ secrets.DEPLOY_PATH }}" -Force
 
-      # ✅ VERIFY artisan EXISTS
+      # ✅ VERIFY ARTISAN
       - name: Verify Deployment Structure
         shell: powershell
         run: |
@@ -71,8 +70,8 @@ jobs:
             exit 1
           }
 
-      # ✅ STORAGE + LOG FILE
-      - name: Create Storage Files
+      # ✅ STORAGE FILES
+      - name: Create Storage Directory
         shell: powershell
         run: |
           New-Item -ItemType Directory -Force -Path "${{ secrets.DEPLOY_PATH }}\storage\logs"
@@ -84,7 +83,7 @@ jobs:
         run: |
           icacls "${{ secrets.DEPLOY_PATH }}\storage" /grant "IIS_IUSRS:(OI)(CI)F" /T
 
-      # ✅ RUN LARAVEL COMMANDS (CORRECT PATH NOW)
+      # ✅ LARAVEL COMMANDS
       - name: Run Laravel Commands
         shell: powershell
         run: |
