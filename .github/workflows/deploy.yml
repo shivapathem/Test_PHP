@@ -92,7 +92,7 @@ jobs:
       - name: Set Folder Permissions
         shell: powershell
         run: |
-          icacls "${{ secrets.DEPLOY_PATH }}\storage" /grant IIS_IUSRS:(OI)(CI)F /T
+          icacls "${{ secrets.DEPLOY_PATH }}\storage" /grant "IIS_IUSRS:(OI)(CI)F" /T
 
       # ✅ LARAVEL COMMANDS
       - name: Run Laravel Commands
