@@ -21,26 +21,18 @@ jobs:
         with:
           php-version: '8.4'
 
-      # ✅ FIX TEMP
-      - name: Fix Temp Directory
-        shell: powershell
-        run: |
-          $env:TEMP = "C:\Temp"
-          $env:TMP = "C:\Temp"
-          New-Item -ItemType Directory -Force -Path C:\Temp
-
-      # ✅ INSTALL COMPOSER (IN LARAVEL FOLDER)
+      # ✅ INSTALL DEPENDENCIES IN LARAVEL FOLDER
       - name: Install Composer Dependencies
         shell: powershell
         run: |
-          cd YOUR_LARAVEL_FOLDER
+          cd backend   # <-- CHANGE THIS
           & "C:\composer\composer.bat" install --no-dev --prefer-dist
 
-      # ✅ PACKAGE LARAVEL ONLY
+      # ✅ PACKAGE ONLY LARAVEL APP
       - name: Create Deployment Package
         shell: powershell
         run: |
-          Compress-Archive -Path .\YOUR_LARAVEL_FOLDER\* -DestinationPath deploy.zip -Force
+          Compress-Archive -Path .\backend\* -DestinationPath deploy.zip -Force
 
       # ✅ STOP IIS
       - name: Stop IIS Website
@@ -62,20 +54,13 @@ jobs:
           Expand-Archive -Path deploy.zip -DestinationPath "${{ secrets.DEPLOY_PATH }}" -Force
 
       # ✅ VERIFY ARTISAN
-      - name: Verify Laravel Setup
+      - name: Verify Laravel Deployment
         shell: powershell
         run: |
           if (!(Test-Path "${{ secrets.DEPLOY_PATH }}\artisan")) {
-            Write-Host "Laravel NOT deployed correctly!"
+            Write-Host "ERROR: Laravel not deployed correctly!"
             exit 1
           }
-
-      # ✅ STORAGE
-      - name: Setup Storage
-        shell: powershell
-        run: |
-          New-Item -ItemType Directory -Force -Path "${{ secrets.DEPLOY_PATH }}\storage\logs"
-          New-Item -ItemType File -Force -Path "${{ secrets.DEPLOY_PATH }}\storage\logs\laravel.log"
 
       # ✅ PERMISSIONS
       - name: Set Permissions
@@ -83,7 +68,7 @@ jobs:
         run: |
           icacls "${{ secrets.DEPLOY_PATH }}\storage" /grant "IIS_IUSRS:(OI)(CI)F" /T
 
-      # ✅ 🔥 ARTISAN COMMANDS (NOW WORKS)
+      # ✅ 🔥 RUN ARTISAN (THIS WILL NOW WORK)
       - name: Run Laravel Commands
         shell: powershell
         run: |
