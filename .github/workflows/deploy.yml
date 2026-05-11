@@ -31,6 +31,7 @@ jobs:
       - name: Create Deployment Package
         shell: powershell
         run: |
+          Get-ChildItem
           Compress-Archive -Path .\* -DestinationPath deploy.zip -Force
 
       # ✅ STOP IIS
@@ -51,6 +52,14 @@ jobs:
         shell: powershell
         run: |
           Expand-Archive -Path deploy.zip -DestinationPath "${{ secrets.DEPLOY_PATH }}" -Force
+          
+      # ✅ ADD DEBUG STEP HERE 👇
+      - name: Debug Deployment Output
+        shell: powershell
+        run: |
+          Write-Host "Listing files in wwwroot:"
+          Get-ChildItem "${{ secrets.DEPLOY_PATH }}"
+
 
       # ✅ VERIFY ARTISAN
       - name: Verify Laravel Deployment
