@@ -25,7 +25,6 @@ jobs:
       - name: Install Composer Dependencies
         shell: powershell
         run: |
-          cd backend   # <-- CHANGE THIS
           & "C:\composer\composer.bat" install --no-dev --prefer-dist
 
       # ✅ PACKAGE ONLY LARAVEL APP
