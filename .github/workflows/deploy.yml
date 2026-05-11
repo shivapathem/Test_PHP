@@ -31,7 +31,7 @@ jobs:
       - name: Create Deployment Package
         shell: powershell
         run: |
-          Compress-Archive -Path .\backend\* -DestinationPath deploy.zip -Force
+          Compress-Archive -Path .\* -DestinationPath deploy.zip -Force
 
       # ✅ STOP IIS
       - name: Stop IIS Website
