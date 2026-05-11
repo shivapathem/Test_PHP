@@ -89,7 +89,7 @@ jobs:
           cd "${{ secrets.DEPLOY_PATH }}"
           php artisan config:clear
           php artisan cache:clear
-          php artisan migrate --force
+          # php artisan migrate --force
 
       # ✅ START IIS
       - name: Start IIS Website
