@@ -21,18 +21,18 @@ jobs:
         with:
           php-version: '8.4'
 
-      # ✅ INSTALL DEPENDENCIES IN LARAVEL FOLDER
+      # ✅ INSTALL COMPOSER (INSIDE LARAVEL FOLDER)
       - name: Install Composer Dependencies
         shell: powershell
         run: |
+          cd src\mvc-app
           & "C:\composer\composer.bat" install --no-dev --prefer-dist
 
-      # ✅ PACKAGE ONLY LARAVEL APP
+      # ✅ CREATE ZIP ONLY FOR LARAVEL APP
       - name: Create Deployment Package
         shell: powershell
         run: |
-          Get-ChildItem
-          Compress-Archive -Path .\* -DestinationPath deploy.zip -Force
+          Compress-Archive -Path .\src\mvc-app\* -DestinationPath deploy.zip -Force
 
       # ✅ STOP IIS
       - name: Stop IIS Website
@@ -41,27 +41,19 @@ jobs:
           Import-Module WebAdministration
           Stop-Website -Name "${{ secrets.IIS_SITE_NAME }}"
 
-      # ✅ CLEAN IIS
+      # ✅ CLEAN IIS ROOT
       - name: Clean IIS Folder
         shell: powershell
         run: |
           Remove-Item "${{ secrets.DEPLOY_PATH }}\*" -Recurse -Force -ErrorAction SilentlyContinue
 
-      # ✅ DEPLOY
+      # ✅ DEPLOY LARAVEL FILES TO ROOT
       - name: Copy Files to IIS
         shell: powershell
         run: |
           Expand-Archive -Path deploy.zip -DestinationPath "${{ secrets.DEPLOY_PATH }}" -Force
-          
-      # ✅ ADD DEBUG STEP HERE 👇
-      - name: Debug Deployment Output
-        shell: powershell
-        run: |
-          Write-Host "Listing files in wwwroot:"
-          Get-ChildItem "${{ secrets.DEPLOY_PATH }}"
 
-
-      # ✅ VERIFY ARTISAN
+      # ✅ VERIFY ARTISAN (NOW IT WILL PASS ✅)
       - name: Verify Laravel Deployment
         shell: powershell
         run: |
@@ -76,7 +68,7 @@ jobs:
         run: |
           icacls "${{ secrets.DEPLOY_PATH }}\storage" /grant "IIS_IUSRS:(OI)(CI)F" /T
 
-      # ✅ 🔥 RUN ARTISAN (THIS WILL NOW WORK)
+      # ✅ ✅ RUN ARTISAN (NOW WORKS ✅)
       - name: Run Laravel Commands
         shell: powershell
         run: |
