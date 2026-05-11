@@ -29,17 +29,18 @@ jobs:
           $env:TMP = "C:\Temp"
           New-Item -ItemType Directory -Force -Path C:\Temp
 
-      # ✅ INSTALL COMPOSER FROM ROOT (IMPORTANT FIX)
+      # ✅ INSTALL COMPOSER (IN LARAVEL FOLDER)
       - name: Install Composer Dependencies
         shell: powershell
         run: |
-          & "C:\composer\composer.bat" install --no-dev --prefer-dist --no-scripts
+          cd YOUR_LARAVEL_FOLDER
+          & "C:\composer\composer.bat" install --no-dev --prefer-dist
 
-      # ✅ CREATE ZIP ONLY FROM src (LARAVEL APP)
+      # ✅ PACKAGE LARAVEL ONLY
       - name: Create Deployment Package
         shell: powershell
         run: |
-          Compress-Archive -Path .\src\* -DestinationPath deploy.zip -Force
+          Compress-Archive -Path .\YOUR_LARAVEL_FOLDER\* -DestinationPath deploy.zip -Force
 
       # ✅ STOP IIS
       - name: Stop IIS Website
@@ -48,42 +49,41 @@ jobs:
           Import-Module WebAdministration
           Stop-Website -Name "${{ secrets.IIS_SITE_NAME }}"
 
-      # ✅ CLEAN IIS FOLDER
+      # ✅ CLEAN IIS
       - name: Clean IIS Folder
         shell: powershell
         run: |
           Remove-Item "${{ secrets.DEPLOY_PATH }}\*" -Recurse -Force -ErrorAction SilentlyContinue
 
-      # ✅ DEPLOY FILES
+      # ✅ DEPLOY
       - name: Copy Files to IIS
         shell: powershell
         run: |
           Expand-Archive -Path deploy.zip -DestinationPath "${{ secrets.DEPLOY_PATH }}" -Force
 
       # ✅ VERIFY ARTISAN
-      - name: Verify Deployment Structure
+      - name: Verify Laravel Setup
         shell: powershell
         run: |
-          Get-ChildItem "${{ secrets.DEPLOY_PATH }}"
           if (!(Test-Path "${{ secrets.DEPLOY_PATH }}\artisan")) {
-            Write-Host "ERROR: artisan file not found!"
+            Write-Host "Laravel NOT deployed correctly!"
             exit 1
           }
 
-      # ✅ STORAGE FILES
-      - name: Create Storage Directory
+      # ✅ STORAGE
+      - name: Setup Storage
         shell: powershell
         run: |
           New-Item -ItemType Directory -Force -Path "${{ secrets.DEPLOY_PATH }}\storage\logs"
           New-Item -ItemType File -Force -Path "${{ secrets.DEPLOY_PATH }}\storage\logs\laravel.log"
 
       # ✅ PERMISSIONS
-      - name: Set Folder Permissions
+      - name: Set Permissions
         shell: powershell
         run: |
           icacls "${{ secrets.DEPLOY_PATH }}\storage" /grant "IIS_IUSRS:(OI)(CI)F" /T
 
-      # ✅ LARAVEL COMMANDS
+      # ✅ 🔥 ARTISAN COMMANDS (NOW WORKS)
       - name: Run Laravel Commands
         shell: powershell
         run: |
